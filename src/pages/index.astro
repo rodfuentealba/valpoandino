@@ -1,0 +1,95 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ValpoAndino — Próximamente</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .logo {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        margin-top: 1rem;
+        letter-spacing: 0.15em;
+      }
+
+      .divider {
+        width: 60px;
+        height: 3px;
+        background: #fff;
+        margin: 1.5rem auto;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <video class="video-bg" autoplay muted loop playsinline poster="/img/poster.jpg">
+      <source src="/video/background.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <img class="logo" src="/img/logo.png" alt="ValpoAndino" />
+      <div class="divider"></div>
+      <h1>Sitio en Construcción</h1>
+      <p>Próximamente — ValpoAndino</p>
+    </div>
+  </body>
+</html>
