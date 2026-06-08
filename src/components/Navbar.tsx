@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-3 left-0 right-0 z-50 transition-all duration-500 max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white dark:bg-zinc-900' : 'bg-transparent'}`}>
+      <nav className={`fixed left-0 right-0 z-50 transition-all duration-500 max-w-md md:max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white dark:bg-zinc-900' : 'top-3 bg-transparent'}`}>
         <div className="px-5 h-14 md:h-16 flex items-center justify-between">
 
           <button onClick={() => scrollTo('hero')} aria-label="Inicio" className={textCol}>
@@ -146,16 +146,19 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-zinc-900 flex flex-col items-center justify-center gap-8 md:hidden">
+      <div
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ease-in-out ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} bg-white dark:bg-zinc-900 backdrop-blur-sm flex flex-col items-center justify-center gap-8`}
+      >
+        <div className={`transition-all duration-300 ease-in-out text-center ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
           {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => scrollTo(link.id)}
-              className="text-white text-3xl font-extrabold uppercase tracking-widest hover:text-red-400 transition-colors"
-            >
-              {link.label}
-            </button>
+            <div key={link.id} className="mb-8">
+              <button
+                onClick={() => scrollTo(link.id)}
+                className="text-zinc-900 dark:text-white text-4xl font-regular uppercase tracking-widest hover:text-red-400 transition-colors"
+              >
+                {link.label}
+              </button>
+            </div>
           ))}
           <button
             onClick={() => scrollTo('contacto')}
@@ -164,7 +167,7 @@ export default function Navbar() {
             {t.reservar}
           </button>
         </div>
-      )}
+      </div>
     </>
   )
 }
