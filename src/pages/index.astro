@@ -1,22 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar'
+import Hero from '../sections/Hero.astro'
 import '../styles/global.css'
 ---
 
 <BaseLayout>
-  <main class="min-h-screen flex flex-col items-center justify-center gap-4 px-4">
-    <h1 class="text-5xl font-extrabold text-red-400 tracking-tight">
-      Valparaíso Andino
-    </h1>
-    <p class="text-lg font-light text-zinc-400">
-      Escalada en Roca · Deportes en Montaña
-    </p>
-    <ul class="text-sm text-zinc-400 dark:text-zinc-600 text-center space-y-1 mt-4">
-      <li>✓ Astro 5</li>
-      <li>✓ React + TypeScript</li>
-      <li>✓ Tailwind — darkMode: class</li>
-      <li>✓ Nohemi (fuente local)</li>
-      <li>✓ Nanostores</li>
-    </ul>
-  </main>
+  <Navbar client:load />
+  <Hero />
+
+  <section id="andinos"   class="h-screen flex items-center justify-center bg-white dark:bg-zinc-900">
+    <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Andinos — próximamente</p>
+  </section>
+  <section id="servicios" class="h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-800">
+    <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Servicios — próximamente</p>
+  </section>
+  <section id="collab"    class="h-screen flex items-center justify-center bg-white dark:bg-zinc-900">
+    <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Collab — próximamente</p>
+  </section>
+  <section id="contacto"  class="h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-800">
+    <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Contacto — próximamente</p>
+  </section>
 </BaseLayout>
