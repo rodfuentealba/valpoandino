@@ -5,6 +5,7 @@ import { themeStore } from '../stores/theme'
 import { langStore } from '../stores/lang'
 import { es } from '../i18n/es'
 import { en } from '../i18n/en'
+import Isotype from './icons/Isotype'
 
 export default function Navbar() {
   const theme = useStore(themeStore)
@@ -15,14 +16,20 @@ export default function Navbar() {
   const [menuOpen,  setMenuOpen]  = useState(false)
 
   useEffect(() => {
-    const hero = document.querySelector('#hero')
-    if (!hero) return
-    const obs = new IntersectionObserver(
-      ([e]) => setScrolled(!e.isIntersecting),
-      { threshold: 0.1 }
-    )
-    obs.observe(hero)
-    return () => obs.disconnect()
+    const savedTheme = localStorage.getItem('va-theme')
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) themeStore.set('dark')
+
+    const savedLang = localStorage.getItem('va-lang')
+    const browserLang = navigator.language.startsWith('en') ? 'en' : 'es'
+    langStore.set((savedLang as 'es' | 'en') ?? browserLang)
+  }, [])
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
@@ -61,26 +68,19 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`
-        fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${scrolled ? 'bg-white dark:bg-zinc-900 shadow-sm' : 'bg-transparent'}
-      `}>
-        <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
+      <nav className={`fixed top-3 left-0 right-0 z-50 transition-all duration-500 max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white dark:bg-zinc-900 shadow-sm' : 'bg-transparent'}`}>
+        <div className="px-5 h-14 md:h-16 flex items-center justify-between">
 
-          <button onClick={() => scrollTo('hero')} aria-label="Inicio">
-            <img
-              src="/assets/isovalpoAndino.svg"
-              alt="Valparaíso Andino"
-              className="h-9 w-auto"
-            />
+          <button onClick={() => scrollTo('hero')} aria-label="Inicio" className={textCol}>
+            <Isotype className="h-8 md:h-9 w-auto transition-all duration-300" />
           </button>
 
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
                   onClick={() => scrollTo(link.id)}
-                  className={`text-sm font-medium uppercase tracking-widest transition-colors duration-300 hover:text-red-400 ${textCol}`}
+                  className={`text-xs font-regular uppercase tracking-widest transition-colors duration-300 hover:text-red-400 ${textCol}`}
                 >
                   {link.label}
                 </button>
@@ -100,11 +100,10 @@ export default function Navbar() {
 
             <button
               onClick={toggleLang}
-              aria-label={`Cambiar a ${lang === 'es' ? 'inglés' : 'español'}`}
-              className={`flex items-center gap-1 text-sm font-medium transition-colors duration-300 hover:text-red-400 ${textCol}`}
+              aria-label={lang === 'es' ? 'English' : 'Español'}
+              className={`material-symbols-outlined text-[20px] transition-colors duration-300 hover:text-red-400 ${textCol}`}
             >
-              <span className="material-symbols-outlined text-[18px]">language</span>
-              {lang === 'es' ? 'EN' : 'ES'}
+              {lang === 'es' ? 'language_us' : 'language_spanish'}
             </button>
 
             <button
@@ -128,11 +127,10 @@ export default function Navbar() {
 
             <button
               onClick={toggleLang}
-              aria-label="Toggle idioma"
-              className={`flex items-center gap-1 text-sm font-medium transition-colors duration-300 ${textCol}`}
+              aria-label={lang === 'es' ? 'English' : 'Español'}
+              className={`material-symbols-outlined text-[20px] transition-colors duration-300 hover:text-red-400 ${textCol}`}
             >
-              <span className="material-symbols-outlined text-[18px]">language</span>
-              {lang === 'es' ? 'EN' : 'ES'}
+              {lang === 'es' ? 'language_us' : 'language_spanish'}
             </button>
 
             <button

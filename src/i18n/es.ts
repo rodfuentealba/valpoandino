@@ -8,7 +8,7 @@ export const es = {
     reservar: 'Reservar',
   },
   hero: {
-    tagline: 'Experiencias | Escalada en Roca · Deportes en Montaña',
+    tagline: 'Experiencias || Escalada en Roca || Deportes en Montaña',
     titulo1: 'valparaíso',
     titulo2: 'Andino.',
   },

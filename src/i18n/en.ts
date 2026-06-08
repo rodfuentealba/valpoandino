@@ -8,7 +8,7 @@ export const en = {
     reservar: 'Book now',
   },
   hero: {
-    tagline: 'Experiences | Rock Climbing · Mountain Sports',
+    tagline: 'Experiences || Rock Climbing || Mountain Sports',
     titulo1: 'valparaíso',
     titulo2: 'Andino.',
   },
