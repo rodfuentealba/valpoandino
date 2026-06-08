@@ -2,5 +2,9 @@
   "framework": "astro",
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist",
-  "installCommand": "pnpm install"
+  "installCommand": "pnpm install",
+  "github": {
+    "silent": true,
+    "autoJobCancelation": true
+  }
 }

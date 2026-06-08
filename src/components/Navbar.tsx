@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-3 left-0 right-0 z-50 transition-all duration-500 max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white dark:bg-zinc-900 shadow-sm' : 'bg-transparent'}`}>
+      <nav className={`fixed top-3 left-0 right-0 z-50 transition-all duration-500 max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white dark:bg-zinc-900' : 'bg-transparent'}`}>
         <div className="px-5 h-14 md:h-16 flex items-center justify-between">
 
           <button onClick={() => scrollTo('hero')} aria-label="Inicio" className={textCol}>
