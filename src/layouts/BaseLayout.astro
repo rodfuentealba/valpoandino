@@ -1,0 +1,30 @@
+---
+interface Props {
+  title?: string
+  description?: string
+}
+const {
+  title = 'Valparaíso Andino — Escalada en Roca',
+  description = 'Experiencias de escalada en roca y deportes en montaña en Valparaíso, Chile.',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preload" href="/fonts/Nohemi-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/Nohemi-ExtraBold.ttf" as="font" type="font/ttf" crossorigin />
+    <script is:inline>
+      const t = localStorage.getItem('va-theme')
+      const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      if (t === 'dark' || (!t && dark)) document.documentElement.classList.add('dark')
+    </script>
+  </head>
+  <body class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white transition-colors duration-300">
+    <slot />
+  </body>
+</html>
