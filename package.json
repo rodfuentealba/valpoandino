@@ -14,17 +14,17 @@
   "dependencies": {
     "@astrojs/react": "^5.0.7",
     "@astrojs/tailwind": "^6.0.2",
-    "@nanostores/react": "^0.5.x",
-    "nanostores": "^0.10.x",
+    "@nanostores/react": "^0.5.0",
+    "nanostores": "^0.10.0",
     "@vercel/analytics": "^2.0.1",
     "astro": "^5.0.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "typescript": "^6.0.3"
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0"
   }
 }
