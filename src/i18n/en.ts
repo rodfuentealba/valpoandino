@@ -55,4 +55,7 @@ export const en = {
       },
     ],
   },
+  chilcas: {
+    cta: 'LEARN MORE ABOUT THE SECTOR',
+  },
 }
