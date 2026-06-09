@@ -2,16 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Navbar from '../components/Navbar'
 import Hero from '../sections/Hero.astro'
+import Andinos from '../sections/Andinos'
 import '../styles/global.css'
 ---
 
 <BaseLayout>
   <Navbar client:load />
   <Hero />
-
-  <section id="andinos"   class="h-screen flex items-center justify-center bg-white dark:bg-zinc-900">
-    <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Andinos — próximamente</p>
-  </section>
+  <Andinos client:load />
   <section id="servicios" class="h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-800">
     <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Servicios — próximamente</p>
   </section>

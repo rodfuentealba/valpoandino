@@ -12,4 +12,8 @@ export const es = {
     titulo1: 'valparaíso',
     titulo2: 'Andino.',
   },
+  andinos: {
+    titulo: 'Andinos®',
+    texto: 'Equipo autónomo de andinistas y escaladores con amplio conocimiento; desde primeros auxilios, nudos, cuerdas, rescates e interpretación de flora y fauna de Chile.',
+  },
 }
