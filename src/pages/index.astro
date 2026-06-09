@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Navbar from '../components/Navbar'
 import Hero from '../sections/Hero.astro'
 import Andinos from '../sections/Andinos'
+import Servicios from '../sections/Servicios'
 import '../styles/global.css'
 ---
 
@@ -10,9 +11,7 @@ import '../styles/global.css'
   <Navbar client:load />
   <Hero />
   <Andinos client:load />
-  <section id="servicios" class="h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-800">
-    <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Servicios — próximamente</p>
-  </section>
+  <Servicios client:load />
   <section id="collab"    class="h-screen flex items-center justify-center bg-white dark:bg-zinc-900">
     <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Collab — próximamente</p>
   </section>
