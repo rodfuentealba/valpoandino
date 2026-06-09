@@ -14,6 +14,8 @@
   "dependencies": {
     "@astrojs/react": "^5.0.7",
     "@astrojs/tailwind": "^6.0.2",
+    "@nanostores/react": "^0.5.x",
+    "nanostores": "^0.10.x",
     "@vercel/analytics": "^2.0.1",
     "astro": "^5.0.0",
     "react": "^19.2.7",
