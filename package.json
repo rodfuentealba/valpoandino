@@ -2,6 +2,10 @@
   "name": "valpoandino",
   "type": "module",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@10.32.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
