@@ -39,7 +39,7 @@ export default function Andinos() {
       </div>
 
       {/* Ícono anclado al corte inferior izquierdo, mitad dentro / mitad fuera */}
-      <div className="absolute bottom-[80%] left-[80%] md:bottom-0 md:left-20 z-20 translate-y-1/2 bg-red-400 p-2">
+      <div className="absolute bottom-[80%] left-[80%] md:bottom-0 md:left-[15%] z-20 translate-y-1/2 bg-red-400 p-2">
         <span className="material-symbols-outlined text-white text-5xl md:text-7xl">
           verified_user
         </span>

@@ -60,8 +60,8 @@ export const es = {
   },
   collab: {
     seccion: 'Collab',
-    tituloBold: 'Programa EducativoAventura',
-    titulo: 'Colegios/Empresas',
+    tituloBold: 'Programa Educativo',
+    titulo: 'Colegios y Empresas',
     texto: 'Placeholdertexto para la sección de colaboración con colegios y empresas.',
     cta: 'GESTIONAMOS TU SALIDA',
   },
