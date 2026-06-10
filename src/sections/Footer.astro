@@ -1,20 +1,27 @@
-<footer class="w-full bg-zinc-900 text-white">
-  <div class="max-w-6xl mx-auto px-6 md:px-8 lg:px-20 py-10 md:py-14">
-    <div class="flex items-center justify-between mb-2">
-      <p class="text-xl md:text-2xl tracking-wide">
-        <span class="font-light">v</span><span class="font-bold">Andino</span>
+<footer class="w-full bg-white dark:bg-zinc-900 text-black dark:text-white">
+  <div class="max-w-6xl mx-auto px-6 md:px-8 lg:px-20 pt-10 md:pt-14 pb-10">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <div class="order-1 md:order-2 md:text-right">
+        <a
+          href="https://www.instagram.com/valparaiso_andino/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-bold text-base md:text-6xl tracking-wide text-red-400 hover:text-red-500 transition-colors"
+        >
+          Instagram
+        </a>
+        <p class="hidden md:block text-xs md:text-sm text-zinc-400 font-light tracking-wide mt-4">
+          &copy;{new Date().getFullYear()} — Valparaíso Andino Expediciones
+        </p>
+      </div>
+      <div class="order-2 md:order-1">
+        <p class="text-xl md:text-9xl">
+          <span class="font-light">v</span><span class="font-bold -ml-5">Andino</span>
+        </p>
+      </div>
+      <p class="md:hidden order-3 text-xs text-zinc-400 font-light tracking-wide">
+        &copy;{new Date().getFullYear()} — Valparaíso Andino Expediciones
       </p>
-      <a
-        href="https://www.instagram.com/valparaiso_andino/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="font-bold text-base md:text-lg tracking-wide hover:text-red-400 transition-colors"
-      >
-        Instagram
-      </a>
     </div>
-    <p class="text-xs md:text-sm text-zinc-400 font-light tracking-wide">
-      &copy;{new Date().getFullYear()} — Valparaíso Andino Expediciones
-    </p>
   </div>
 </footer>
