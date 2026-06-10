@@ -61,7 +61,7 @@ export const es = {
   testimonial: {
     titulo: 'Testimonios',
     personas: [
-      { nombre: 'Persona 1', texto: 'Testimonio increíble sobre la experiencia de escalada.' },
+      { nombre: 'Cinthia Zelada, CL', texto: 'Excelente taller, ¡recomendadisimo! Entregan todos los conocimientos necesarios de forma completa y clara. La parte práctica espectacular, la seguridad y confianza para poder realizar esta maravilla que es la escalada. ¡Muchas gracias chicos! Y a todo el grupo.' },
       { nombre: 'Persona 2', texto: 'Una experiencia única que recomiendo a todos.' },
       { nombre: 'Persona 3', texto: 'Los guías son excelentes, aprendí mucho.' },
       { nombre: 'Persona 4', texto: 'El mejor lugar para escalar en Chile.' },

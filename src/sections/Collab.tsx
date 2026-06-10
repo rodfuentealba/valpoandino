@@ -44,7 +44,7 @@ export default function Collab() {
             <div className="absolute inset-0 bg-black/30" />
           </div>
 
-          <button className="md:hidden bg-red-400 hover:bg-red-500 text-white text-sm font-bold uppercase tracking-widest px-6 py-3 absolute z-10 -bottom-7 left-[16%]">
+          <button className="md:hidden bg-red-400 hover:bg-red-500 text-white text-sm font-bold uppercase shadow-lg tracking-widest px-6 py-3 absolute z-10 -bottom-7 left-[16%]">
               {t.cta}
               <span className="material-symbols-outlined text-2xl">arrow_forward</span>
             </button>
