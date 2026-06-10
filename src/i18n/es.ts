@@ -58,4 +58,11 @@ export const es = {
   chilcas: {
     cta: 'SABER MÁS DEL SECTOR',
   },
+  collab: {
+    seccion: 'Collab',
+    tituloBold: 'Programa EducativoAventura',
+    titulo: 'Colegios/Empresas',
+    texto: 'Placeholdertexto para la sección de colaboración con colegios y empresas.',
+    cta: 'GESTIONAMOS TU SALIDA',
+  },
 }

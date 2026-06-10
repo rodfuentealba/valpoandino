@@ -5,6 +5,7 @@ import Hero from '../sections/Hero.astro'
 import Andinos from '../sections/Andinos'
 import Servicios from '../sections/Servicios'
 import Chilcas from '../sections/Chilcas'
+import Collab from '../sections/Collab'
 import '../styles/global.css'
 ---
 
@@ -14,9 +15,7 @@ import '../styles/global.css'
   <Andinos client:load />
   <Servicios client:load />
   <Chilcas client:load />
-  <section id="collab"    class="h-screen flex items-center justify-center bg-white dark:bg-zinc-900">
-    <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Collab — próximamente</p>
-  </section>
+  <Collab client:load />
   <section id="contacto"  class="h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-800">
     <p class="text-zinc-300 font-light tracking-widest uppercase text-sm">Contacto — próximamente</p>
   </section>

@@ -58,4 +58,11 @@ export const en = {
   chilcas: {
     cta: 'LEARN MORE ABOUT THE SECTOR',
   },
+  collab: {
+    seccion: 'Collab',
+    tituloBold: 'Educational Adventure Program',
+    titulo: 'Schools/Companies',
+    texto: 'Placeholder text for the collaboration section with schools and companies.',
+    cta: 'MANAGE YOUR TRIP',
+  },
 }

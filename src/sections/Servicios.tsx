@@ -27,7 +27,7 @@ export default function Servicios() {
   const t = lang === 'es' ? es.servicios : en.servicios
 
   return (
-    <section id="servicios" className="relative w-full bg-zinc-50 dark:bg-zinc-900 overflow-hidden">
+    <section id="servicios" className="relative w-full bg-white dark:bg-zinc-900 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-32">
 
         <p className="text-md font-semibold uppercase text-black dark:text-white mb-16">
