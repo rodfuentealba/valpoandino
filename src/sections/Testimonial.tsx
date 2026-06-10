@@ -12,12 +12,14 @@ const placeholderBg = [
 
 const STEP = 76
 
+function slot(i: number, selected: number): number {
+  return ((i - selected + 10) % 7) - 3
+}
+
 export default function Testimonial() {
   const lang = useStore(langStore)
   const t = lang === 'es' ? es.testimonial : en.testimonial
   const [selected, setSelected] = useState(3)
-
-  const offset = -(selected - 3) * STEP
 
   return (
     <section id="testimonial" className="relative w-full bg-red-400 overflow-hidden">
@@ -26,34 +28,34 @@ export default function Testimonial() {
           {t.titulo}
         </p>
 
-        <div className="relative w-full overflow-hidden" style={{ height: '5rem' }}>
-          <div
-            className="absolute inset-0 flex items-center justify-center gap-3 md:gap-5 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
-            style={{ transform: `translateX(${offset}px)` }}
-          >
-            {t.personas.map((p, i) => (
+        <div className="relative w-full" style={{ height: '5rem' }}>
+          {t.personas.map((p, i) => {
+            const s = slot(i, selected)
+            const isCenter = s === 0
+            return (
               <button
                 key={i}
                 onClick={() => setSelected(i)}
-                className={`rounded-full overflow-hidden flex-shrink-0 transition-all duration-300 w-14 h-14 md:w-16 md:h-16 ${
-                  i === selected
-                    ? 'ring-2 ring-white ring-offset-2 ring-offset-red-400 scale-110 shadow-lg'
-                    : 'grayscale hover:grayscale-0 opacity-60 hover:opacity-100'
+                className={`absolute top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex-shrink-0 w-14 h-14 md:w-14 md:h-14 transition-all duration-500 ease-out ${
+                  isCenter
+                    ? 'scale-130 shadow-lg z-10 ring-2 ring-white ring-offset-2 ring-offset-red-400'
+                    : 'scale-100 grayscale hover:grayscale-0 opacity-60 hover:opacity-100'
                 }`}
+                style={{ left: `calc(50% + ${s * STEP}px)` }}
               >
                 <div className={`w-full h-full ${placeholderBg[i]} flex items-center justify-center text-white font-bold text-sm`}>
                   {p.nombre.charAt(0)}
                 </div>
               </button>
-            ))}
-          </div>
+            )
+          })}
         </div>
 
         <div className="p-8 md:p-12 max-w-3xl mx-auto text-center">
           <h3 className="text-4xl md:text-6xl font-bold text-white mb-4">
             {t.personas[selected].nombre}
           </h3>
-          <p className="text-sm md:text-base text-white leading-relaxed font-light">
+          <p className=" text-white leading-10 text-xl font-light">
             &ldquo;{t.personas[selected].texto}&rdquo;
           </p>
         </div>
