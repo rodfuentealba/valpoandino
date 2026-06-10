@@ -9,6 +9,13 @@ const serviceImages = [
   '/assets/service02.png',
 ]
 
+const PHONE = '56962822676'
+
+function waUrl(prefijo: string, nombre: string) {
+  const msg = `${prefijo}! Vi el programa de ${nombre} y necesito más informacion.`
+  return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`
+}
+
 function HighlightedText({ texto, destacado }: { texto: string; destacado: string }) {
   if (!destacado) return <>{texto}</>
   const parts = texto.split(destacado)
@@ -38,6 +45,7 @@ export default function Servicios() {
           {t.filas.map((fila, i) => {
             const isReversed = i % 2 !== 0
             const img = serviceImages[i] ?? '/assets/service01.png'
+            const fullName = `${fila.titulo} - ${fila.subtitulo}`
 
             return (
               <div key={i} className="grid md:grid-cols-5 gap-0">
@@ -61,16 +69,26 @@ export default function Servicios() {
                         <HighlightedText texto={fila.texto} destacado={fila.destacado} />
                       </p>
 
-                      <button className="hidden md:inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 md:-translate-x-[40%] relative z-10 hover:scale-105 transition-all">
+                      <a
+                        href={waUrl(lang === 'es' ? 'Hola' : 'Hi', fullName)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hidden md:inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 md:-translate-x-[40%] relative z-10 hover:scale-105 transition-all"
+                      >
                         {fila.cta}
                         <span className="material-symbols-outlined text-2xl">arrow_forward</span>
-                      </button>
+                      </a>
                     </div>
 
-                    <button className="md:hidden -mt-6 relative z-10 inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 transition-colors mx-8 order-3">
+                    <a
+                      href={waUrl(lang === 'es' ? 'Hola' : 'Hi', fullName)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="md:hidden -mt-6 relative z-10 inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 transition-colors mx-8 order-3"
+                    >
                       {fila.cta}
                       <span className="material-symbols-outlined text-2xl">arrow_forward</span>
-                    </button>
+                    </a>
                   </>
                 ) : (
                   <>
@@ -84,10 +102,15 @@ export default function Servicios() {
                         <HighlightedText texto={fila.texto} destacado={fila.destacado} />
                       </p>
 
-                      <button className="hidden md:inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 md:-translate-x-[-40%] relative z-10 hover:scale-105 transition-all">
+                      <a
+                        href={waUrl(lang === 'es' ? 'Hola' : 'Hi', fullName)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hidden md:inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 md:-translate-x-[-40%] relative z-10 hover:scale-105 transition-all"
+                      >
                         {fila.cta}
                         <span className="material-symbols-outlined text-2xl">arrow_forward</span>
-                      </button>
+                      </a>
                     </div>
                     <div className="md:col-span-3 relative overflow-hidden">
                       <div
@@ -97,10 +120,15 @@ export default function Servicios() {
                       <div className="absolute inset-0 bg-black/30" />
                     </div>
 
-                    <button className="md:hidden -mt-6 relative z-10 inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 transition-colors mx-8">
+                    <a
+                      href={waUrl(lang === 'es' ? 'Hola' : 'Hi', fullName)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="md:hidden -mt-6 relative z-10 inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 transition-colors mx-8"
+                    >
                       {fila.cta}
                       <span className="material-symbols-outlined text-2xl">arrow_forward</span>
-                    </button>
+                    </a>
                   </>
                 )}
               </div>
@@ -112,7 +140,6 @@ export default function Servicios() {
           {t.columnas.map((col, i) => (
             <div key={i} className="text-center md:text-left">
               <div className="inline-flex items-center justify-center w-16 h-16 mb-6">
-                
                 <span className="material-symbols-outlined text-black dark:text-white text-5xl">
                   {col.icono}
                 </span>
@@ -131,10 +158,20 @@ export default function Servicios() {
         </div>
 
         <div className="flex justify-center mt-16">
-          <button className="bg-red-400 hover:bg-red-500 hover:scale-105 transition-all  text-white text-xs font-bold uppercase tracking-widest px-6 py-3">
-          Más Información
-          <span className="material-symbols-outlined text-base">arrow_forward</span>
-        </button>
+          <a
+            href={(() => {
+              const prefijo = lang === 'es' ? 'Hola!' : 'Hi!'
+              const sep = lang === 'es' ? 'Elegí una opción:' : 'Choose an option:'
+              const body = t.columnas.map((c, i) => `*${i + 1}* ${c.tituloBold} ${c.titulo}`).join('\n')
+              return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${prefijo}\n\n${sep}\n${body}\n\nRespondé con el número y te enviamos la info.`)}`
+            })()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-400 hover:bg-red-500 hover:scale-105 transition-all text-white text-xs font-bold uppercase tracking-widest px-6 py-3 inline-flex items-center gap-2"
+          >
+            {lang === 'es' ? 'Más Información' : 'More Info'}
+            <span className="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
         </div>
 
       </div>

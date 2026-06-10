@@ -29,7 +29,7 @@ export const es = {
       {
         titulo: 'Por el día',
         subtitulo: 'Escalada en Roca.',
-        texto: 'Vivencia un día de escalada en roca en uno de los mejores sectores de Escalada en Chile, Las Chilcas - LlayLlay.',
+        texto: 'Vivencia un día de escalada en roca en uno de los mejores sectores de Chile, Las Chilcas - LlayLlay.',
         destacado: 'Las Chilcas - LlayLlay.',
         cta: 'RECIBIR PROGRAMA',
       },
