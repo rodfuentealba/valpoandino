@@ -35,7 +35,7 @@ export default function AnimatedTagline() {
   }, [lines.length])
 
   return (
-    <p className="text-white text-xs md:text-md uppercase tracking-[1rem] mb-6 font-light min-h-[1.2em]">
+    <p className="text-white text-xs md:text-lg uppercase tracking-[0.3rem] md:tracking-[1rem] mb-6 font-bold min-h-[1.2em]">
       <span
         className="transition-opacity duration-500 ease-in-out"
         style={{ opacity: fade ? 1 : 0 }}

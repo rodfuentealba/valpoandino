@@ -70,4 +70,11 @@ export const es = {
       { nombre: 'Persona 7', texto: 'Superó todas mis expectativas, recomendado.' },
     ],
   },
+  collab: {
+    seccion: 'Collab',
+    tituloBold: 'Programa Educativo',
+    titulo: 'Colegios y Empresas',
+    texto: 'Placeholdertexto para la sección de colaboración con colegios y empresas.',
+    cta: 'GESTIONAMOS TU SALIDA',
+  },
 }

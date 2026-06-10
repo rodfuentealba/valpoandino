@@ -70,4 +70,11 @@ export const en = {
       { nombre: 'Person 7', texto: 'Exceeded all my expectations, recommended.' },
     ],
   },
+  collab: {
+    seccion: 'Collab',
+    tituloBold: 'Educational Adventure Program',
+    titulo: 'Schools/Companies',
+    texto: 'Placeholder text for the collaboration section with schools and companies.',
+    cta: 'MANAGE YOUR TRIP',
+  },
 }
