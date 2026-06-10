@@ -12,7 +12,7 @@ const serviceImages = [
 const PHONE = '56962822676'
 
 function waUrl(prefijo: string, nombre: string) {
-  const msg = `${prefijo} 👋 Vi el programa de *${nombre}* y necesito más información 😊`
+  const msg = `${prefijo}! Vi el programa de ${nombre} y necesito más informacion.`
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`
 }
 
