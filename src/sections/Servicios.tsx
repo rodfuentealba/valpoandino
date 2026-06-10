@@ -161,8 +161,8 @@ export default function Servicios() {
             href={(() => {
               const prefijo = lang === 'es' ? 'Hola!' : 'Hi!'
               const sep = lang === 'es' ? 'Elegí una opción:' : 'Choose an option:'
-              const body = t.filas.map((f, i) => `${i + 1}️⃣ ${f.titulo} - ${f.subtitulo}`).join('\n')
-              const extra = lang === 'es' ? '\n3️⃣ Talleres / Clínicas' : '\n3️⃣ Workshops / Clinics'
+              const body = t.filas.map((f, i) => `*${i + 1}* ${f.titulo} - ${f.subtitulo}`).join('\n')
+              const extra = lang === 'es' ? '\n*3* Talleres / Clínicas' : '\n*3* Workshops / Clinics'
               return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${prefijo}\n\n${sep}\n${body}${extra}\n\nRespondé con el número y te enviamos la info.`)}`
             })()}
             target="_blank"
