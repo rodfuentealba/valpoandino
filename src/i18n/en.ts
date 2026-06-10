@@ -58,4 +58,16 @@ export const en = {
   chilcas: {
     cta: 'LEARN MORE ABOUT THE SECTOR',
   },
+  testimonial: {
+    titulo: 'Testimonials',
+    personas: [
+      { nombre: 'Person 1', texto: 'An incredible testimonial about the climbing experience.' },
+      { nombre: 'Person 2', texto: 'A unique experience that I recommend to everyone.' },
+      { nombre: 'Person 3', texto: 'The guides are excellent, I learned a lot.' },
+      { nombre: 'Person 4', texto: 'The best place to climb in Chile.' },
+      { nombre: 'Person 5', texto: 'I would come back again and again, unforgettable.' },
+      { nombre: 'Person 6', texto: 'Professional team and spectacular landscapes.' },
+      { nombre: 'Person 7', texto: 'Exceeded all my expectations, recommended.' },
+    ],
+  },
 }

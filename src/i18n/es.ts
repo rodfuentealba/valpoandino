@@ -58,4 +58,16 @@ export const es = {
   chilcas: {
     cta: 'SABER MÁS DEL SECTOR',
   },
+  testimonial: {
+    titulo: 'Testimonios',
+    personas: [
+      { nombre: 'Persona 1', texto: 'Testimonio increíble sobre la experiencia de escalada.' },
+      { nombre: 'Persona 2', texto: 'Una experiencia única que recomiendo a todos.' },
+      { nombre: 'Persona 3', texto: 'Los guías son excelentes, aprendí mucho.' },
+      { nombre: 'Persona 4', texto: 'El mejor lugar para escalar en Chile.' },
+      { nombre: 'Persona 5', texto: 'Volvería una y otra vez, inolvidable.' },
+      { nombre: 'Persona 6', texto: 'Equipo profesional y paisajes espectaculares.' },
+      { nombre: 'Persona 7', texto: 'Superó todas mis expectativas, recomendado.' },
+    ],
+  },
 }
