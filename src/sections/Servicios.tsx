@@ -43,10 +43,11 @@ export default function Servicios() {
               <div key={i} className="grid md:grid-cols-5 gap-0">
                 {isReversed ? (
                   <>
-                    <div
-                      className="md:col-span-3 relative min-h-[300px] md:min-h-[400px] bg-cover bg-center order-2 md:order-1"
-                      style={{ backgroundImage: `url('${img}')` }}
-                    >
+                    <div className="md:col-span-3 relative overflow-hidden order-2 md:order-1">
+                      <div
+                        className="min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110"
+                        style={{ backgroundImage: `url('${img}')` }}
+                      />
                       <div className="absolute inset-0 bg-black/30" />
                     </div>
 
@@ -88,10 +89,11 @@ export default function Servicios() {
                         <span className="material-symbols-outlined text-2xl">arrow_forward</span>
                       </button>
                     </div>
-                    <div
-                      className="md:col-span-3 relative min-h-[300px] md:min-h-[400px] bg-cover bg-center"
-                      style={{ backgroundImage: `url('${img}')` }}
-                    >
+                    <div className="md:col-span-3 relative overflow-hidden">
+                      <div
+                        className="min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110"
+                        style={{ backgroundImage: `url('${img}')` }}
+                      />
                       <div className="absolute inset-0 bg-black/30" />
                     </div>
 

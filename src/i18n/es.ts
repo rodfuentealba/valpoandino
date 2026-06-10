@@ -14,7 +14,7 @@ export const es = {
   },
   andinos: {
     titulo: 'Andinos®',
-    texto: 'Equipo autónomo de andinistas y escaladores con amplio conocimiento; desde primeros auxilios, nudos, cuerdas, rescates e interpretación de flora y fauna de Chile.',
+    texto: 'Equipo autónomo de andinistas y escaladores dedicados a transmitir experiencias desde el año 2018 nuestra misión ha sido ofrecer experiencias únicas y seguras para disfrutar al máximo de la escalada en roca.',
   },
   servicios: {
     titulo: 'Servicios',
@@ -29,7 +29,7 @@ export const es = {
       {
         titulo: 'Por el día',
         subtitulo: 'Escalada en Roca.',
-        texto: 'Vivencia un día de escalada en roca en el concurrido sector de Escalada en Chile, Las Chilcas - LlayLlay.',
+        texto: 'Vivencia un día de escalada en roca en uno de los mejores sectores de Escalada en Chile, Las Chilcas - LlayLlay.',
         destacado: 'Las Chilcas - LlayLlay.',
         cta: 'RECIBIR PROGRAMA',
       },
@@ -74,7 +74,7 @@ export const es = {
     seccion: 'Collab',
     tituloBold: 'Programa Educativo',
     titulo: 'Colegios y Empresas',
-    texto: 'Placeholdertexto para la sección de colaboración con colegios y empresas.',
+    texto: 'Transformamos grupos escolares y corporativos a través de la aventura al aire libre. Combinamos escalada, trekking y educación ambiental para fortalecer el compañerismo, superar retos y aprender a proteger nuestro entorno.',
     cta: 'GESTIONAMOS TU SALIDA',
   },
 }
