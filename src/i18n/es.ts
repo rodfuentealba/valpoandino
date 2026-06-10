@@ -74,7 +74,7 @@ export const es = {
     seccion: 'Collab',
     tituloBold: 'Programa Educativo',
     titulo: 'Colegios y Empresas',
-    texto: 'Placeholdertexto para la sección de colaboración con colegios y empresas.',
+    texto: 'Transformamos grupos escolares y corporativos a través de la aventura al aire libre. Combinamos escalada, trekking y educación ambiental para fortalecer el compañerismo, superar retos y aprender a proteger nuestro entorno.',
     cta: 'GESTIONAMOS TU SALIDA',
   },
 }

@@ -4,12 +4,14 @@ import { langStore } from '../stores/lang'
 import { es } from '../i18n/es'
 import { en } from '../i18n/en'
 
+const PHONE = '56962822676'
+
 export default function Collab() {
   const lang = useStore(langStore)
   const t = lang === 'es' ? es.collab : en.collab
 
   return (
-    <section id="collab" className="relative w-full bg-white dark:bg-zinc-900 md:-translate-y-[19%] z-10">
+    <section id="collab" className="relative w-full bg-white dark:bg-zinc-900 md:-translate-y-[8%] z-10">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="absolute -top-[15%] md:top-0 left-5 md:left-[15%] z-20 md:-translate-y-40 bg-red-400 p-2">
           <span className="material-symbols-outlined text-white text-5xl md:text-7xl">
@@ -31,10 +33,21 @@ export default function Collab() {
               {t.texto}
             </p>
 
-            <button className="hidden md:inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 md:translate-x-[40%] relative z-10 hover:scale-105 transition-all">
+            <a
+              href={(() => {
+                const p = lang === 'es' ? 'Hola! Me interesa saber más información sobre el' : 'Hi! I want to know more about the'
+                const sep = lang === 'es' ? 'Elegí una opción:' : 'Choose an option:'
+                const o1 = lang === 'es' ? '*1* Colegio' : '*1* School'
+                const o2 = lang === 'es' ? '*2* Empresa' : '*2* Company'
+                return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${p} *${t.tituloBold}*\n\n${sep}\n${o1}\n${o2}\n\nRespondé con el número y te contactamos.`)}`
+              })()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 md:translate-x-[40%] relative z-10 hover:scale-105 transition-all"
+            >
               {t.cta}
               <span className="material-symbols-outlined text-2xl">arrow_forward</span>
-            </button>
+            </a>
           </div>
 
           <div
@@ -44,10 +57,21 @@ export default function Collab() {
             <div className="absolute inset-0 bg-black/30" />
           </div>
 
-          <button className="md:hidden bg-red-400 hover:bg-red-500 text-white text-sm font-bold uppercase shadow-lg tracking-widest px-6 py-3 absolute z-10 -bottom-7 left-[16%]">
+          <a
+              href={(() => {
+                const p = lang === 'es' ? 'Hola! Me interesa saber más información sobre el' : 'Hi! I want to know more about the'
+                const sep = lang === 'es' ? 'Elegí una opción:' : 'Choose an option:'
+                const o1 = lang === 'es' ? '*1* Colegio' : '*1* School'
+                const o2 = lang === 'es' ? '*2* Empresa' : '*2* Company'
+                return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${p} *${t.tituloBold}*\n\n${sep}\n${o1}\n${o2}\n\nRespondé con el número y te contactamos.`)}`
+              })()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden bg-red-400 hover:bg-red-500 text-white text-sm font-bold uppercase shadow-lg tracking-widest px-6 py-3 absolute z-10 -bottom-7 left-[16%]"
+            >
               {t.cta}
               <span className="material-symbols-outlined text-2xl">arrow_forward</span>
-            </button>
+            </a>
         </div>
       </div>
     </section>
