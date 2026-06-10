@@ -22,23 +22,23 @@ export default function Chilcas() {
         </div>
       </div>
 
-      <div className="relative z-10 w-full flex items-center justify-center py-20 md:py-32">
+      <div className="relative z-10 w-full flex items-center justify-center py-20 md:py-32 ">
         <img
           src="/assets/bgChilcas.png"
           alt="Las Chilcas - LlayLlay"
-          className="w-full h-auto object-contain"
+          className="w-full h-auto object-contain grayscale"
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 lg:px-20 pb-20 md:pb-32 flex items-center justify-center">
-        <button className="inline-flex items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 transition-colors">
+      <div className="absolute z-20 bottom-[30%] left-[18%] max-w-6xl mx-auto px-6 md:px-12 lg:px-20 pb-20 md:pb-32 flex items-center justify-center">
+        <button className="inline-flex items-center gap-2 bg-red-400 hover:bg-red-500 hover:scale-105 transition-all text-white text-xs font-bold uppercase tracking-widest px-6 py-3">
           {t.cta}
           <span className="material-symbols-outlined text-base">arrow_forward</span>
         </button>
       </div>
 
-      <div className="absolute top-8 right-8 md:top-16 md:right-16 z-20">
-        <span className="material-symbols-outlined text-4xl md:text-5xl text-red-400 opacity-60">
+      <div className="absolute top-[20%] right-[15%] z-20 translate-y-1/2 bg-red-400 p-2">
+        <span className="material-symbols-outlined text-white text-5xl md:text-7xl">
           brightness_5
         </span>
       </div>
