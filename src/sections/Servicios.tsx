@@ -158,7 +158,13 @@ export default function Servicios() {
 
         <div className="flex justify-center mt-16">
           <a
-            href={waUrl(lang === 'es' ? 'Hola' : 'Hi', lang === 'es' ? 'Valparaíso Andino' : 'Valparaíso Andino')}
+            href={(() => {
+              const prefijo = lang === 'es' ? 'Hola!' : 'Hi!'
+              const sep = lang === 'es' ? 'Elegí una opción:' : 'Choose an option:'
+              const body = t.filas.map((f, i) => `${i + 1}️⃣ ${f.titulo} - ${f.subtitulo}`).join('\n')
+              const extra = lang === 'es' ? '\n3️⃣ Talleres / Clínicas' : '\n3️⃣ Workshops / Clinics'
+              return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${prefijo}\n\n${sep}\n${body}${extra}\n\nRespondé con el número y te enviamos la info.`)}`
+            })()}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-red-400 hover:bg-red-500 hover:scale-105 transition-all text-white text-xs font-bold uppercase tracking-widest px-6 py-3 inline-flex items-center gap-2"
