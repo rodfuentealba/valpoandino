@@ -14,6 +14,7 @@ export default function Navbar() {
 
   const [scrolled,  setScrolled]  = useState(false)
   const [menuOpen,  setMenuOpen]  = useState(false)
+  const [pathname,  setPathname]  = useState('/')
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('va-theme')
@@ -23,6 +24,8 @@ export default function Navbar() {
     const savedLang = localStorage.getItem('va-lang')
     const browserLang = navigator.language.startsWith('en') ? 'en' : 'es'
     langStore.set((savedLang as 'es' | 'en') ?? browserLang)
+
+    setPathname(window.location.pathname)
   }, [])
 
   useEffect(() => {
@@ -43,6 +46,9 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
+  const isHome = pathname === '/' || pathname === ''
+  const isChilcasPage = pathname.includes('chilcas')
+
   const scrollTo = (id: string) => {
     setMenuOpen(false)
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -52,38 +58,60 @@ export default function Navbar() {
   const toggleLang  = () => langStore.set(lang === 'es' ? 'en' : 'es')
 
   const navLinks = [
-    { label: t.inicio,    id: 'hero'      },
-    { label: t.andinos,   id: 'andinos'   },
-    { label: t.servicios, id: 'servicios' },
-    { label: t.collab,    id: 'collab'    },
-    { label: t.contacto,  id: 'contacto'  },
+    { label: t.inicio,    id: 'hero',      href: '/#hero'       },
+    { label: t.andinos,   id: 'andinos',   href: '/#andinos'    },
+    { label: t.servicios, id: 'servicios', href: '/#servicios'  },
+    { label: t.chilcas,   id: 'chilcas',   href: '/#chilcas'    },
+    { label: t.collab,    id: 'collab',    href: '/#collab'     },
+    { label: t.contacto,  id: 'contacto',  href: '/#contacto'   },
   ]
 
-  const textCol = scrolled
+  const textCol = scrolled || isChilcasPage
     ? 'text-zinc-900 dark:text-white'
     : 'text-white'
 
   const themeIcon      = theme === 'dark' ? 'bedtime'  : 'sunny'
   const themeIconColor = theme === 'dark' ? 'text-sky-500' : 'text-red-400'
 
+  function renderNavLink(link: typeof navLinks[0], className: string) {
+    const isActive = link.id === 'chilcas' && isChilcasPage
+    const cls = `${className} ${isActive ? 'text-red-400' : ''}`
+
+    if (link.id === 'contacto') return null
+
+    if (isHome) {
+      return (
+        <button onClick={() => scrollTo(link.id)} className={cls}>
+          {link.label}
+        </button>
+      )
+    }
+    return (
+      <a href={link.href} className={cls}>
+        {link.label}
+      </a>
+    )
+  }
+
   return (
     <>
       <nav className={`fixed left-0 right-0 z-50 transition-all duration-500 max-w-sm md:max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white shadow-lg dark:bg-zinc-900' : 'top-3 bg-transparent'}`}>
         <div className="px-5 h-14 md:h-16 flex items-center justify-between">
 
-          <button onClick={() => scrollTo('hero')} aria-label="Inicio" className={textCol}>
-            <Isotype className="h-8 md:h-9 w-auto transition-all duration-300" />
-          </button>
+          {isHome ? (
+            <button onClick={() => scrollTo('hero')} aria-label="Inicio" className={textCol}>
+              <Isotype className="h-8 md:h-9 w-auto transition-all duration-300" />
+            </button>
+          ) : (
+            <a href="/" aria-label="Inicio" className={textCol}>
+              <Isotype className="h-8 md:h-9 w-auto transition-all duration-300" />
+            </a>
+          )}
 
           <ul className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <li key={link.id}>
-                <button
-                  onClick={() => scrollTo(link.id)}
-                  className={`text-xs font-regular uppercase tracking-widest transition-colors duration-300 hover:text-red-400 ${textCol}`}
-                >
-                  {link.label}
-                </button>
+                {renderNavLink(link, `text-xs font-regular uppercase tracking-widest transition-colors duration-300 hover:text-red-400 ${textCol}`)}
               </li>
             ))}
           </ul>
@@ -106,12 +134,21 @@ export default function Navbar() {
               {lang === 'es' ? 'language_us' : 'language_spanish'}
             </button>
 
-            <button
-              onClick={() => scrollTo('contacto')}
-              className="ml-2 px-5 py-2 bg-red-400 hover:bg-red-500 text-white text-sm font-semibold uppercase tracking-widest rounded-none transition-colors duration-200"
-            >
-              {t.reservar}
-            </button>
+            {isHome ? (
+              <button
+                onClick={() => scrollTo('contacto')}
+                className="ml-2 px-5 py-2 bg-red-400 hover:bg-red-500 text-white text-sm font-semibold uppercase tracking-widest rounded-none transition-colors duration-200"
+              >
+                {t.reservar}
+              </button>
+            ) : (
+              <a
+                href="/#contacto"
+                className="ml-2 px-5 py-2 bg-red-400 hover:bg-red-500 text-white text-sm font-semibold uppercase tracking-widest rounded-none transition-colors duration-200"
+              >
+                {t.reservar}
+              </a>
+            )}
 
           </div>
 
@@ -150,22 +187,45 @@ export default function Navbar() {
         className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ease-in-out ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'} bg-white dark:bg-zinc-900 backdrop-blur-sm flex flex-col items-center justify-center gap-8`}
       >
         <div className={`transition-all duration-300 ease-in-out text-center ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-          {navLinks.map((link) => (
-            <div key={link.id} className="mb-8">
-              <button
-                onClick={() => scrollTo(link.id)}
-                className="text-zinc-900 dark:text-white text-4xl font-regular uppercase tracking-widest hover:text-red-400 transition-colors"
-              >
-                {link.label}
-              </button>
-            </div>
-          ))}
-          <button
-            onClick={() => scrollTo('contacto')}
-            className="mt-6 px-8 py-3 bg-red-400 hover:bg-red-500 text-white text-base font-semibold uppercase tracking-widest rounded-none transition-colors"
-          >
-            {t.reservar}
-          </button>
+          {navLinks.filter(l => l.id !== 'contacto').map((link) => {
+            const isActive = link.id === 'chilcas' && isChilcasPage
+            return (
+              <div key={link.id} className="mb-8">
+                {isHome ? (
+                  <button
+                    onClick={() => scrollTo(link.id)}
+                    className={`text-zinc-900 dark:text-white text-4xl font-regular uppercase tracking-widest transition-colors ${isActive ? 'text-red-400' : 'hover:text-red-400'}`}
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  <a
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`text-zinc-900 dark:text-white text-4xl font-regular uppercase tracking-widest transition-colors ${isActive ? 'text-red-400' : 'hover:text-red-400'}`}
+                  >
+                    {link.label}
+                  </a>
+                )}
+              </div>
+            )
+          })}
+          {isHome ? (
+            <button
+              onClick={() => scrollTo('contacto')}
+              className="mt-6 px-8 py-3 bg-red-400 hover:bg-red-500 text-white text-base font-semibold uppercase tracking-widest rounded-none transition-colors"
+            >
+              {t.reservar}
+            </button>
+          ) : (
+            <a
+              href="/#contacto"
+              onClick={() => setMenuOpen(false)}
+              className="mt-6 inline-block px-8 py-3 bg-red-400 hover:bg-red-500 text-white text-base font-semibold uppercase tracking-widest rounded-none transition-colors"
+            >
+              {t.reservar}
+            </a>
+          )}
         </div>
       </div>
     </>
