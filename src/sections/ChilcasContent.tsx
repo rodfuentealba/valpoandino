@@ -12,7 +12,7 @@ export default function ChilcasContent() {
 
   return (
     <>
-      <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 pt-20 md:pt-32">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 pt-20 md:pt-32">
 
         <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-8">{t.title}</h1>
 
@@ -38,25 +38,53 @@ export default function ChilcasContent() {
 
         <div className="space-y-20 md:space-y-32 mt-20">
           <div className="grid md:grid-cols-5 gap-8 items-center">
-            <div className="md:col-span-2">
+            <div className="md:col-span-3">
               <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
-                {t.block1Title} <span className="text-red-400 font-light">{t.block1TitleLight}</span>
+                {t.block1Title} <br></br><span className="text-red-400 font-light">{t.block1TitleLight}</span>
               </h2>
               <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.block1Text}</p>
               <div className="mt-8 space-y-6">
                 <h3 className="text-sm font-bold text-red-400 uppercase tracking-widest mb-4">{t.routesTitle}</h3>
+
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-red-400 mb-2">{t.routeSchool}</h3>
-                  <p className="text-xs md:text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed font-light italic">{t.routeSchoolText}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-red-400 text-2xl">school</span>
+                    {t.routeSchool}
+                  </h3>
+                  <ul className="space-y-2">
+                    {t.routeSchoolList.map((r) => (
+                      <li key={r.name} className="flex items-center justify-between text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        <span className="italic">{r.name}</span>
+                        <span className="flex items-center gap-2">
+                          <span className="text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-600">{r.fame}</span>
+                          <span className="font-bold text-red-400">{r.grade}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-red-400 mb-2">{t.routeExpert}</h3>
-                  <p className="text-xs md:text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed font-light italic">{t.routeExpertText}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-red-400 text-2xl">star</span>
+                    {t.routeExpert}
+                  </h3>
+                  <ul className="space-y-2">
+                    {t.routeExpertList.map((r) => (
+                      <li key={r.name} className="flex items-center justify-between text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        <span className="italic">{r.name}</span>
+                        <span className="flex items-center gap-2">
+                          <span className="text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-600">{r.fame}</span>
+                          <span className="font-bold text-red-400">{r.grade}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
-            <div className="md:col-span-3 relative overflow-hidden min-h-[250px] md:min-h-[350px] group">
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: "url('/assets/service01.png')" }}>
+            <div className="md:col-span-2 relative overflow-hidden h-full group">
+              <div className="absolute inset-0 bg-cover bg-[25%] transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: "url('/assets/service01.png')" }}>
                 <div className="absolute inset-0 bg-black/30" />
               </div>
             </div>
@@ -102,7 +130,7 @@ export default function ChilcasContent() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 pb-20 md:pb-32">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 pb-20 md:pb-32">
 
         <blockquote className="my-20 md:my-28 border-l-4 border-red-400 pl-6 md:pl-10">
           <p className="text-xl md:text-3xl text-zinc-600 dark:text-zinc-400 leading-relaxed font-light italic">
@@ -117,7 +145,7 @@ export default function ChilcasContent() {
           <div className="grid md:grid-cols-5 gap-8 items-center">
             <div className="md:col-span-2">
               <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
-                {t.block3Title} <span className="text-red-400 font-light">{t.block3TitleLight}</span>
+                {t.block3Title} <br></br><span className="text-red-400 font-light">{t.block3TitleLight}</span>
               </h2>
               <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.block3Text}</p>
             </div>
@@ -136,25 +164,25 @@ export default function ChilcasContent() {
         <div className="mt-28">
           <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-12 text-center">{t.infoTitle}</h2>
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <div className="bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8">
-              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 mb-2 block">ac_unit</span>
-              <h3 className="text-sm font-bold text-red-400 tracking-widest uppercase mb-3">{t.infoSeason}</h3>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.infoSeasonText}</p>
+            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
+              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">ac_unit</span>
+              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">{t.infoSeason}</h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoSeasonText}</p>
             </div>
-            <div className="bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8">
-              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 mb-2 block">health_and_safety</span>
-              <h3 className="text-sm font-bold text-red-400 tracking-widest uppercase mb-3">{t.infoSafety}</h3>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.infoSafetyText}</p>
+            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
+              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">health_and_safety</span>
+              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">{t.infoSafety}</h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoSafetyText}</p>
             </div>
-            <div className="bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8">
-              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 mb-2 block">camping</span>
-              <h3 className="text-sm font-bold text-red-400 tracking-widest uppercase mb-3">{t.infoCamping}</h3>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.infoCampingText}</p>
+            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
+              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">camping</span>
+              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">{t.infoCamping}</h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoCampingText}</p>
             </div>
-            <div className="bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8">
-              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 mb-2 block">handyman</span>
-              <h3 className="text-sm font-bold text-red-400 tracking-widest uppercase mb-3">{t.infoRoutes}</h3>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.infoRoutesText}</p>
+            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
+              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">handyman</span>
+              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">{t.infoRoutes}</h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoRoutesText}</p>
             </div>
           </div>
         </div>

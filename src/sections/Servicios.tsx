@@ -53,10 +53,11 @@ export default function Servicios() {
                   <>
                     <div className="md:col-span-3 relative overflow-hidden order-2 md:order-1">
                       <div
-                        className="min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110"
+                        className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110"
                         style={{ backgroundImage: `url('${img}')` }}
-                      />
-                      <div className="absolute inset-0 bg-black/30" />
+                      >
+                        <div className="absolute inset-0 bg-black/30" />
+                      </div>
                     </div>
 
                     <div className="md:col-span-2 flex flex-col text-left justify-between gap-6 dark:bg-zinc-900 py-8 md:p-12 order-1 md:order-2">
@@ -114,10 +115,11 @@ export default function Servicios() {
                     </div>
                     <div className="md:col-span-3 relative overflow-hidden">
                       <div
-                        className="min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110"
+                        className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110"
                         style={{ backgroundImage: `url('${img}')` }}
-                      />
-                      <div className="absolute inset-0 bg-black/30" />
+                      >
+                        <div className="absolute inset-0 bg-black/30" />
+                      </div>
                     </div>
 
                     <a

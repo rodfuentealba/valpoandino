@@ -50,11 +50,13 @@ export default function Collab() {
             </a>
           </div>
 
-          <div
-            className="md:col-span-3 relative min-h-[300px] md:min-h-[600px] bg-cover bg-center"
-            style={{ backgroundImage: "url('/assets/bgCollab.png')" }}
-          >
-            <div className="absolute inset-0 bg-black/30" />
+          <div className="md:col-span-3 relative overflow-hidden min-h-[300px] md:min-h-[600px]">
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-110"
+              style={{ backgroundImage: "url('/assets/bgCollab.png')" }}
+            >
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
           </div>
 
           <a
