@@ -11,6 +11,7 @@ export default function Navbar() {
   const theme = useStore(themeStore)
   const lang  = useStore(langStore)
   const t     = lang === 'es' ? es.nav : en.nav
+  const PHONE = '56962822676'
 
   const [scrolled,       setScrolled]       = useState(false)
   const [menuOpen,       setMenuOpen]       = useState(false)
@@ -76,6 +77,29 @@ export default function Navbar() {
 
   const toggleTheme = () => themeStore.set(theme === 'dark' ? 'light' : 'dark')
   const toggleLang  = () => langStore.set(lang === 'es' ? 'en' : 'es')
+
+  const whatsappMsg = (l: string) => {
+    if (l === 'es') {
+      return `¡Hola! Quiero reservar una actividad.
+
+Opciones:
+1. Escalada en Las Chilcas
+2. Trekking Andinos
+3. Talleres / Collab
+4. Otro
+
+Respondé con el número y te contactamos.`
+    }
+    return `Hi! I want to book an activity.
+
+Options:
+1. Climbing at Las Chilcas
+2. Andean Trekking
+3. Workshops / Collab
+4. Other
+
+Reply with the number and we'll contact you.`
+  }
 
   const navLinks = [
     { label: t.inicio,    id: 'hero',      href: '/#hero'       },
@@ -151,7 +175,6 @@ export default function Navbar() {
             >
               {themeIcon}
             </button>
-
             <button
               onClick={toggleLang}
               aria-label={lang === 'es' ? 'English' : 'Español'}
@@ -160,21 +183,15 @@ export default function Navbar() {
               {lang === 'es' ? 'language_us' : 'language_spanish'}
             </button>
 
-            {isHome ? (
-              <button
-                onClick={() => scrollTo('contacto')}
-                className="ml-2 px-5 py-2 bg-red-400 hover:bg-red-500 text-white text-sm font-semibold uppercase tracking-widest rounded-none transition-colors duration-200"
-              >
-                {t.reservar}
-              </button>
-            ) : (
-              <a
-                href="/#contacto"
-                className="ml-2 px-5 py-2 bg-red-400 hover:bg-red-500 text-white text-sm font-semibold uppercase tracking-widest rounded-none transition-colors duration-200"
-              >
-                {t.reservar}
-              </a>
-            )}
+
+            <a
+              href={`https://wa.me/${PHONE}?text=${encodeURIComponent(whatsappMsg(lang))}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-5 py-2 bg-red-400 hover:bg-red-500 text-white text-sm font-semibold uppercase tracking-widest rounded-none transition-colors duration-200"
+            >
+              {t.reservar}
+            </a>
 
           </div>
 
@@ -236,22 +253,15 @@ export default function Navbar() {
               </div>
             )
           })}
-          {isHome ? (
-            <button
-              onClick={() => scrollTo('contacto')}
-              className="mt-6 px-8 py-3 bg-red-400 hover:bg-red-500 text-white text-base font-semibold uppercase tracking-widest rounded-none transition-colors"
-            >
-              {t.reservar}
-            </button>
-          ) : (
-            <a
-              href="/#contacto"
+          <a
+              href={`https://wa.me/${PHONE}?text=${encodeURIComponent(whatsappMsg(lang))}`}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="mt-6 inline-block px-8 py-3 bg-red-400 hover:bg-red-500 text-white text-base font-semibold uppercase tracking-widest rounded-none transition-colors"
             >
               {t.reservar}
             </a>
-          )}
         </div>
       </div>
     </>
