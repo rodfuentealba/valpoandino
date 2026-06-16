@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: 'Nohemi';
   src: url('/fonts/Nohemi-Thin.ttf') format('truetype');

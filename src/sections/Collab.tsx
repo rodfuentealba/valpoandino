@@ -11,7 +11,7 @@ export default function Collab() {
   const t = lang === 'es' ? es.collab : en.collab
 
   return (
-    <section id="collab" className="relative w-full bg-white dark:bg-zinc-900 md:-translate-y-[9%] z-10">
+    <section id="collab" className="relative w-full bg-white dark:bg-zinc-900 md:-translate-y-[9%] z-10 mt-10 md:mt-0">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="absolute -top-[15%] md:top-0 left-5 md:left-[15%] z-20 md:-translate-y-40 bg-red-400 p-2">
           <span className="material-symbols-outlined text-white text-5xl md:text-7xl">

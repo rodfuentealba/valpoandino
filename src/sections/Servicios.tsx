@@ -34,8 +34,8 @@ export default function Servicios() {
   const t = lang === 'es' ? es.servicios : en.servicios
 
   return (
-    <section id="servicios" className="relative w-full bg-white dark:bg-zinc-900 overflow-hidden mt-[25%] md:mt-0">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-20 md:py-32">
+    <section id="servicios" className="relative w-full bg-white dark:bg-zinc-900 overflow-hidden pb-20 md:pb-0 mt-[60%] md:mt-0">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 md:py-32">
 
         <p className="text-md font-semibold uppercase text-black dark:text-white mb-16">
           {t.titulo}
@@ -53,10 +53,10 @@ export default function Servicios() {
                   <>
                     <div className="md:col-span-3 relative overflow-hidden order-2 md:order-1">
                       <div
-                        className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110"
+                        className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110 grayscale"
                         style={{ backgroundImage: `url('${img}')` }}
                       >
-                        <div className="absolute inset-0 bg-black/30" />
+                        
                       </div>
                     </div>
 
@@ -115,10 +115,9 @@ export default function Servicios() {
                     </div>
                     <div className="md:col-span-3 relative overflow-hidden">
                       <div
-                        className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110"
+                        className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110 grayscale"
                         style={{ backgroundImage: `url('${img}')` }}
                       >
-                        <div className="absolute inset-0 bg-black/30" />
                       </div>
                     </div>
 

@@ -31,8 +31,7 @@ export default function ChilcasContent() {
           <p className="md:col-span-3 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.subtitle}</p>
         </div>
 
-        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24">
-          <img src="/assets/ChilcasSeparator.jpg" alt="Sector Las Chilcas" className="w-full h-[300px] md:h-[450px] object-cover" />
+        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/assets/ChilcasSeparator.jpg')" }}>
         </div>
 
         <div className="space-y-20 md:space-y-32 mt-20">
@@ -46,10 +45,10 @@ export default function ChilcasContent() {
                 <h3 className="text-sm font-bold text-red-400 uppercase tracking-widest mb-4">{t.routesTitle}</h3>
 
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
+                  <div className="mb-3 flex items-center gap-2">
                     <span className="material-symbols-outlined text-red-400 text-2xl">school</span>
-                    {t.routeSchool}
-                  </h3>
+                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">{t.routeSchool}</h4>
+                  </div>
                   <ul className="space-y-2">
                     {t.routeSchoolList.map((r) => (
                       <li key={r.name} className="flex items-center justify-between text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -64,9 +63,10 @@ export default function ChilcasContent() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-red-400 mb-3 flex items-center gap-2">
+                  <h3 className="mb-3 flex items-center gap-2">
                     <span className="material-symbols-outlined text-red-400 text-2xl">star</span>
-                    {t.routeExpert}
+                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">{t.routeExpert}</h4>
+                    
                   </h3>
                   <ul className="space-y-2">
                     {t.routeExpertList.map((r) => (
@@ -82,7 +82,7 @@ export default function ChilcasContent() {
                 </div>
               </div>
             </div>
-            <div className="md:col-span-2 relative overflow-hidden min-h-[250px] md:min-h-[450px] group">
+            <div className="md:col-span-2 relative overflow-hidden min-h-[550px] md:h-full group">
               <video
                 src="/assets/service03.mp4"
                 autoPlay
@@ -95,7 +95,7 @@ export default function ChilcasContent() {
           </div>
 
           <div className="grid md:grid-cols-5 gap-8 items-center">
-            <div className="md:col-span-2 md:order-1 order-2 relative overflow-hidden min-h-[250px] md:min-h-[650px] group">
+            <div className="md:col-span-2 md:order-1 order-2 relative overflow-hidden min-h-[550px] md:h-full group">
               <video
                 src="/assets/service04.mp4"
                 autoPlay
@@ -113,7 +113,7 @@ export default function ChilcasContent() {
               <div className="space-y-5">
                 {t.envItems.map((item) => (
                   <div key={item.title} className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-red-400 text-xl mt-0.5 shrink-0">{item.icon}</span>
+                    <span className="material-symbols-outlined text-red-400 text-2xl mt-0.5 shrink-0">{item.icon}</span>
                     <div>
                       <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">{item.title}</h4>
                       <p className="text-xs md:text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed font-light">{item.text}</p>
@@ -136,7 +136,7 @@ export default function ChilcasContent() {
             muted
             loop
             playsInline
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -150,7 +150,7 @@ export default function ChilcasContent() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 pb-20 md:pb-32">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
 
         <blockquote className="my-20 md:my-28 border-l-4 border-red-400 pl-6 md:pl-10">
           <p className="text-xl md:text-3xl text-zinc-600 dark:text-zinc-400 leading-relaxed font-light italic">
@@ -207,10 +207,6 @@ export default function ChilcasContent() {
           </div>
         </div>
 
-        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24">
-          <img src="/assets/service05.jpg" alt="Las Chilcas" className="w-full h-[300px] md:h-[450px] object-cover" />
-        </div>
-
         <div className="flex justify-center mt-24">
           <a
             href={`https://wa.me/${PHONE}?text=${encodeURIComponent(lang === 'es' ? 'Hola! Quiero saber más sobre el sector Las Chilcas.' : 'Hi! I want to know more about Las Chilcas sector.')}`}
@@ -222,6 +218,11 @@ export default function ChilcasContent() {
             <span className="material-symbols-outlined text-base">arrow_forward</span>
           </a>
         </div>
+
+        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-24">
+          <img src="/assets/service05.jpg" alt="Las Chilcas" className="w-full h-full object-cover" />
+        </div>
+
       </div>
     </>
   )

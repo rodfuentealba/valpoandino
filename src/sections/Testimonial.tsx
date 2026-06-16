@@ -22,7 +22,7 @@ export default function Testimonial() {
   const [selected, setSelected] = useState(3)
 
   return (
-    <section id="testimonial" className="relative w-full bg-red-400 overflow-hidden">
+    <section id="testimonial" className="relative w-full bg-red-400 overflow-hidden mt-12 md:mt-0">
       <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-20 py-10 md:py-20">
         <p className="text-center text-md font-semibold uppercase text-white mb-16">
           {t.titulo}

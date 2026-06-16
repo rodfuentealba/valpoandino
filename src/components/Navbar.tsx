@@ -121,7 +121,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed left-0 right-0 z-50 transition-all duration-500 max-w-sm md:max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white shadow-lg dark:bg-zinc-900' : 'top-3 bg-transparent'}`}>
+      <nav className={`fixed inset-x-4 md:inset-x-0 z-50 transition-all duration-500 max-w-sm md:max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white shadow-lg dark:bg-zinc-900' : 'top-3 bg-transparent'}`}>
         <div className="px-5 h-14 md:h-16 flex items-center justify-between">
 
           {isHome ? (

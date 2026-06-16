@@ -6,7 +6,7 @@ export default function ChilcasHero() {
 
       <div className="absolute inset-0 flex items-start justify-center pt-[12%] pointer-events-none select-none z-0">
         <div className="text-center md:text-left" data-astro-transition-name="chilcas-title" data-astro-transition-animate="morph">
-          <p className="text-7xl md:text-8xl lg:text-[10rem] font-light text-black dark:text-white leading-none tracking-tight">
+          <p className="mt-[40%] md:mt-0 text-7xl md:text-8xl lg:text-[10rem] font-light text-black dark:text-white leading-none tracking-tight">
             LasChilcas
           </p>
           <p className="text-7xl md:text-8xl lg:text-[10rem] font-bold text-black dark:text-white leading-none tracking-tight -mt-4 md:-mt-10">
@@ -23,8 +23,8 @@ export default function ChilcasHero() {
         />
       </div>
 
-      <div className="absolute top-24 md:top-[25%] right-[10%] z-20 bg-red-400 p-3" data-astro-transition-name="chilcas-icon" data-astro-transition-animate="morph">
-        <span className="material-symbols-outlined text-white text-4xl md:text-7xl">
+      <div className="absolute top-[55%] md:top-[35%] right-[38%] md:right-[15%] z-20 bg-red-400 p-3" data-astro-transition-name="chilcas-icon" data-astro-transition-animate="morph">
+        <span className="material-symbols-outlined text-white text-6xl md:text-7xl">
           brightness_5
         </span>
       </div>
