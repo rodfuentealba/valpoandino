@@ -138,13 +138,13 @@ export default function ChilcasContent() {
             playsInline
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/10" />
         </div>
         <div className="relative -mt-[400px] md:-mt-[600px] h-[400px] md:h-[600px] flex flex-col justify-between px-6 py-12 md:py-20">
           <p className="text-white dark:text-zinc-900 text-3xl md:text-5xl lg:text-9xl font-bold leading-tight md:-mt-24">
             {t.parallaxText1}
           </p>
-          <p className="text-white dark:text-red-400/80 text-3xl md:text-5xl lg:text-9xl font-light leading-tight text-right md:-mb-28">
+          <p className="text-white dark:text-zinc-900 text-3xl md:text-5xl lg:text-9xl font-light leading-tight text-right md:-mb-28">
             {t.parallaxText2}
           </p>
         </div>
