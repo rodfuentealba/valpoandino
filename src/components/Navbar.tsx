@@ -12,9 +12,10 @@ export default function Navbar() {
   const lang  = useStore(langStore)
   const t     = lang === 'es' ? es.nav : en.nav
 
-  const [scrolled,  setScrolled]  = useState(false)
-  const [menuOpen,  setMenuOpen]  = useState(false)
-  const [pathname,  setPathname]  = useState('/')
+  const [scrolled,       setScrolled]       = useState(false)
+  const [menuOpen,       setMenuOpen]       = useState(false)
+  const [pathname,       setPathname]       = useState('/')
+  const [activeSection,  setActiveSection]  = useState('')
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('va-theme')
@@ -46,6 +47,25 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
+  useEffect(() => {
+    const sectionIds = ['hero', 'andinos', 'servicios', 'chilcas', 'collab']
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        }
+      },
+      { rootMargin: '-40% 0px -50% 0px' }
+    )
+    for (const id of sectionIds) {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    }
+    return () => observer.disconnect()
+  }, [])
+
   const isHome = pathname === '/' || pathname === ''
   const isChilcasPage = pathname.includes('chilcas')
 
@@ -73,9 +93,15 @@ export default function Navbar() {
   const themeIcon      = theme === 'dark' ? 'bedtime'  : 'sunny'
   const themeIconColor = theme === 'dark' ? 'text-sky-500' : 'text-red-400'
 
+  function isLinkActive(id: string) {
+    if (id === 'chilcas' && isChilcasPage) return true
+    if (isHome && activeSection === id) return true
+    return false
+  }
+
   function renderNavLink(link: typeof navLinks[0], className: string) {
-    const isActive = link.id === 'chilcas' && isChilcasPage
-    const cls = `${className} ${isActive ? 'text-red-400' : ''}`
+    const active = isLinkActive(link.id)
+    const cls = `${className} ${active ? 'text-red-400 dark:text-red-400 font-bold' : ''}`
 
     if (link.id === 'contacto') return null
 
@@ -111,7 +137,7 @@ export default function Navbar() {
           <ul className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <li key={link.id}>
-                {renderNavLink(link, `text-xs font-regular uppercase tracking-widest transition-colors duration-300 hover:text-red-400 ${textCol}`)}
+                {renderNavLink(link, `text-xs font-regular uppercase tracking-widest transition-colors duration-300 hover:text-red-400 active:text-red-400 visited:text-[inherit] ${textCol}`)}
               </li>
             ))}
           </ul>
@@ -188,13 +214,13 @@ export default function Navbar() {
       >
         <div className={`transition-all duration-300 ease-in-out text-center ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
           {navLinks.filter(l => l.id !== 'contacto').map((link) => {
-            const isActive = link.id === 'chilcas' && isChilcasPage
+            const active = isLinkActive(link.id)
             return (
               <div key={link.id} className="mb-8">
                 {isHome ? (
                   <button
                     onClick={() => scrollTo(link.id)}
-                    className={`text-zinc-900 dark:text-white text-4xl font-regular uppercase tracking-widest transition-colors ${isActive ? 'text-red-400' : 'hover:text-red-400'}`}
+                    className={`text-zinc-900 dark:text-white text-4xl font-regular uppercase tracking-widest transition-all duration-300 visited:text-[inherit] ${active ? 'text-red-400 dark:text-red-400 font-bold' : 'hover:text-red-400 active:text-red-400'}`}
                   >
                     {link.label}
                   </button>
@@ -202,7 +228,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`text-zinc-900 dark:text-white text-4xl font-regular uppercase tracking-widest transition-colors ${isActive ? 'text-red-400' : 'hover:text-red-400'}`}
+                    className={`text-zinc-900 dark:text-white text-4xl font-regular uppercase tracking-widest transition-all duration-300 visited:text-[inherit] ${active ? 'text-red-400 dark:text-red-400 font-bold' : 'hover:text-red-400 active:text-red-400'}`}
                   >
                     {link.label}
                   </a>

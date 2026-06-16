@@ -5,8 +5,8 @@ import { es } from '../i18n/es'
 import { en } from '../i18n/en'
 
 const serviceImages = [
-  '/assets/service01.png',
-  '/assets/service02.png',
+  '/assets/service01.jpg',
+  '/assets/service02.jpg',
 ]
 
 const PHONE = '56962822676'
@@ -44,7 +44,7 @@ export default function Servicios() {
         <div className="space-y-20 md:space-y-32">
           {t.filas.map((fila, i) => {
             const isReversed = i % 2 !== 0
-            const img = serviceImages[i] ?? '/assets/service01.png'
+            const img = serviceImages[i] ?? '/assets/service01.jpg'
             const fullName = `${fila.titulo} - ${fila.subtitulo}`
 
             return (

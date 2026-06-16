@@ -32,8 +32,7 @@ export default function ChilcasContent() {
         </div>
 
         <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24">
-          <img src="/assets/bgChilcas.png" alt="Las Chilcas" className="w-full h-[300px] md:h-[450px] object-cover grayscale" />
-          <div className="absolute inset-0 bg-black/20" />
+          <img src="/assets/ChilcasSeparator.jpg" alt="Sector Las Chilcas" className="w-full h-[300px] md:h-[450px] object-cover" />
         </div>
 
         <div className="space-y-20 md:space-y-32 mt-20">
@@ -83,24 +82,45 @@ export default function ChilcasContent() {
                 </div>
               </div>
             </div>
-            <div className="md:col-span-2 relative overflow-hidden h-full group">
-              <div className="absolute inset-0 bg-cover bg-[25%] transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: "url('/assets/service01.png')" }}>
-                <div className="absolute inset-0 bg-black/30" />
-              </div>
+            <div className="md:col-span-2 relative overflow-hidden min-h-[250px] md:min-h-[450px] group">
+              <video
+                src="/assets/service03.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
           </div>
 
           <div className="grid md:grid-cols-5 gap-8 items-center">
-            <div className="md:col-span-3 md:order-1 order-2 relative overflow-hidden min-h-[250px] md:min-h-[350px] group">
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: "url('/assets/service02.png')" }}>
-                <div className="absolute inset-0 bg-black/30" />
-              </div>
+            <div className="md:col-span-2 md:order-1 order-2 relative overflow-hidden min-h-[250px] md:min-h-[650px] group">
+              <video
+                src="/assets/service04.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
-            <div className="md:col-span-2 md:order-2 order-1">
+            <div className="md:col-span-3 md:order-2 order-1">
               <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
                 {t.block2Title} <span className="text-red-400 font-light">{t.block2TitleLight}</span>
               </h2>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.block2Text}</p>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light mb-6">{t.block2Text}</p>
+              <div className="space-y-5">
+                {t.envItems.map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-red-400 text-xl mt-0.5 shrink-0">{item.icon}</span>
+                    <div>
+                      <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">{item.title}</h4>
+                      <p className="text-xs md:text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed font-light">{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -185,6 +205,10 @@ export default function ChilcasContent() {
               <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoRoutesText}</p>
             </div>
           </div>
+        </div>
+
+        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24">
+          <img src="/assets/service05.jpg" alt="Las Chilcas" className="w-full h-[300px] md:h-[450px] object-cover" />
         </div>
 
         <div className="flex justify-center mt-24">

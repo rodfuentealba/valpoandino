@@ -93,6 +93,12 @@ export const en = {
     block2Title: 'Natural',
     block2TitleLight: 'environment',
     block2Text: 'Surrounded by hills and native vegetation, the sector offers a complete mountain experience just 30 minutes from the city. Its conglomerate walls, reaching heights of up to 100 meters, resemble gym climbing but in the open air.',
+    envItems: [
+      { icon: 'forest', title: 'Sclerophyll forest', text: 'The dominant vegetation is Mediterranean sclerophyll forest, adapted to summer drought. Notable species include quillay, litre, boldo, and espino, along with chilca shrubs that give the sector its name.' },
+      { icon: 'ecology', title: 'Native flora', text: 'Key species include chilca (Baccharis linearis), quillay (Quillaja saponaria), litre (Lithraea caustica), and various cacti from the Echinopsis and Trichocereus genera.' },
+      { icon: 'pets', title: 'Wildlife', text: 'Andean condors soar above the cliffs, culpeo foxes appear at dusk, degus scurry among the rocks, and birds such as loicas, tiuques, and chercanes are common. In spring, native butterflies and bees pollinate the scrubland.' },
+      { icon: 'landscape', title: 'Geology', text: 'The conglomerate walls belong to the Abanico Formation (Miocene), a sedimentary rock composed of rounded pebbles in a sandstone matrix. Its porous, rough texture creates characteristic pocket and sloper holds.' },
+    ],
     block3Title: 'Quick',
     block3TitleLight: 'easy access',
     block3Text: 'Just 1 hour from Santiago and 30 minutes from Valparaíso, Las Chilcas is the perfect destination for a full-day climbing trip. Access via Ruta 5 Norte, km 74, right next to the highway at the "Los Loros" bridge.',

@@ -93,6 +93,12 @@ export const es = {
     block2Title: 'Entorno natural',
     block2TitleLight: 'privilegiado',
     block2Text: 'Rodeado de cerros y vegetación nativa, el sector ofrece una experiencia completa de montaña a solo 30 minutos de la ciudad. Sus paredes de conglomerado, con alturas de hasta 100 metros, se asemejan a la escalada de gimnasio pero al aire libre.',
+    envItems: [
+      { icon: 'forest', title: 'Bosque esclerófilo', text: 'La vegetación dominante es el bosque esclerófilo mediterráneo, adaptado a la sequedad estival. Destacan el quillay, litre, boldo y espino, junto a matorrales de chilca que dan nombre al sector.' },
+      { icon: 'ecology', title: 'Flora nativa', text: 'Entre las especies más representativas están la chilca (Baccharis linearis), el quillay (Quillaja saponaria), el litre (Lithraea caustica) y diversos cactus del género Echinopsis y Trichocereus.' },
+      { icon: 'pets', title: 'Fauna', text: 'Es posible avistar cóndores andinos sobrevolando los farellones, zorros culpeo al atardecer, degúes entre las rocas, y aves como loicas, tiuques y chercanes. En primavera las mariposas y abejas nativas polinizan el matorral.' },
+      { icon: 'landscape', title: 'Geología', text: 'Las paredes de conglomerado pertenecen a la Formación Abanico (Mioceno), una roca sedimentaria compuesta por cantos rodados y matriz arenisca. Su textura porosa y rugosa crea agarres característicos de hueco y romo.' },
+    ],
     block3Title: 'Acceso',
     block3TitleLight: 'rápido y sencillo',
     block3Text: 'A solo 1 hora de Santiago y 30 minutos de Valparaíso, Las Chilcas es el destino perfecto para una escapada de escalada de día completo. Se accede por la Ruta 5 Norte, km 74, a un costado de la carretera, justo donde se señala el puente "Los Loros".',
