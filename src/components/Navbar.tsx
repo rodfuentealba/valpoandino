@@ -80,25 +80,9 @@ export default function Navbar() {
 
   const whatsappMsg = (l: string) => {
     if (l === 'es') {
-      return `¡Hola! Quiero reservar una actividad.
-
-Opciones:
-1. Escalada en Las Chilcas
-2. Trekking Andinos
-3. Talleres / Collab
-4. Otro
-
-Respondé con el número y te contactamos.`
+      return '¡Hola! Quiero reservar una actividad con Valparaíso Andino. ¿Me puedes enviar los servicios disponibles?'
     }
-    return `Hi! I want to book an activity.
-
-Options:
-1. Climbing at Las Chilcas
-2. Andean Trekking
-3. Workshops / Collab
-4. Other
-
-Reply with the number and we'll contact you.`
+    return 'Hi! I want to book an activity with Valparaíso Andino. Can you send me the available services?'
   }
 
   const navLinks = [
