@@ -91,7 +91,7 @@ export default function WeatherCard() {
 
   if (error && !weather) {
     return (
-      <div className={`${position} p-5 rounded-2xl ${cardBg} backdrop-blur-xl shadow-lg`}>
+      <div className={`${position} p-5 rounded-2xl ${cardBg} backdrop-blur-sm shadow-lg`}>
         <div className={`text-xs ${textTertiary} text-center`}>
           {es ? 'Clima no disponible' : 'Weather unavailable'}
         </div>
@@ -101,7 +101,7 @@ export default function WeatherCard() {
 
   if (!weather) {
     return (
-      <div className={`${position} p-5 rounded-2xl ${cardBg} backdrop-blur-xl shadow-lg`}>
+      <div className={`${position} p-5 rounded-2xl ${cardBg} backdrop-blur-sm  shadow-lg`}>
         <div className="animate-pulse flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-zinc-400/20" />
           <div className="space-y-2 flex-1">
@@ -114,7 +114,7 @@ export default function WeatherCard() {
   }
 
   return (
-    <div className={`${position} p-5 rounded-2xl ${cardBg} backdrop-blur-xl  shadow-lg transition-all duration-300`}>
+    <div className={`${position} p-5 rounded-2xl ${cardBg} backdrop-blur-sm  shadow-lg transition-all duration-300`}>
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-1.5">
           <span className="relative flex h-2 w-2">
