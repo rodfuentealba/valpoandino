@@ -127,7 +127,7 @@ export default function WeatherCard() {
       </div>
 
       <div className="flex items-center gap-4 mb-3">
-        <span className={`material-symbols-outlined text-4xl ${textPrimary} animate-weather-float`}>
+        <span className={`material-symbols-outlined text-5xl ${textPrimary} animate-weather-float`}>
           {getWeatherIcon(weather.weatherCode)}
         </span>
         <div>
@@ -140,16 +140,16 @@ export default function WeatherCard() {
 
       <div className="grid grid-cols-2 gap-2 text-xs">
         <div className={`flex items-center gap-1.5 ${textSecondary}`}>
-          <span className="material-symbols-outlined text-sm">thermostat</span>
+          <span className="material-symbols-outlined text-xl">thermostat</span>
           <span>{es ? 'Sensación' : 'Feels'} {weather.apparentTemperature}°</span>
         </div>
         <div className={`flex items-center gap-1.5 ${textSecondary}`}>
-          <span className="material-symbols-outlined text-sm">air</span>
+          <span className="material-symbols-outlined text-xl">air</span>
           <span>{weather.windSpeed} km/h</span>
         </div>
         {precipWarning && (
           <div className="col-span-2 flex items-center gap-1.5 mt-1 pt-2 border-t border-zinc-200/20 dark:border-zinc-700/20 text-red-400 font-semibold">
-            <span className="material-symbols-outlined text-sm animate-pulse">water_drop</span>
+            <span className="material-symbols-outlined text-xl animate-pulse">water_drop</span>
             <span>
               {es
                 ? `Posible lluvia (${weather.precipitationProbability}%)`
