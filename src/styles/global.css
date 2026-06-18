@@ -6,6 +6,15 @@ html {
   overflow-x: hidden;
 }
 
+@keyframes weather-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-3px) rotate(2deg); }
+  66% { transform: translateY(-1px) rotate(-1deg); }
+}
+.animate-weather-float {
+  animation: weather-float 4s ease-in-out infinite;
+}
+
 @font-face {
   font-family: 'Nohemi';
   src: url('/fonts/Nohemi-Thin.ttf') format('truetype');

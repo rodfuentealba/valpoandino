@@ -3,6 +3,7 @@ import { useStore } from '@nanostores/react'
 import { langStore } from '../stores/lang'
 import { es, en } from '../i18n/index'
 import MapboxMap from '../components/MapboxMap'
+import WeatherCard from '../components/WeatherCard'
 
 const PHONE = '56962822676'
 
@@ -220,7 +221,11 @@ export default function ChilcasContent() {
         </div>
 
         <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-24">
-          <img src="/assets/service05.jpg" alt="Las Chilcas" className="w-full h-full object-cover" />
+          <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
+            <img src="/assets/service05.jpg" alt="Las Chilcas" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/10" />
+            <WeatherCard />
+          </div>
         </div>
 
       </div>
