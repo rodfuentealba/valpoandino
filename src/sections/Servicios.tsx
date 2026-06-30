@@ -4,17 +4,12 @@ import { langStore } from '../stores/lang'
 import { es } from '../i18n/es'
 import { en } from '../i18n/en'
 
+import { waService, waMoreInfo } from '../constants'
+
 const serviceImages = [
   '/assets/service01.jpg',
   '/assets/service02.jpg',
 ]
-
-const PHONE = '56962822676'
-
-function waUrl(prefijo: string, nombre: string) {
-  const msg = `${prefijo}! Vi el programa de ${nombre} y necesito más informacion.`
-  return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`
-}
 
 function HighlightedText({ texto, destacado }: { texto: string; destacado: string }) {
   if (!destacado) return <>{texto}</>
@@ -71,7 +66,7 @@ export default function Servicios() {
                       </p>
 
                       <a
-                        href={waUrl(lang === 'es' ? 'Hola' : 'Hi', fullName)}
+                        href={waService(lang, fullName)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hidden md:inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 md:-translate-x-[40%] relative z-10 hover:scale-105 transition-all"
@@ -82,7 +77,7 @@ export default function Servicios() {
                     </div>
 
                     <a
-                      href={waUrl(lang === 'es' ? 'Hola' : 'Hi', fullName)}
+                      href={waService(lang, fullName)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="md:hidden -mt-6 relative z-10 inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 transition-colors mx-8 order-3"
@@ -104,7 +99,7 @@ export default function Servicios() {
                       </p>
 
                       <a
-                        href={waUrl(lang === 'es' ? 'Hola' : 'Hi', fullName)}
+                        href={waService(lang, fullName)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hidden md:inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 md:-translate-x-[-40%] relative z-10 hover:scale-105 transition-all"
@@ -122,7 +117,7 @@ export default function Servicios() {
                     </div>
 
                     <a
-                      href={waUrl(lang === 'es' ? 'Hola' : 'Hi', fullName)}
+                      href={waService(lang, fullName)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="md:hidden -mt-6 relative z-10 inline-flex justify-between items-center gap-2 bg-red-400 hover:bg-red-500 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 transition-colors mx-8"
@@ -161,10 +156,8 @@ export default function Servicios() {
         <div className="flex justify-center mt-16">
           <a
             href={(() => {
-              const prefijo = lang === 'es' ? 'Hola!' : 'Hi!'
-              const sep = lang === 'es' ? 'Elegí una opción:' : 'Choose an option:'
               const body = t.columnas.map((c, i) => `*${i + 1}* ${c.tituloBold} ${c.titulo}`).join('\n')
-              return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${prefijo}\n\n${sep}\n${body}\n\nRespondé con el número y te enviamos la info.`)}`
+              return waMoreInfo(lang, body)
             })()}
             target="_blank"
             rel="noopener noreferrer"

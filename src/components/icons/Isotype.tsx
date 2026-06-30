@@ -1,5 +1,3 @@
-'use client'
-
 export default function Isotype({ className }: { className?: string }) {
   return (
     <svg

@@ -4,8 +4,7 @@ import { langStore } from '../stores/lang'
 import { es, en } from '../i18n/index'
 import MapboxMap from '../components/MapboxMap'
 import WeatherCard from '../components/WeatherCard'
-
-const PHONE = '56962822676'
+import { waChilcas } from '../constants'
 
 export default function ChilcasContent() {
   const lang = useStore(langStore)
@@ -64,11 +63,10 @@ export default function ChilcasContent() {
                 </div>
 
                 <div>
-                  <h3 className="mb-3 flex items-center gap-2">
+                  <div className="mb-3 flex items-center gap-2">
                     <span className="material-symbols-outlined text-red-400 text-2xl">star</span>
                     <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">{t.routeExpert}</h4>
-                    
-                  </h3>
+                  </div>
                   <ul className="space-y-2">
                     {t.routeExpertList.map((r) => (
                       <li key={r.name} className="flex items-center justify-between text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -210,7 +208,7 @@ export default function ChilcasContent() {
 
         <div className="flex justify-center mt-24">
           <a
-            href={`https://wa.me/${PHONE}?text=${encodeURIComponent(lang === 'es' ? 'Hola! Quiero saber más sobre el sector Las Chilcas.' : 'Hi! I want to know more about Las Chilcas sector.')}`}
+            href={waChilcas(lang)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-red-400 hover:bg-red-500 hover:scale-105 transition-all text-white text-xs font-bold uppercase tracking-widest px-8 py-4"

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoicm9kZnVlbnRlYWxiYSIsImEiOiJjaW8wY2cyaWgxOXRudWlrajQ2eThnbXluIn0.2uC06I6LslSsJL6-_XQikA'
+mapboxgl.accessToken = import.meta.env.PUBLIC_MAPBOX_TOKEN
 
 interface Props {
   lng: number

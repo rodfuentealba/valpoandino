@@ -6,12 +6,12 @@ import { langStore } from '../stores/lang'
 import { es } from '../i18n/es'
 import { en } from '../i18n/en'
 import Isotype from './icons/Isotype'
+import { waBooking } from '../constants'
 
 export default function Navbar() {
   const theme = useStore(themeStore)
   const lang  = useStore(langStore)
   const t     = lang === 'es' ? es.nav : en.nav
-  const PHONE = '56962822676'
 
   const [scrolled,       setScrolled]       = useState(false)
   const [menuOpen,       setMenuOpen]       = useState(false)
@@ -22,10 +22,6 @@ export default function Navbar() {
     const savedTheme = localStorage.getItem('va-theme')
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) themeStore.set('dark')
-
-    const savedLang = localStorage.getItem('va-lang')
-    const browserLang = navigator.language.startsWith('en') ? 'en' : 'es'
-    langStore.set((savedLang as 'es' | 'en') ?? browserLang)
 
     setPathname(window.location.pathname)
   }, [])
@@ -77,13 +73,6 @@ export default function Navbar() {
 
   const toggleTheme = () => themeStore.set(theme === 'dark' ? 'light' : 'dark')
   const toggleLang  = () => langStore.set(lang === 'es' ? 'en' : 'es')
-
-  const whatsappMsg = (l: string) => {
-    if (l === 'es') {
-      return '¡Hola! Quiero reservar una actividad con Valparaíso Andino. ¿Me puedes enviar los servicios disponibles?'
-    }
-    return 'Hi! I want to book an activity with Valparaíso Andino. Can you send me the available services?'
-  }
 
   const navLinks = [
     { label: t.inicio,    id: 'hero',      href: '/#hero'       },
@@ -169,7 +158,7 @@ export default function Navbar() {
 
 
             <a
-              href={`https://wa.me/${PHONE}?text=${encodeURIComponent(whatsappMsg(lang))}`}
+              href={waBooking(lang)}
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 px-5 py-2 bg-red-400 hover:bg-red-500 text-white text-sm font-semibold uppercase tracking-widest rounded-none transition-colors duration-200"
@@ -238,7 +227,7 @@ export default function Navbar() {
             )
           })}
           <a
-              href={`https://wa.me/${PHONE}?text=${encodeURIComponent(whatsappMsg(lang))}`}
+              href={waBooking(lang)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}

@@ -13,12 +13,6 @@ const taglines = (lang: 'es' | 'en') => {
 export default function AnimatedTagline() {
   const lang = useStore(langStore)
   const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    const savedLang = localStorage.getItem('va-lang')
-    const browserLang = navigator.language.startsWith('en') ? 'en' : 'es'
-    langStore.set((savedLang as 'es' | 'en') ?? browserLang)
-  }, [])
   const [fade, setFade] = useState(true)
 
   const lines = taglines(lang)
