@@ -1,7 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
-import mapboxgl from 'mapbox-gl'
-import 'mapbox-gl/dist/mapbox-gl.css'
+import { useEffect, useState, useRef } from 'react'
 
 interface Props {
   lng: number
@@ -13,8 +11,9 @@ interface Props {
 }
 
 export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', mapboxToken }: Props) {
+  const containerRef = useRef<HTMLDivElement>(null)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
-  const [hasError, setHasError] = useState(false)
+  const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
 
   useEffect(() => {
     const check = () => {
@@ -26,56 +25,68 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
     return () => obs.disconnect()
   }, [])
 
-  const containerId = 'mapbox-map'
-
   useEffect(() => {
-    if (!mapboxToken) {
-      setHasError(true)
+    if (!mapboxToken || !containerRef.current) {
+      if (!mapboxToken) setStatus('error')
       return
     }
 
-    mapboxgl.accessToken = mapboxToken
+    let map: mapboxgl.Map | null = null
 
-    try {
-      const map = new mapboxgl.Map({
-        container: containerId,
-        style:
-          theme === 'dark' ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11',
-        center: [lng, lat],
-        zoom,
-        attributionControl: false,
-      })
+    import('mapbox-gl').then((mod) => {
+      const mapboxgl = mod.default
+      import('mapbox-gl/dist/mapbox-gl.css')
 
-      map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
+      mapboxgl.accessToken = mapboxToken!
 
-      const marker = new mapboxgl.Marker({ color: '#f87171' }).setLngLat([lng, lat]).addTo(map)
+      try {
+        map = new mapboxgl.Map({
+          container: containerRef.current!,
+          style: theme === 'dark' ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11',
+          center: [lng, lat],
+          zoom,
+          attributionControl: false,
+        })
 
-      if (popup) {
-        marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
+        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
+
+        const marker = new mapboxgl.Marker({ color: '#f87171' }).setLngLat([lng, lat]).addTo(map)
+
+        if (popup) {
+          marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
+        }
+
+        setStatus('ready')
+      } catch {
+        setStatus('error')
       }
+    }).catch(() => {
+      setStatus('error')
+    })
 
-      return () => map.remove()
-    } catch {
-      setHasError(true)
+    return () => {
+      if (map) map.remove()
     }
-  }, [theme, lng, lat, zoom, popup])
+  }, [theme, lng, lat, zoom, popup, mapboxToken])
 
-  if (hasError) {
-    return (
-      <div
-        className={`w-full h-full rounded-none overflow-hidden bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center ${className}`}
-      >
+  return (
+    <div
+      ref={containerRef}
+      className={`w-full h-full rounded-none overflow-hidden ${className} ${status === 'error' ? 'bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center' : ''}`}
+    >
+      {status === 'error' && (
         <div className="text-center px-4">
           <span className="material-symbols-outlined text-4xl text-zinc-400 mb-2 block">map</span>
           <p className="text-xs text-zinc-500 dark:text-zinc-400 font-light">
             {mapboxToken ? 'Error al cargar el mapa' : 'Mapa no disponible'}
           </p>
         </div>
-      </div>
-    )
-  }
-
-  return (
-    <div id={containerId} className={`w-full h-full rounded-none overflow-hidden ${className}`} />
+      )}
+      {status === 'loading' && (
+        <div className="w-full h-full bg-zinc-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+          <span className="material-symbols-outlined text-4xl text-zinc-400">map</span>
+        </div>
+      )}
+    </div>
   )
 }
