@@ -12,12 +12,8 @@ const waMsg = {
     en: 'Hi! I saw the program of',
   },
   collab: {
-    es: 'Hola! Me interesa saber más información sobre el',
-    en: 'Hi! I want to know more about the',
-  },
-  collabOptions: {
-    es: 'Elegí una opción:\n*1* Colegio\n*2* Empresa\n\nRespondé con el número y te contactamos.',
-    en: 'Choose an option:\n*1* School\n*2* Company\n\nReply with the number and we will contact you.',
+    es: 'Hola! Necesito saber más información sobre el programa educativo.',
+    en: 'Hi! I need more information about the educational program.',
   },
   servicesOptions: {
     es: 'Elegí una opción:',
@@ -28,8 +24,8 @@ const waMsg = {
     en: 'Hi! I want to know more about Las Chilcas sector.',
   },
   moreInfo: {
-    es: 'Hola!',
-    en: 'Hi!',
+    es: 'Hola! Necesito saber mas información sobre los talleres.',
+    en: 'Hi! I need more information about the workshops.',
   },
 }
 
@@ -41,15 +37,14 @@ export function waService(lang: Lang, serviceName: string): string {
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${waMsg.service[lang]} ${serviceName} y necesito más información.`)}`
 }
 
-export function waCollab(lang: Lang, programName: string): string {
-  return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${waMsg.collab[lang]} *${programName}*\n\n${waMsg.collabOptions[lang]}`)}`
+export function waCollab(lang: Lang, _programName: string): string {
+  return `https://wa.me/${PHONE}?text=${encodeURIComponent(waMsg.collab[lang])}`
 }
 
 export function waChilcas(lang: Lang): string {
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(waMsg.chilcas[lang])}`
 }
 
-export function waMoreInfo(lang: Lang, body: string): string {
-  const sep = waMsg.servicesOptions[lang]
-  return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${waMsg.moreInfo[lang]}\n\n${sep}\n${body}\n\nRespondé con el número y te enviamos la info.`)}`
+export function waMoreInfo(lang: Lang, _body: string): string {
+  return `https://wa.me/${PHONE}?text=${encodeURIComponent(waMsg.moreInfo[lang])}`
 }

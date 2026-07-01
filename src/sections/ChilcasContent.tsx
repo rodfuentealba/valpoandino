@@ -28,7 +28,10 @@ export default function ChilcasContent() {
               </div>
             ))}
           </div>
-          <p className="md:col-span-3 text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.subtitle}</p>
+          <div className="md:col-span-3 space-y-6">
+            <p className="text-zinc-600 dark:text-zinc-400 leading-8 font-light">{t.subtitle}</p>
+            <p className="text-zinc-600 dark:text-zinc-400 leading-8 font-light">{t.subtitle2}</p>
+          </div>
         </div>
 
         <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/assets/ChilcasSeparator.jpg')" }}>
