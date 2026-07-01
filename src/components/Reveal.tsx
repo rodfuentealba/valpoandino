@@ -106,5 +106,9 @@ export function StaggerIn({
     return () => ctx.revert()
   }, [])
 
-  return <Tag ref={ref as any} className={className}>{children}</Tag>
+  return (
+    <Tag ref={ref as any} className={className}>
+      {children}
+    </Tag>
+  )
 }

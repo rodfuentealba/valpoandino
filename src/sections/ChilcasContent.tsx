@@ -124,8 +124,8 @@ export default function ChilcasContent({ mapboxToken }: Props) {
                 muted
                 loop
                 playsInline
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
           </FadeIn>
 
@@ -168,7 +168,6 @@ export default function ChilcasContent({ mapboxToken }: Props) {
             </div>
           </FadeIn>
         </div>
-
       </div>
 
       <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24">
@@ -198,10 +197,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
-        <FadeIn
-          as="blockquote"
-          className="my-20 md:my-28 border-l-4 border-red-400 pl-6 md:pl-10"
-        >
+        <FadeIn as="blockquote" className="my-20 md:my-28 border-l-4 border-red-400 pl-6 md:pl-10">
           <p className="text-xl md:text-3xl text-zinc-600 dark:text-zinc-400 leading-relaxed font-light italic">
             {t.citaText}
           </p>

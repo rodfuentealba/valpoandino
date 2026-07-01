@@ -75,10 +75,7 @@ export default function Andinos() {
   }, [])
 
   return (
-    <section
-      id="andinos"
-      className="relative w-full overflow-visible bg-white dark:bg-zinc-900"
-    >
+    <section id="andinos" className="relative w-full overflow-visible bg-white dark:bg-zinc-900">
       <div className="relative w-full h-[320px] md:h-[500px]">
         <div
           ref={imgRef}
@@ -86,10 +83,7 @@ export default function Andinos() {
           style={{ backgroundImage: "url('/assets/bgAndinos.png')" }}
         />
 
-        <div
-          ref={textRef}
-          className="absolute inset-0 z-10 translate-y-[45%] md:translate-y-[65%]"
-        >
+        <div ref={textRef} className="absolute inset-0 z-10 translate-y-[45%] md:translate-y-[65%]">
           <div className="w-full max-w-6xl mx-auto px-6">
             <div className="ml-auto w-full md:w-1/2 text-left">
               <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-red-400 mb-6 opacity-0 translate-y-8">

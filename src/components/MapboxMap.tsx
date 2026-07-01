@@ -69,7 +69,11 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, mapboxToken }: P
           <div className="text-center px-4">
             <span className="material-symbols-outlined text-4xl text-zinc-400 mb-2 block">map</span>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 font-light">
-              {status === 'error' ? (mapboxToken ? 'Error al cargar el mapa' : 'Mapa no disponible') : 'Cargando mapa...'}
+              {status === 'error'
+                ? mapboxToken
+                  ? 'Error al cargar el mapa'
+                  : 'Mapa no disponible'
+                : 'Cargando mapa...'}
             </p>
           </div>
         </div>
