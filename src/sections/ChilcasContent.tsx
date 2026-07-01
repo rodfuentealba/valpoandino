@@ -213,7 +213,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
                 {t.block3Text}
               </p>
             </div>
-            <div className="md:col-span-3 relative overflow-hidden min-h-[250px] md:min-h-[450px] group">
+            <div className="md:col-span-3 relative overflow-hidden group">
               <MapboxMap
                 lng={-70.957}
                 lat={-32.849}

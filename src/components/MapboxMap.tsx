@@ -8,12 +8,10 @@ interface Props {
   lat: number
   zoom?: number
   popup?: string
-  className?: string
   mapboxToken?: string
 }
 
-export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', mapboxToken }: Props) {
-  const mapRef = useRef<mapboxgl.Map | null>(null)
+export default function MapboxMap({ lng, lat, zoom = 13, popup, mapboxToken }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
 
@@ -42,20 +40,17 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
       if (popup) {
         marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
       }
-
-      mapRef.current = map
     } catch {
       setStatus('error')
     }
 
     return () => {
-      mapRef.current?.remove()
-      mapRef.current = null
+      containerRef.current?.querySelector('.mapboxgl-map')?.remove()
     }
   }, [lng, lat, zoom, popup, mapboxToken])
 
   return (
-    <div className={`relative w-full h-full min-h-[250px] md:min-h-[450px] ${className}`}>
+    <div className="relative w-full" style={{ height: '400px' }}>
       <div ref={containerRef} className="absolute inset-0" />
       {status !== 'ready' && (
         <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center pointer-events-none z-10">
