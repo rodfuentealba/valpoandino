@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
+import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 interface Props {
@@ -34,37 +35,30 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
 
     let map: mapboxgl.Map | null = null
 
-    import('mapbox-gl').then((mod) => {
-      const mapboxgl = mod.default
+    mapboxgl.accessToken = mapboxToken
 
-      mapboxgl.accessToken = mapboxToken
+    try {
+      map = new mapboxgl.Map({
+        container: containerRef.current!,
+        style: theme === 'dark' ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11',
+        center: [lng, lat],
+        zoom,
+        attributionControl: false,
+      })
 
-      try {
-        map = new mapboxgl.Map({
-          container: containerRef.current!,
-          style: theme === 'dark' ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11',
-          center: [lng, lat],
-          zoom,
-          attributionControl: false,
-        })
+      map.on('load', () => setStatus('ready'))
+      map.on('error', () => setStatus('error'))
 
-        map.on('load', () => setStatus('ready'))
+      map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
 
-        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
+      const marker = new mapboxgl.Marker({ color: '#f87171' }).setLngLat([lng, lat]).addTo(map)
 
-        const marker = new mapboxgl.Marker({ color: '#f87171' }).setLngLat([lng, lat]).addTo(map)
-
-        if (popup) {
-          marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
-        }
-
-        map.on('error', () => setStatus('error'))
-      } catch {
-        setStatus('error')
+      if (popup) {
+        marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
       }
-    }).catch(() => {
+    } catch {
       setStatus('error')
-    })
+    }
 
     return () => {
       if (map) map.remove()
