@@ -3,8 +3,8 @@ import { useStore } from '@nanostores/react'
 import { langStore } from '../stores/lang'
 import { es } from '../i18n/es'
 import { en } from '../i18n/en'
-
 import { waService, waMoreInfo } from '../constants'
+import { FadeIn, StaggerIn } from '../components/Reveal'
 
 const serviceImages = ['/assets/service01.jpg', '/assets/service02.jpg']
 
@@ -31,9 +31,12 @@ export default function Servicios() {
       className="relative w-full bg-white dark:bg-zinc-900 overflow-hidden pb-20 md:pb-0 mt-[60%] md:mt-0"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 md:py-32">
-        <p className="text-md font-semibold uppercase text-black dark:text-white mb-16">
+        <FadeIn
+          as="p"
+          className="text-md font-semibold uppercase text-black dark:text-white mb-16"
+        >
           {t.titulo}
-        </p>
+        </FadeIn>
 
         <div className="space-y-20 md:space-y-32">
           {t.filas.map((fila, i) => {
@@ -42,7 +45,7 @@ export default function Servicios() {
             const fullName = `${fila.titulo} - ${fila.subtitulo}`
 
             return (
-              <div key={i} className="grid md:grid-cols-5 gap-0">
+              <FadeIn key={i} className="grid md:grid-cols-5 gap-0">
                 {isReversed ? (
                   <>
                     <div className="md:col-span-3 relative overflow-hidden order-2 md:order-1">
@@ -121,12 +124,12 @@ export default function Servicios() {
                     </a>
                   </>
                 )}
-              </div>
+            </FadeIn>
             )
           })}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-20 md:gap-16 mt-16 md:mt-32">
+        <StaggerIn className="grid md:grid-cols-3 gap-20 md:gap-16 mt-16 md:mt-32">
           {t.columnas.map((col, i) => (
             <div key={i} className="text-center md:text-left">
               <div className="inline-flex items-center justify-center w-16 h-16 mb-6">
@@ -145,7 +148,7 @@ export default function Servicios() {
               </p>
             </div>
           ))}
-        </div>
+        </StaggerIn>
 
         <div className="flex justify-center mt-16">
           <a
