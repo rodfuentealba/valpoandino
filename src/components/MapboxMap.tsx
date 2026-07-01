@@ -51,7 +51,7 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, mapboxToken }: P
 
   return (
     <div className="relative w-full" style={{ height: '400px' }}>
-      <div ref={containerRef} className="absolute inset-0" />
+      <div ref={containerRef} className="absolute inset-0 h-full" />
       {status !== 'ready' && (
         <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center pointer-events-none z-10">
           <div className="text-center px-4">
