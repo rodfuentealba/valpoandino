@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar'
+import ChilcasHero from '../sections/ChilcasHero'
+import ChilcasContent from '../sections/ChilcasContent'
+import Footer from '../sections/Footer.astro'
+import { es } from '../i18n/index'
+import '../styles/global.css'
+---
+
+<BaseLayout title="Las Chilcas — Valparaíso Andino" description={es.chilcasPage.metaDesc}>
+  <Navbar client:load />
+  <ChilcasHero client:visible />
+  <ChilcasContent client:visible />
+  <Footer />
+</BaseLayout>

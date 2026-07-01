@@ -4,3 +4,7 @@ dist/
 .astro/
 .DS_Store
 public/video/videoVA.mp4
+
+# Original large videos (use compressed versions in public/assets/)
+public/video/*.MP4
+public/video/*.mp4
