@@ -13,7 +13,10 @@ interface Props {
 
 export default function MapboxMap({ lng, lat, zoom = 13, popup, mapboxToken }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const mapRef = useRef<mapboxgl.Map | null>(null)
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
+
+  const isDark = () => document.documentElement.classList.contains('dark')
 
   useEffect(() => {
     if (!mapboxToken || !containerRef.current) {
@@ -25,27 +28,36 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, mapboxToken }: P
       const map = new mapboxgl.Map({
         accessToken: mapboxToken,
         container: containerRef.current,
-        style: 'mapbox://styles/mapbox/light-v11',
+        style: isDark() ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11',
         center: [lng, lat],
         zoom,
         attributionControl: false,
       })
 
-      map.on('load', () => setStatus('ready'))
-      map.on('error', () => setStatus('error'))
-      map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
-
       const marker = new mapboxgl.Marker({ color: '#f87171' }).setLngLat([lng, lat]).addTo(map)
+      if (popup) marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
 
-      if (popup) {
-        marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
-      }
+      map.on('load', () => {
+        setStatus('ready')
+        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
+      })
+      map.on('error', () => setStatus('error'))
+      mapRef.current = map
     } catch {
       setStatus('error')
     }
 
+    const obs = new MutationObserver(() => {
+      const m = mapRef.current
+      if (!m || !m.loaded()) return
+      m.setStyle(isDark() ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11')
+    })
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+
     return () => {
-      containerRef.current?.querySelector('.mapboxgl-map')?.remove()
+      obs.disconnect()
+      mapRef.current?.remove()
+      mapRef.current = null
     }
   }, [lng, lat, zoom, popup, mapboxToken])
 
