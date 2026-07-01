@@ -21,7 +21,9 @@ export default function Testimonial() {
     <section className="relative w-full overflow-hidden mt-12 md:mt-0">
       <div
         className="absolute inset-0 bg-cover bg-center grayscale transition-all duration-500"
-        style={{ backgroundImage: `url('${testimonialImages[selected % testimonialImages.length]}')` }}
+        style={{
+          backgroundImage: `url('${testimonialImages[selected % testimonialImages.length]}')`,
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
 

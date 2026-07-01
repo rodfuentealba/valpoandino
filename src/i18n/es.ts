@@ -1,10 +1,10 @@
 export const es = {
   nav: {
-    inicio:   'Inicio',
-    andinos:  'Andinos',
-    servicios:'Servicios',
-    chilcas:  'Chilcas',
-    collab:   'Collab',
+    inicio: 'Inicio',
+    andinos: 'Andinos',
+    servicios: 'Servicios',
+    chilcas: 'Chilcas',
+    collab: 'Collab',
     contacto: 'Contacto',
     reservar: 'Reservar',
   },
@@ -15,7 +15,8 @@ export const es = {
   },
   andinos: {
     titulo: 'Andinos®',
-    texto: 'Equipo autónomo de andinistas y escaladores dedicados a transmitir experiencias desde el año 2018 nuestra misión ha sido ofrecer experiencias únicas y seguras para disfrutar al máximo de la escalada en roca.',
+    texto:
+      'Equipo autónomo de andinistas y escaladores dedicados a transmitir experiencias desde el año 2018 nuestra misión ha sido ofrecer experiencias únicas y seguras para disfrutar al máximo de la escalada en roca.',
   },
   servicios: {
     titulo: 'Servicios',
@@ -23,14 +24,16 @@ export const es = {
       {
         titulo: 'Iniciación',
         subtitulo: 'Escalada en Roca.',
-        texto: 'Taller para aprender a escalar en roca de forma SEGURA guiado por escaladores con más de 10 años de trayectoria.',
+        texto:
+          'Taller para aprender a escalar en roca de forma SEGURA guiado por escaladores con más de 10 años de trayectoria.',
         destacado: 'SEGURA',
         cta: 'RECIBIR PROGRAMA',
       },
       {
         titulo: 'Por el día',
         subtitulo: 'Escalada en Roca.',
-        texto: 'Experiencia de un día de escalada en roca en uno de los mejores sectores de Chile, Las Chilcas - Llay Llay.',
+        texto:
+          'Experiencia de un día de escalada en roca en uno de los mejores sectores de Chile, Las Chilcas - Llay Llay.',
         destacado: 'Las Chilcas - Llay Llay.',
         cta: 'RECIBIR PROGRAMA',
       },
@@ -40,13 +43,15 @@ export const es = {
         icono: 'details',
         tituloBold: 'Taller de',
         titulo: 'Reuniones',
-        texto: 'Aprende a montar triángulos de fuerza para la escalada deportiva en roca, monolargos.',
+        texto:
+          'Aprende a montar triángulos de fuerza para la escalada deportiva en roca, monolargos.',
       },
       {
         icono: 'arrow_or_edge',
         tituloBold: 'Taller de',
         titulo: 'Rápel',
-        texto: 'Aprende el sistema de descenso por cuerda utilizado para escalada deportiva en roca.',
+        texto:
+          'Aprende el sistema de descenso por cuerda utilizado para escalada deportiva en roca.',
       },
       {
         icono: 'elevation',
@@ -61,19 +66,34 @@ export const es = {
   },
   chilcasPage: {
     title: 'Sector Las Chilcas',
-    subtitle: 'Las Chilcas es uno de los sectores de escalada deportiva más icónicos de Chile, ubicado en LlayLlay, Región de Valparaíso, a los pies de la Cordillera de la Costa.',
-    subtitle2: 'Bautizada en honor a la Chilca el abundante arbusto nativo de la zona con roca sedimentaria. El conglomerado de la zona te ofrece una escalada donde predominan agujeros y romos. Con un abanico que va del 5° - al 8° grado, es el spot ideal para la progresión de la comunidad escaladora.',
+    subtitle:
+      'Las Chilcas es uno de los sectores de escalada deportiva más icónicos de Chile, ubicado en LlayLlay, Región de Valparaíso, a los pies de la Cordillera de la Costa.',
+    subtitle2:
+      'Bautizada en honor a la Chilca el abundante arbusto nativo de la zona con roca sedimentaria. El conglomerado de la zona te ofrece una escalada donde predominan agujeros y romos. Con un abanico que va del 5° - al 8° grado, es el spot ideal para la progresión de la comunidad escaladora.',
     techInfo: [
-      { icon: 'location_on', label: 'Ubicación', value: 'km 74 Ruta 5 Norte, LlayLlay. 1 h desde Santiago / Valparaíso' },
+      {
+        icon: 'location_on',
+        label: 'Ubicación',
+        value: 'km 74 Ruta 5 Norte, LlayLlay. 1 h desde Santiago / Valparaíso',
+      },
       { icon: 'terrain', label: 'Tipo de roca', value: 'Conglomerado (tomas de agujeros y romos)' },
       { icon: 'route', label: 'Rutas', value: '+100 deportivas equipadas con bolts. 5−8 Grado' },
       { icon: 'thermostat', label: 'Clima', value: 'Mediterráneo semiárido.' },
-      { icon: 'layers', label: 'Sectores', value: 'El Cubo, La Muela, Desplomilandia y Tecnobloque' },
-      { icon: 'directions_car', label: 'Acceso', value: 'Proximo a la carretera. Estacionamiento cercanos al sector.' },
+      {
+        icon: 'layers',
+        label: 'Sectores',
+        value: 'El Cubo, La Muela, Desplomilandia y Tecnobloque',
+      },
+      {
+        icon: 'directions_car',
+        label: 'Acceso',
+        value: 'Proximo a la carretera. Estacionamiento cercanos al sector.',
+      },
     ],
     block1Title: 'Vías para',
     block1TitleLight: 'todos los niveles',
-    block1Text: 'Desde principiantes hasta expertos, Las Chilcas ofrece una amplia variedad de vías de escalada deportiva equipadas y mantenidas por la comunidad escaladora. Más de 100 rutas que van desde el quinto grado hasta octavo en su última letra, predominando los extraplomos y tomas de tipo agujero y romos sobre roca conglomerado.',
+    block1Text:
+      'Desde principiantes hasta expertos, Las Chilcas ofrece una amplia variedad de vías de escalada deportiva equipadas y mantenidas por la comunidad escaladora. Más de 100 rutas que van desde el quinto grado hasta octavo en su última letra, predominando los extraplomos y tomas de tipo agujero y romos sobre roca conglomerado.',
     routesTitle: 'Rutas destacadas',
     routeSchool: 'Rutas Escuela',
     routeSchoolList: [
@@ -90,47 +110,88 @@ export const es = {
     ],
     block2Title: 'Entorno natural',
     block2TitleLight: 'privilegiado',
-    block2Text: 'Rodeado de cerros y vegetación nativa, el sector ofrece una experiencia completa de montaña a solo 1 hora de la ciudad.',
+    block2Text:
+      'Rodeado de cerros y vegetación nativa, el sector ofrece una experiencia completa de montaña a solo 1 hora de la ciudad.',
     envItems: [
-      { icon: 'forest', title: 'Bosque esclerófilo', text: 'La vegetación dominante es el bosque esclerófilo mediterráneo, adaptado a la sequedad estival. Destacan el quillay, litre, boldo y espino, junto a matorrales de chilca que dan nombre al sector.' },
-      { icon: 'eco', title: 'Flora nativa', text: 'Entre las especies más representativas están la chilca (Baccharis linearis), el quillay (Quillaja saponaria), el litre (Lithraea caustica) y diversos cactus del género Echinopsis y Trichocereus.' },
-      { icon: 'raven', title: 'Fauna', text: 'Es posible avistar cóndores andinos sobrevolando los farellones, zorros culpeo al atardecer, degúes entre las rocas, y aves como loicas, tiuques y chercanes. En primavera las mariposas y abejas nativas polinizan el matorral.' },
-      { icon: 'landscape', title: 'Geología', text: 'Las paredes de conglomerado pertenecen a la Formación Abanico (Mioceno), una roca sedimentaria compuesta por cantos rodados y matriz arenisca. Su textura porosa y rugosa crea agarres característicos de agujero y romo.' },
+      {
+        icon: 'forest',
+        title: 'Bosque esclerófilo',
+        text: 'La vegetación dominante es el bosque esclerófilo mediterráneo, adaptado a la sequedad estival. Destacan el quillay, litre, boldo y espino, junto a matorrales de chilca que dan nombre al sector.',
+      },
+      {
+        icon: 'eco',
+        title: 'Flora nativa',
+        text: 'Entre las especies más representativas están la chilca (Baccharis linearis), el quillay (Quillaja saponaria), el litre (Lithraea caustica) y diversos cactus del género Echinopsis y Trichocereus.',
+      },
+      {
+        icon: 'raven',
+        title: 'Fauna',
+        text: 'Es posible avistar cóndores andinos sobrevolando los farellones, zorros culpeo al atardecer, degúes entre las rocas, y aves como loicas, tiuques y chercanes. En primavera las mariposas y abejas nativas polinizan el matorral.',
+      },
+      {
+        icon: 'landscape',
+        title: 'Geología',
+        text: 'Las paredes de conglomerado pertenecen a la Formación Abanico (Mioceno), una roca sedimentaria compuesta por cantos rodados y matriz arenisca. Su textura porosa y rugosa crea agarres característicos de agujero y romo.',
+      },
     ],
     block3Title: 'Acceso',
     block3TitleLight: 'rápido y sencillo',
-    block3Text: 'A solo 1 hora de Santiago y Valparaíso, Las Chilcas es el destino perfecto para una escapada de escalada de día completo. Se accede por la Ruta 5 Norte, km 74, a un costado de la carretera, justo donde se señala el puente "Los Loros".',
+    block3Text:
+      'A solo 1 hora de Santiago y Valparaíso, Las Chilcas es el destino perfecto para una escapada de escalada de día completo. Se accede por la Ruta 5 Norte, km 74, a un costado de la carretera, justo donde se señala el puente "Los Loros".',
     citaTitle: 'Primera vía',
-    citaText: 'El lugar comenzó a equiparse por los años 90\', donde la primera vía fue nombrada "La Furia del Ermitaño" (6b), en honor a un ermitaño que vivió por años al pie de ella.',
+    citaText:
+      'El lugar comenzó a equiparse por los años 90\', donde la primera vía fue nombrada "La Furia del Ermitaño" (6b), en honor a un ermitaño que vivió por años al pie de ella.',
     citaAuthor: '— Comunidad escaladora',
     infoTitle: 'Información útil',
     infoSeason: 'Temporada recomendada',
-    infoSeasonText: 'Otoño e invierno son ideales por sus temperaturas templadas. En verano puede ser muy caluroso, permitiendo escalar buscando la sombra.',
+    infoSeasonText:
+      'Otoño e invierno son ideales por sus temperaturas templadas. En verano puede ser muy caluroso, permitiendo escalar buscando la sombra.',
     infoSafety: 'Seguridad',
-    infoSafetyText: 'Por la característica de la roca conglomerado, no se está libre de desprendimientos. Se recomienda el uso de casco en todo momento.',
+    infoSafetyText:
+      'Por la característica de la roca conglomerado, no se está libre de desprendimientos. Se recomienda el uso de casco en todo momento.',
     infoCamping: 'Camping',
-    infoCampingText: 'Es posible pernoctar cerca del lugar en el camping de Alejandra a unos 200m antes del sector.',
+    infoCampingText:
+      'Es posible pernoctar cerca del lugar en el camping de Alejandra a unos 200m antes del sector.',
     infoRoutes: 'Equipamiento',
-    infoRoutesText: '100+ rutas equipadas con bolts. Altura promedio de 30 m, con paredes de hasta 100m (multilargos).',
+    infoRoutesText:
+      '100+ rutas equipadas con bolts. Altura promedio de 30 m, con paredes de hasta 100m (multilargos).',
     cta: 'CONSULTAR DISPONIBILIDAD',
     parallaxText1: 'Cada agarre,',
     parallaxText2: 'cuenta una historia',
-    metaDesc: 'Conoce el sector de escalada Las Chilcas en LlayLlay. Vías para todos los niveles, entorno natural único y fácil acceso desde Santiago y Valparaíso.',
+    metaDesc:
+      'Conoce el sector de escalada Las Chilcas en LlayLlay. Vías para todos los niveles, entorno natural único y fácil acceso desde Santiago y Valparaíso.',
   },
   testimonial: {
     titulo: 'Testimonios',
     personas: [
-      { nombre: 'Cinthia Zelada', texto: 'Excelente taller, ¡recomendadisimo! Entregan todos los conocimientos necesarios de forma completa y clara. La parte práctica espectacular, la seguridad y confianza para poder realizar esta maravilla que es la escalada. ¡Muchas gracias chicos! Y a todo el grupo.' },
-      { nombre: 'Naty Castro', texto: 'Me encantó el taller y obvio quede con las ganas de seguir aprendiendo de este bello deporte.' },
-      { nombre: 'Valentina Zepeda', texto: '¡Se pasaron! Unos crack para enseñar. Todo lo que necesitas saber para comenzar. No sólo desde la visión deportiva, si no que además suman la filosofía y principios fundamentales de la escalada.' },
-      { nombre: 'Gualo Fuentes', texto: 'Los mejores, transmiten confianza y sabiduría, como se nota que les apasiona la escalada, son secos para enseñar, se agradece la buena onda. Nos vemos pronto.' },
+      {
+        nombre: 'Cinthia Zelada',
+        texto:
+          'Excelente taller, ¡recomendadisimo! Entregan todos los conocimientos necesarios de forma completa y clara. La parte práctica espectacular, la seguridad y confianza para poder realizar esta maravilla que es la escalada. ¡Muchas gracias chicos! Y a todo el grupo.',
+      },
+      {
+        nombre: 'Naty Castro',
+        texto:
+          'Me encantó el taller y obvio quede con las ganas de seguir aprendiendo de este bello deporte.',
+      },
+      {
+        nombre: 'Valentina Zepeda',
+        texto:
+          '¡Se pasaron! Unos crack para enseñar. Todo lo que necesitas saber para comenzar. No sólo desde la visión deportiva, si no que además suman la filosofía y principios fundamentales de la escalada.',
+      },
+      {
+        nombre: 'Gualo Fuentes',
+        texto:
+          'Los mejores, transmiten confianza y sabiduría, como se nota que les apasiona la escalada, son secos para enseñar, se agradece la buena onda. Nos vemos pronto.',
+      },
     ],
   },
   collab: {
     seccion: 'Collab',
     tituloBold: 'Programa Educativo',
     titulo: 'Colegios y Empresas',
-    texto: 'Diseñamos experiencias de aventura a la medida para colegios y empresas. A través de la escalada, el trekking y la educación ambiental.',
+    texto:
+      'Diseñamos experiencias de aventura a la medida para colegios y empresas. A través de la escalada, el trekking y la educación ambiental.',
     cta: 'COTIZA TU EXPERIENCIA',
   },
 }

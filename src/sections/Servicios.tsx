@@ -6,10 +6,7 @@ import { en } from '../i18n/en'
 
 import { waService, waMoreInfo } from '../constants'
 
-const serviceImages = [
-  '/assets/service01.jpg',
-  '/assets/service02.jpg',
-]
+const serviceImages = ['/assets/service01.jpg', '/assets/service02.jpg']
 
 function HighlightedText({ texto, destacado }: { texto: string; destacado: string }) {
   if (!destacado) return <>{texto}</>
@@ -29,9 +26,11 @@ export default function Servicios() {
   const t = lang === 'es' ? es.servicios : en.servicios
 
   return (
-    <section id="servicios" className="relative w-full bg-white dark:bg-zinc-900 overflow-hidden pb-20 md:pb-0 mt-[60%] md:mt-0">
+    <section
+      id="servicios"
+      className="relative w-full bg-white dark:bg-zinc-900 overflow-hidden pb-20 md:pb-0 mt-[60%] md:mt-0"
+    >
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 md:py-32">
-
         <p className="text-md font-semibold uppercase text-black dark:text-white mb-16">
           {t.titulo}
         </p>
@@ -50,15 +49,12 @@ export default function Servicios() {
                       <div
                         className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110 grayscale"
                         style={{ backgroundImage: `url('${img}')` }}
-                      >
-                        
-                      </div>
+                      ></div>
                     </div>
 
                     <div className="md:col-span-2 flex flex-col text-left justify-between gap-6 dark:bg-zinc-900 py-8 md:p-12 order-1 md:order-2">
                       <h3 className="text-5xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white md:-translate-x-[40%] relative z-10">
-                        {fila.titulo}{' '}
-                        <span className="font-light">{fila.subtitulo}</span>
+                        {fila.titulo} <span className="font-light">{fila.subtitulo}</span>
                       </h3>
 
                       <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
@@ -90,8 +86,7 @@ export default function Servicios() {
                   <>
                     <div className="md:col-span-2 flex flex-col text-left md:text-right justify-center gap-6 dark:bg-zinc-900 py-8 md:p-12">
                       <h3 className="text-5xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white md:-translate-x-[-40%] relative z-10">
-                        {fila.titulo}{' '}
-                        <span className="font-light">{fila.subtitulo}</span>
+                        {fila.titulo} <span className="font-light">{fila.subtitulo}</span>
                       </h3>
 
                       <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
@@ -112,8 +107,7 @@ export default function Servicios() {
                       <div
                         className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110 grayscale"
                         style={{ backgroundImage: `url('${img}')` }}
-                      >
-                      </div>
+                      ></div>
                     </div>
 
                     <a
@@ -156,7 +150,9 @@ export default function Servicios() {
         <div className="flex justify-center mt-16">
           <a
             href={(() => {
-              const body = t.columnas.map((c, i) => `*${i + 1}* ${c.tituloBold} ${c.titulo}`).join('\n')
+              const body = t.columnas
+                .map((c, i) => `*${i + 1}* ${c.tituloBold} ${c.titulo}`)
+                .join('\n')
               return waMoreInfo(lang, body)
             })()}
             target="_blank"
@@ -167,7 +163,6 @@ export default function Servicios() {
             <span className="material-symbols-outlined text-base">arrow_forward</span>
           </a>
         </div>
-
       </div>
     </section>
   )

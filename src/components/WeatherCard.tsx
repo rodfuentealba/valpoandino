@@ -55,7 +55,7 @@ export default function WeatherCard() {
     const fetchWeather = async () => {
       try {
         const res = await fetch(
-          'https://api.open-meteo.com/v1/forecast?latitude=-32.849&longitude=-70.957&current=temperature_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&daily=precipitation_probability_max&timezone=auto'
+          'https://api.open-meteo.com/v1/forecast?latitude=-32.849&longitude=-70.957&current=temperature_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&daily=precipitation_probability_max&timezone=auto',
         )
         if (!res.ok) throw new Error('Failed to fetch')
         const data = await res.json()
@@ -66,7 +66,7 @@ export default function WeatherCard() {
           weatherCode: data.current.weather_code,
           windSpeed: Math.round(data.current.wind_speed_10m),
           precipitation: data.current.precipitation ?? 0,
-          precipitationProbability: data.daily?.precipitation_probability_max?.[0] ?? 0
+          precipitationProbability: data.daily?.precipitation_probability_max?.[0] ?? 0,
         })
         setError(false)
       } catch {
@@ -81,13 +81,15 @@ export default function WeatherCard() {
     }
   }, [])
 
-  const precipWarning = weather && (weather.precipitationProbability > 25 || weather.precipitation > 0)
+  const precipWarning =
+    weather && (weather.precipitationProbability > 25 || weather.precipitation > 0)
   const cardBg = isDark ? 'bg-black/30' : 'bg-white/30'
   const textPrimary = 'text-white'
   const textSecondary = 'text-white/70'
   const textTertiary = 'text-white/50'
 
-  const position = 'absolute left-1/2 -translate-x-1/2 md:left-32 md:-translate-x-0 top-1/2 -translate-y-1/2 w-72 md:w-80'
+  const position =
+    'absolute left-1/2 -translate-x-1/2 md:left-32 md:-translate-x-0 top-1/2 -translate-y-1/2 w-72 md:w-80'
 
   if (error && !weather) {
     return (
@@ -114,14 +116,18 @@ export default function WeatherCard() {
   }
 
   return (
-    <div className={`${position} p-5 rounded-2xl ${cardBg} backdrop-blur-sm  shadow-lg transition-all duration-300`}>
+    <div
+      className={`${position} p-5 rounded-2xl ${cardBg} backdrop-blur-sm  shadow-lg transition-all duration-300`}
+    >
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-1.5">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
           </span>
-          <span className={`text-[10px] font-bold uppercase tracking-widest ${textTertiary}`}>Live</span>
+          <span className={`text-[10px] font-bold uppercase tracking-widest ${textTertiary}`}>
+            Live
+          </span>
         </div>
         <span className={`text-[10px] font-medium ${textTertiary}`}>Las Chilcas</span>
       </div>
@@ -141,7 +147,9 @@ export default function WeatherCard() {
       <div className="grid grid-cols-2 gap-2 text-xs">
         <div className={`flex items-center gap-1.5 ${textSecondary}`}>
           <span className="material-symbols-outlined text-xl">thermostat</span>
-          <span>{es ? 'Sensación' : 'Feels'} {weather.apparentTemperature}°</span>
+          <span>
+            {es ? 'Sensación' : 'Feels'} {weather.apparentTemperature}°
+          </span>
         </div>
         <div className={`flex items-center gap-1.5 ${textSecondary}`}>
           <span className="material-symbols-outlined text-xl">air</span>
@@ -153,8 +161,7 @@ export default function WeatherCard() {
             <span>
               {es
                 ? `Posible lluvia (${weather.precipitationProbability}%)`
-                : `Rain possible (${weather.precipitationProbability}%)`
-              }
+                : `Rain possible (${weather.precipitationProbability}%)`}
             </span>
           </div>
         )}

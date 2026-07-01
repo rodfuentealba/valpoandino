@@ -13,17 +13,24 @@ export default function ChilcasContent() {
   return (
     <>
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 pt-20 md:pt-32">
-
-        <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-8">{t.title}</h1>
+        <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-8">
+          {t.title}
+        </h1>
 
         <div className="grid md:grid-cols-5 gap-8 md:gap-12 mb-16">
           <div className="md:col-span-2 space-y-4">
             {t.techInfo.map((item) => (
               <div key={item.label} className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-red-400 text-xl mt-0.5 shrink-0">{item.icon}</span>
+                <span className="material-symbols-outlined text-red-400 text-xl mt-0.5 shrink-0">
+                  {item.icon}
+                </span>
                 <div>
-                  <span className="text-xs font-bold text-red-400 uppercase tracking-widest">{item.label}</span>
-                  <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-snug">{item.value}</p>
+                  <span className="text-xs font-bold text-red-400 uppercase tracking-widest">
+                    {item.label}
+                  </span>
+                  <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-snug">
+                    {item.value}
+                  </p>
                 </div>
               </div>
             ))}
@@ -34,30 +41,44 @@ export default function ChilcasContent() {
           </div>
         </div>
 
-        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/assets/ChilcasSeparator.jpg')" }}>
-        </div>
+        <div
+          className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-fixed bg-center bg-cover"
+          style={{ backgroundImage: "url('/assets/ChilcasSeparator.jpg')" }}
+        ></div>
 
         <div className="space-y-20 md:space-y-32 mt-20">
           <div className="grid md:grid-cols-5 gap-8 items-center">
             <div className="md:col-span-3">
               <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
-                {t.block1Title} <br></br><span className="text-red-400 font-light">{t.block1TitleLight}</span>
+                {t.block1Title} <br></br>
+                <span className="text-red-400 font-light">{t.block1TitleLight}</span>
               </h2>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.block1Text}</p>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+                {t.block1Text}
+              </p>
               <div className="mt-8 space-y-6">
-                <h3 className="text-sm font-bold text-red-400 uppercase tracking-widest mb-4">{t.routesTitle}</h3>
+                <h3 className="text-sm font-bold text-red-400 uppercase tracking-widest mb-4">
+                  {t.routesTitle}
+                </h3>
 
                 <div>
                   <div className="mb-3 flex items-center gap-2">
                     <span className="material-symbols-outlined text-red-400 text-2xl">school</span>
-                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">{t.routeSchool}</h4>
+                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">
+                      {t.routeSchool}
+                    </h4>
                   </div>
                   <ul className="space-y-2">
                     {t.routeSchoolList.map((r) => (
-                      <li key={r.name} className="flex items-center justify-between text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                      <li
+                        key={r.name}
+                        className="flex items-center justify-between text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed"
+                      >
                         <span className="italic">{r.name}</span>
                         <span className="flex items-center gap-2">
-                          <span className="text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-600">{r.fame}</span>
+                          <span className="text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-600">
+                            {r.fame}
+                          </span>
                           <span className="font-bold text-red-400">{r.grade}</span>
                         </span>
                       </li>
@@ -68,14 +89,21 @@ export default function ChilcasContent() {
                 <div>
                   <div className="mb-3 flex items-center gap-2">
                     <span className="material-symbols-outlined text-red-400 text-2xl">star</span>
-                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">{t.routeExpert}</h4>
+                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">
+                      {t.routeExpert}
+                    </h4>
                   </div>
                   <ul className="space-y-2">
                     {t.routeExpertList.map((r) => (
-                      <li key={r.name} className="flex items-center justify-between text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                      <li
+                        key={r.name}
+                        className="flex items-center justify-between text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed"
+                      >
                         <span className="italic">{r.name}</span>
                         <span className="flex items-center gap-2">
-                          <span className="text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-600">{r.fame}</span>
+                          <span className="text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-600">
+                            {r.fame}
+                          </span>
                           <span className="font-bold text-red-400">{r.grade}</span>
                         </span>
                       </li>
@@ -109,16 +137,25 @@ export default function ChilcasContent() {
             </div>
             <div className="md:col-span-3 md:order-2 order-1">
               <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
-                {t.block2Title} <span className="text-red-400 font-light">{t.block2TitleLight}</span>
+                {t.block2Title}{' '}
+                <span className="text-red-400 font-light">{t.block2TitleLight}</span>
               </h2>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light mb-6">{t.block2Text}</p>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light mb-6">
+                {t.block2Text}
+              </p>
               <div className="space-y-5">
                 {t.envItems.map((item) => (
                   <div key={item.title} className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-red-400 text-2xl mt-0.5 shrink-0">{item.icon}</span>
+                    <span className="material-symbols-outlined text-red-400 text-2xl mt-0.5 shrink-0">
+                      {item.icon}
+                    </span>
                     <div>
-                      <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">{item.title}</h4>
-                      <p className="text-xs md:text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed font-light">{item.text}</p>
+                      <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs md:text-sm text-zinc-500 dark:text-zinc-500 leading-relaxed font-light">
+                        {item.text}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -126,7 +163,6 @@ export default function ChilcasContent() {
             </div>
           </div>
         </div>
-
       </div>
 
       <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24">
@@ -153,7 +189,6 @@ export default function ChilcasContent() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
-
         <blockquote className="my-20 md:my-28 border-l-4 border-red-400 pl-6 md:pl-10">
           <p className="text-xl md:text-3xl text-zinc-600 dark:text-zinc-400 leading-relaxed font-light italic">
             {t.citaText}
@@ -167,9 +202,12 @@ export default function ChilcasContent() {
           <div className="grid md:grid-cols-5 gap-8 items-center">
             <div className="md:col-span-2">
               <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
-                {t.block3Title} <br></br><span className="text-red-400 font-light">{t.block3TitleLight}</span>
+                {t.block3Title} <br></br>
+                <span className="text-red-400 font-light">{t.block3TitleLight}</span>
               </h2>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">{t.block3Text}</p>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+                {t.block3Text}
+              </p>
             </div>
             <div className="md:col-span-3 relative overflow-hidden min-h-[250px] md:min-h-[450px] group">
               <MapboxMap
@@ -184,27 +222,53 @@ export default function ChilcasContent() {
         </div>
 
         <div className="mt-28">
-          <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-12 text-center">{t.infoTitle}</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-12 text-center">
+            {t.infoTitle}
+          </h2>
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
-              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">ac_unit</span>
-              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">{t.infoSeason}</h3>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoSeasonText}</p>
+              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">
+                ac_unit
+              </span>
+              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">
+                {t.infoSeason}
+              </h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">
+                {t.infoSeasonText}
+              </p>
             </div>
             <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
-              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">health_and_safety</span>
-              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">{t.infoSafety}</h3>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoSafetyText}</p>
+              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">
+                health_and_safety
+              </span>
+              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">
+                {t.infoSafety}
+              </h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">
+                {t.infoSafetyText}
+              </p>
             </div>
             <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
-              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">camping</span>
-              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">{t.infoCamping}</h3>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoCampingText}</p>
+              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">
+                camping
+              </span>
+              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">
+                {t.infoCamping}
+              </h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">
+                {t.infoCampingText}
+              </p>
             </div>
             <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
-              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">handyman</span>
-              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">{t.infoRoutes}</h3>
-              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">{t.infoRoutesText}</p>
+              <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">
+                handyman
+              </span>
+              <h3 className="text-sm font-bold text-red-400 group-hover/card:text-white tracking-widest uppercase mb-3 transition-colors duration-300">
+                {t.infoRoutes}
+              </h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 group-hover/card:text-white leading-relaxed font-light transition-colors duration-300">
+                {t.infoRoutesText}
+              </p>
             </div>
           </div>
         </div>
@@ -223,12 +287,15 @@ export default function ChilcasContent() {
 
         <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-24">
           <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
-            <img src="/assets/service05.jpg" alt="Las Chilcas" className="w-full h-full object-cover" />
+            <img
+              src="/assets/service05.jpg"
+              alt="Las Chilcas"
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-black/10" />
             <WeatherCard />
           </div>
         </div>
-
       </div>
     </>
   )
