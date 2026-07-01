@@ -219,7 +219,6 @@ export default function ChilcasContent({ mapboxToken }: Props) {
                 lat={-32.849}
                 zoom={14}
                 popup={lang === 'es' ? 'Las Chilcas, LlayLlay' : 'Las Chilcas, LlayLlay'}
-                className="absolute inset-0"
                 mapboxToken={mapboxToken}
               />
             </div>
