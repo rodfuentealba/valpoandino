@@ -34,7 +34,8 @@ export function waBooking(lang: Lang): string {
 }
 
 export function waService(lang: Lang, serviceName: string): string {
-  return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${waMsg.service[lang]} ${serviceName} y necesito más información.`)}`
+  const suffix = lang === 'es' ? ' y necesito más información.' : ' and I need more information.'
+  return `https://wa.me/${PHONE}?text=${encodeURIComponent(`${waMsg.service[lang]} ${serviceName}${suffix}`)}`
 }
 
 export function waCollab(lang: Lang, _programName: string): string {
