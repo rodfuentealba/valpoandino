@@ -4,6 +4,7 @@ import { useStore } from '@nanostores/react'
 import { langStore } from '../stores/lang'
 import { es } from '../i18n/es'
 import { en } from '../i18n/en'
+import { FadeIn } from '../components/Reveal'
 
 const testimonialImages = [
   '/assets/testimonial01.JPG',
@@ -27,7 +28,7 @@ export default function Testimonial() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
 
-      <div className="relative max-w-5xl mx-auto px-6 md:px-8 lg:px-20 py-10 md:py-20">
+      <FadeIn className="relative max-w-5xl mx-auto px-6 md:px-8 lg:px-20 py-10 md:py-20">
         <div className="md:grid md:grid-cols-7 md:gap-8">
           <div className="md:col-span-4">
             <div className="p-8 md:p-12 md:pl-0 md:text-left text-center">
@@ -62,7 +63,7 @@ export default function Testimonial() {
           </div>
           <div className="hidden md:block md:col-span-3" />
         </div>
-      </div>
+      </FadeIn>
     </section>
   )
 }

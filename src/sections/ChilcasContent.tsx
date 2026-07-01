@@ -5,6 +5,7 @@ import { es, en } from '../i18n/index'
 import MapboxMap from '../components/MapboxMap'
 import WeatherCard from '../components/WeatherCard'
 import { waChilcas } from '../constants'
+import { FadeIn } from '../components/Reveal'
 
 interface Props {
   mapboxToken?: string
@@ -21,7 +22,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
           {t.title}
         </h1>
 
-        <div className="grid md:grid-cols-5 gap-8 md:gap-12 mb-16">
+        <FadeIn className="grid md:grid-cols-5 gap-8 md:gap-12 mb-16">
           <div className="md:col-span-2 space-y-4">
             {t.techInfo.map((item) => (
               <div key={item.label} className="flex items-start gap-3">
@@ -43,7 +44,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
             <p className="text-zinc-600 dark:text-zinc-400 leading-8 font-light">{t.subtitle}</p>
             <p className="text-zinc-600 dark:text-zinc-400 leading-8 font-light">{t.subtitle2}</p>
           </div>
-        </div>
+        </FadeIn>
 
         <div
           className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-scroll md:bg-fixed bg-center bg-cover"
@@ -51,7 +52,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
         ></div>
 
         <div className="space-y-20 md:space-y-32 mt-20">
-          <div className="grid md:grid-cols-5 gap-8 items-center">
+          <FadeIn className="grid md:grid-cols-5 gap-8 items-center">
             <div className="md:col-span-3">
               <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
                 {t.block1Title} <br></br>
@@ -123,12 +124,12 @@ export default function ChilcasContent({ mapboxToken }: Props) {
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
             </div>
-          </div>
+          </FadeIn>
 
-          <div className="grid md:grid-cols-5 gap-8 items-center">
+          <FadeIn className="grid md:grid-cols-5 gap-8 items-center">
             <div className="md:col-span-2 md:order-1 order-2 relative overflow-hidden min-h-[550px] md:h-full group">
               <video
                 src="/assets/service04.mp4"
@@ -165,8 +166,9 @@ export default function ChilcasContent({ mapboxToken }: Props) {
                 ))}
               </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
+
       </div>
 
       <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24">
@@ -182,27 +184,33 @@ export default function ChilcasContent({ mapboxToken }: Props) {
           />
           <div className="absolute inset-0 bg-black/10" />
         </div>
-        <div className="relative -mt-[400px] md:-mt-[600px] h-[400px] md:h-[600px] flex flex-col justify-between px-6 py-12 md:py-20">
+        <FadeIn
+          as="div"
+          className="relative -mt-[400px] md:-mt-[600px] h-[400px] md:h-[600px] flex flex-col justify-between px-6 py-12 md:py-20"
+        >
           <p className="text-white dark:text-zinc-900 text-3xl md:text-5xl lg:text-9xl font-bold leading-tight md:-mt-24">
             {t.parallaxText1}
           </p>
           <p className="text-white dark:text-zinc-900 text-3xl md:text-5xl lg:text-9xl font-light leading-tight text-right md:-mb-28">
             {t.parallaxText2}
           </p>
-        </div>
+        </FadeIn>
       </div>
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
-        <blockquote className="my-20 md:my-28 border-l-4 border-red-400 pl-6 md:pl-10">
+        <FadeIn
+          as="blockquote"
+          className="my-20 md:my-28 border-l-4 border-red-400 pl-6 md:pl-10"
+        >
           <p className="text-xl md:text-3xl text-zinc-600 dark:text-zinc-400 leading-relaxed font-light italic">
             {t.citaText}
           </p>
           <footer className="mt-4 text-sm text-red-400 font-bold tracking-widest uppercase">
             {t.citaAuthor}
           </footer>
-        </blockquote>
+        </FadeIn>
 
-        <div className="mt-20">
+        <FadeIn className="mt-20">
           <div className="grid md:grid-cols-5 gap-8 items-center">
             <div className="md:col-span-2">
               <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
@@ -223,14 +231,14 @@ export default function ChilcasContent({ mapboxToken }: Props) {
               />
             </div>
           </div>
-        </div>
+        </FadeIn>
 
-        <div className="mt-28">
+        <FadeIn className="mt-28">
           <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-12 text-center">
             {t.infoTitle}
           </h2>
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
+            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 dark:hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
               <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">
                 ac_unit
               </span>
@@ -241,7 +249,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
                 {t.infoSeasonText}
               </p>
             </div>
-            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
+            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 dark:hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
               <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">
                 health_and_safety
               </span>
@@ -252,7 +260,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
                 {t.infoSafetyText}
               </p>
             </div>
-            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
+            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 dark:hover:bg-red-400  hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
               <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">
                 camping
               </span>
@@ -263,7 +271,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
                 {t.infoCampingText}
               </p>
             </div>
-            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
+            <div className="group/card bg-zinc-50 dark:bg-zinc-800/50 p-6 md:p-8 hover:bg-red-400 dark:hover:bg-red-400 hover:scale-[1.03] transition-all duration-500 ease-out cursor-default">
               <span className="material-symbols-outlined text-2xl md:text-3xl text-red-400 group-hover/card:text-white mb-2 block transition-colors duration-300">
                 handyman
               </span>
@@ -275,9 +283,9 @@ export default function ChilcasContent({ mapboxToken }: Props) {
               </p>
             </div>
           </div>
-        </div>
+        </FadeIn>
 
-        <div className="flex justify-center mt-24">
+        <FadeIn className="flex justify-center mt-24">
           <a
             href={waChilcas(lang)}
             target="_blank"
@@ -287,9 +295,9 @@ export default function ChilcasContent({ mapboxToken }: Props) {
             {t.cta}
             <span className="material-symbols-outlined text-base">arrow_forward</span>
           </a>
-        </div>
+        </FadeIn>
 
-        <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-24">
+        <FadeIn className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-24">
           <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
             <img
               src="/assets/service05.jpg"
@@ -299,7 +307,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
             <div className="absolute inset-0 bg-black/10" />
             <WeatherCard />
           </div>
-        </div>
+        </FadeIn>
       </div>
     </>
   )

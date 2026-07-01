@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useStore } from '@nanostores/react'
 import { themeStore } from '../stores/theme'
 import { langStore } from '../stores/lang'
@@ -7,6 +7,7 @@ import { es } from '../i18n/es'
 import { en } from '../i18n/en'
 import Isotype from './icons/Isotype'
 import { waBooking } from '../constants'
+import gsap from 'gsap'
 
 export default function Navbar() {
   const theme = useStore(themeStore)
@@ -69,6 +70,34 @@ export default function Navbar() {
 
   const isHome = pathname === '/' || pathname === ''
   const isChilcasPage = pathname.includes('chilcas')
+  const navRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const el = navRef.current
+    if (!el) return
+
+    const ctx = gsap.context(() => {
+      const children = el.children[0]?.children
+      if (!children) return
+
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
+
+      tl.fromTo(
+        children[0],
+        { opacity: 0, y: -15 },
+        { opacity: 1, y: 0, duration: 0.5 },
+      )
+
+      tl.fromTo(
+        [children[1], children[2], children[3]].filter(Boolean),
+        { opacity: 0, y: -15 },
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.15 },
+        '-=0.1',
+      )
+    })
+
+    return () => ctx.revert()
+  }, [])
 
   const scrollTo = (id: string) => {
     setMenuOpen(false)
@@ -121,6 +150,7 @@ export default function Navbar() {
   return (
     <>
       <nav
+        ref={navRef}
         className={`fixed inset-x-4 md:inset-x-0 z-50 transition-all duration-500 max-w-sm md:max-w-4xl mx-auto ${scrolled ? 'top-10 bg-white shadow-lg dark:bg-zinc-900' : 'top-3 bg-transparent'}`}
       >
         <div className="px-5 h-14 md:h-16 flex items-center justify-between">
