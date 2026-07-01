@@ -3,17 +3,16 @@ import { useEffect, useState } from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-const MAPBOX_TOKEN = import.meta.env.PUBLIC_MAPBOX_TOKEN
-
 interface Props {
   lng: number
   lat: number
   zoom?: number
   popup?: string
   className?: string
+  mapboxToken?: string
 }
 
-export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '' }: Props) {
+export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', mapboxToken }: Props) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [hasError, setHasError] = useState(false)
 
@@ -30,12 +29,12 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '' }
   const containerId = 'mapbox-map'
 
   useEffect(() => {
-    if (!MAPBOX_TOKEN) {
+    if (!mapboxToken) {
       setHasError(true)
       return
     }
 
-    mapboxgl.accessToken = MAPBOX_TOKEN
+    mapboxgl.accessToken = mapboxToken
 
     try {
       const map = new mapboxgl.Map({
@@ -69,7 +68,7 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '' }
         <div className="text-center px-4">
           <span className="material-symbols-outlined text-4xl text-zinc-400 mb-2 block">map</span>
           <p className="text-xs text-zinc-500 dark:text-zinc-400 font-light">
-            {MAPBOX_TOKEN ? 'Error al cargar el mapa' : 'Mapa no disponible'}
+            {mapboxToken ? 'Error al cargar el mapa' : 'Mapa no disponible'}
           </p>
         </div>
       </div>

@@ -6,7 +6,11 @@ import MapboxMap from '../components/MapboxMap'
 import WeatherCard from '../components/WeatherCard'
 import { waChilcas } from '../constants'
 
-export default function ChilcasContent() {
+interface Props {
+  mapboxToken?: string
+}
+
+export default function ChilcasContent({ mapboxToken }: Props) {
   const lang = useStore(langStore)
   const t = lang === 'es' ? es.chilcasPage : en.chilcasPage
 
@@ -216,6 +220,7 @@ export default function ChilcasContent() {
                 zoom={14}
                 popup={lang === 'es' ? 'Las Chilcas, LlayLlay' : 'Las Chilcas, LlayLlay'}
                 className="absolute inset-0"
+                mapboxToken={mapboxToken}
               />
             </div>
           </div>
