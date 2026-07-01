@@ -9,8 +9,8 @@ import '../styles/global.css'
 ---
 
 <BaseLayout title="Las Chilcas — Valparaíso Andino" description={es.chilcasPage.metaDesc}>
-  <Navbar client:load />
-  <ChilcasHero client:visible />
+  <Navbar client:only="react" />
+  <ChilcasHero client:only="react" />
   <ChilcasContent client:only="react" />
   <Footer />
 </BaseLayout>

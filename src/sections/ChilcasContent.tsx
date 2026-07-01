@@ -169,7 +169,7 @@ export default function ChilcasContent() {
         <div className="sticky top-0 h-[400px] md:h-[600px] overflow-hidden">
           <video
             src="/assets/chilcasInside01.mp4"
-            poster="/assets/chilcasInside01-poster.jpg"
+
             autoPlay
             muted
             loop
