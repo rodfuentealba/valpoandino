@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState, useRef } from 'react'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 interface Props {
   lng: number
@@ -35,7 +36,6 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
 
     import('mapbox-gl').then((mod) => {
       const mapboxgl = mod.default
-      import('mapbox-gl/dist/mapbox-gl.css')
 
       mapboxgl.accessToken = mapboxToken
 
@@ -48,6 +48,8 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
           attributionControl: false,
         })
 
+        map.on('load', () => setStatus('ready'))
+
         map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
 
         const marker = new mapboxgl.Marker({ color: '#f87171' }).setLngLat([lng, lat]).addTo(map)
@@ -56,7 +58,7 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
           marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
         }
 
-        setStatus('ready')
+        map.on('error', () => setStatus('error'))
       } catch {
         setStatus('error')
       }
