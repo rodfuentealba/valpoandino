@@ -27,8 +27,8 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
   }, [])
 
   useEffect(() => {
-    if (!mapboxToken) {
-      setStatus('error')
+    if (!mapboxToken || !containerRef.current) {
+      if (!mapboxToken) setStatus('error')
       return
     }
 
@@ -72,17 +72,15 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
   }, [theme, lng, lat, zoom, popup, mapboxToken])
 
   return (
-    <div className={`relative w-full h-full ${status === 'error' ? 'bg-zinc-200 dark:bg-zinc-800' : ''} ${className}`}>
+    <div className={`relative w-full h-full ${className}`}>
+      <div ref={containerRef} className="absolute inset-0" />
       {status === 'loading' && (
-        <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+        <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center pointer-events-none">
           <span className="material-symbols-outlined text-4xl text-zinc-400">map</span>
         </div>
       )}
-      {status === 'ready' && (
-        <div ref={containerRef} className="absolute inset-0" />
-      )}
       {status === 'error' && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center pointer-events-none">
           <div className="text-center px-4">
             <span className="material-symbols-outlined text-4xl text-zinc-400 mb-2 block">map</span>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 font-light">
