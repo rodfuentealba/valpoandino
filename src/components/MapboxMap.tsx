@@ -13,19 +13,9 @@ interface Props {
 }
 
 export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', mapboxToken }: Props) {
+  const mapRef = useRef<mapboxgl.Map | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
-
-  useEffect(() => {
-    const check = () => {
-      setTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light')
-    }
-    check()
-    const obs = new MutationObserver(check)
-    obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
-    return () => obs.disconnect()
-  }, [])
 
   useEffect(() => {
     if (!mapboxToken || !containerRef.current) {
@@ -33,14 +23,11 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
       return
     }
 
-    let map: mapboxgl.Map | null = null
-
-    mapboxgl.accessToken = mapboxToken
-
     try {
-      map = new mapboxgl.Map({
-        container: containerRef.current!,
-        style: theme === 'dark' ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11',
+      const map = new mapboxgl.Map({
+        accessToken: mapboxToken,
+        container: containerRef.current,
+        style: 'mapbox://styles/mapbox/light-v11',
         center: [lng, lat],
         zoom,
         attributionControl: false,
@@ -48,7 +35,6 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
 
       map.on('load', () => setStatus('ready'))
       map.on('error', () => setStatus('error'))
-
       map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
 
       const marker = new mapboxgl.Marker({ color: '#f87171' }).setLngLat([lng, lat]).addTo(map)
@@ -56,29 +42,27 @@ export default function MapboxMap({ lng, lat, zoom = 13, popup, className = '', 
       if (popup) {
         marker.setPopup(new mapboxgl.Popup({ offset: 25 }).setText(popup))
       }
+
+      mapRef.current = map
     } catch {
       setStatus('error')
     }
 
     return () => {
-      if (map) map.remove()
+      mapRef.current?.remove()
+      mapRef.current = null
     }
-  }, [theme, lng, lat, zoom, popup, mapboxToken])
+  }, [lng, lat, zoom, popup, mapboxToken])
 
   return (
-    <div className={`relative w-full h-full ${className}`}>
+    <div className={`relative w-full h-full min-h-[250px] md:min-h-[450px] ${className}`}>
       <div ref={containerRef} className="absolute inset-0" />
-      {status === 'loading' && (
-        <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center pointer-events-none">
-          <span className="material-symbols-outlined text-4xl text-zinc-400">map</span>
-        </div>
-      )}
-      {status === 'error' && (
-        <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center pointer-events-none">
+      {status !== 'ready' && (
+        <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center pointer-events-none z-10">
           <div className="text-center px-4">
             <span className="material-symbols-outlined text-4xl text-zinc-400 mb-2 block">map</span>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 font-light">
-              {mapboxToken ? 'Error al cargar el mapa' : 'Mapa no disponible'}
+              {status === 'error' ? (mapboxToken ? 'Error al cargar el mapa' : 'Mapa no disponible') : 'Cargando mapa...'}
             </p>
           </div>
         </div>
