@@ -46,7 +46,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
         </div>
 
         <div
-          className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-fixed bg-center bg-cover"
+          className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-scroll md:bg-fixed bg-center bg-cover"
           style={{ backgroundImage: "url('/assets/ChilcasSeparator.jpg')" }}
         ></div>
 
