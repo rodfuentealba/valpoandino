@@ -197,6 +197,7 @@ export const es = {
       'Diseñamos experiencias a la medida para colegios y empresas.',
     texto2: 'A través de la escalada en roca, trekking y educación ambiental.',
     destacado: 'experiencias',
+    videoLabel: 'Ver experiencia',
     cta: 'COTIZA TU EXPERIENCIA',
   },
 }
