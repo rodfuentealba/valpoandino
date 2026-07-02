@@ -85,6 +85,15 @@ export default function Collab() {
                 <HighlightedText texto={t.texto} destacado={t.destacado}  />
                 {t.texto2}
               </p>
+              <a
+                href="https://www.instagram.com/p/DM6GEeZJ_1f/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-5 gap-1 text-sm text-red-400 hover:text-red-500 font-bold transition-colors"
+              >
+                <span className="material-symbols-outlined text-xl">smart_display</span>
+                {t.videoLabel}
+              </a>
             </div>
 
             <a

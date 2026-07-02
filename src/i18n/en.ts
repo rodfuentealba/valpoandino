@@ -195,6 +195,7 @@ export const en = {
       'We design adventure experiences for schools and companies.',
     texto2: 'Through climbing, trekking and environmental education.',
     destacado: 'adventure experiences',
+    videoLabel: 'Watch experience',
     cta: 'GET A QUOTE',
   },
 }
