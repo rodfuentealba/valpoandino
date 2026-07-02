@@ -6,7 +6,8 @@ import { en } from '../i18n/en'
 import { waService, waMoreInfo } from '../constants'
 import { FadeIn, StaggerIn } from '../components/Reveal'
 
-const serviceImages = ['/assets/service01.jpg', '/assets/service02.jpg']
+const v = '?v=2'
+const serviceImages = [`/assets/service01.jpg${v}`, `/assets/service02.jpg${v}`]
 
 function HighlightedText({ texto, destacado }: { texto: string; destacado: string }) {
   if (!destacado) return <>{texto}</>
