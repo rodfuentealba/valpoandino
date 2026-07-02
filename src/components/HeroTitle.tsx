@@ -43,10 +43,7 @@ export default function HeroTitle() {
   }, [])
 
   return (
-    <h1
-      ref={ref}
-      className="text-white dark:text-zinc-900"
-    >
+    <h1 ref={ref} className="text-white dark:text-zinc-900">
       <span className="block text-7xl md:text-[10rem] lg:text-[12rem] font-light tracking-tight leading-none">
         {splitText('valparaíso')}
       </span>

@@ -31,10 +31,7 @@ export default function Servicios() {
       className="relative w-full bg-white dark:bg-zinc-900 overflow-hidden pb-20 md:pb-0 mt-[60%] md:mt-0"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 md:py-32">
-        <FadeIn
-          as="p"
-          className="text-md font-semibold uppercase text-black dark:text-white mb-16"
-        >
+        <FadeIn as="p" className="text-md font-semibold uppercase text-black dark:text-white mb-16">
           {t.titulo}
         </FadeIn>
 
@@ -124,7 +121,7 @@ export default function Servicios() {
                     </a>
                   </>
                 )}
-            </FadeIn>
+              </FadeIn>
             )
           })}
         </div>
@@ -144,7 +141,7 @@ export default function Servicios() {
                 {col.titulo}
               </h4>
               <p className="px-10 md:p-0 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
-                {col.texto}
+                <HighlightedText texto={col.texto} destacado={col.destacado} />
               </p>
             </div>
           ))}

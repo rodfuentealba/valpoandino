@@ -33,7 +33,7 @@ export const es = {
         titulo: 'Por el día',
         subtitulo: 'Escalada en Roca.',
         texto:
-          'Experiencia de un día de escalada en roca en uno de los mejores sectores de Chile, Las Chilcas - Llay Llay.',
+          'Vivencia un día de escalada en roca en uno de los mejores sectores de Chile, Las Chilcas - Llay Llay.',
         destacado: 'Las Chilcas - Llay Llay.',
         cta: 'RECIBIR PROGRAMA',
       },
@@ -45,6 +45,7 @@ export const es = {
         titulo: 'Reuniones',
         texto:
           'Aprende a montar triángulos de fuerza para la escalada deportiva en roca, monolargos.',
+        destacado: 'triángulos de fuerza',
       },
       {
         icono: 'arrow_or_edge',
@@ -52,12 +53,14 @@ export const es = {
         titulo: 'Rápel',
         texto:
           'Aprende el sistema de descenso por cuerda utilizado para escalada deportiva en roca.',
+        destacado: 'sistema de descenso',
       },
       {
         icono: 'elevation',
-        tituloBold: 'Clínica de',
+        tituloBold: 'Taller de',
         titulo: 'Vuelos - 2 Días',
         texto: 'Factores de caída y vuelos dinámicos.',
+        destacado: 'vuelos dinámicos',
       },
     ],
   },
@@ -74,15 +77,15 @@ export const es = {
       {
         icon: 'location_on',
         label: 'Ubicación',
-        value: 'km 74 Ruta 5 Norte, LlayLlay. 1 h desde Santiago / Valparaíso',
+        value: 'km 74 Ruta 5 Norte, LlayLlay. 1 h desde Santiago / Valparaíso.',
       },
-      { icon: 'terrain', label: 'Tipo de roca', value: 'Conglomerado (tomas de agujeros y romos)' },
-      { icon: 'route', label: 'Rutas', value: '+100 deportivas equipadas con bolts. 5−8 Grado' },
+      { icon: 'terrain', label: 'Tipo de roca', value: 'Conglomerado (tomas de agujeros y romos).' },
+      { icon: 'route', label: 'Rutas', value: '+100 deportivas equipadas con bolts. 5−8 Grado.' },
       { icon: 'thermostat', label: 'Clima', value: 'Mediterráneo semiárido.' },
       {
         icon: 'layers',
         label: 'Sectores',
-        value: 'El Cubo, La Muela, Desplomilandia y Tecnobloque',
+        value: 'El Cubo, La Muela, Desplomilandia y Tecnobloque.',
       },
       {
         icon: 'directions_car',
@@ -131,7 +134,7 @@ export const es = {
       {
         icon: 'landscape',
         title: 'Geología',
-        text: 'Las paredes de conglomerado pertenecen a la Formación Abanico (Mioceno), una roca sedimentaria compuesta por cantos rodados y matriz arenisca. Su textura porosa y rugosa crea agarres característicos de agujero y romo.',
+        text: 'Las paredes de conglomerado pertenecen a la Formación Chilcas, una roca sedimentaria compuesta por cantos rodados y matriz arenisca. Su textura porosa y rugosa crea agarres característicos de agujero y romo.',
       },
     ],
     block3Title: 'Acceso',
@@ -191,7 +194,9 @@ export const es = {
     tituloBold: 'Programa Educativo',
     titulo: 'Colegios y Empresas',
     texto:
-      'Diseñamos experiencias de aventura a la medida para colegios y empresas. A través de la escalada, el trekking y la educación ambiental.',
+      'Diseñamos experiencias a la medida para colegios y empresas.',
+    texto2: 'A través de la escalada en roca, trekking y educación ambiental.',
+    destacado: 'experiencias',
     cta: 'COTIZA TU EXPERIENCIA',
   },
 }

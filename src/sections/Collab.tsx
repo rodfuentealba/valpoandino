@@ -11,6 +11,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+function HighlightedText({ texto, destacado }: { texto: string; destacado: string }) {
+  if (!destacado) return <>{texto}</>
+  const parts = texto.split(destacado)
+  if (parts.length < 2) return <>{texto}</>
+  return (
+    <>
+      {parts[0]}
+      <span className="text-red-400 font-bold">{destacado}</span>
+      {parts.slice(1).join('')}
+    </>
+  )
+}
+
 export default function Collab() {
   const lang = useStore(langStore)
   const t = lang === 'es' ? es.collab : en.collab
@@ -67,9 +80,12 @@ export default function Collab() {
               {t.tituloBold} <span className="font-light">{t.titulo}</span>
             </h3>
 
-            <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
-              {t.texto}
-            </p>
+            <div>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+                <HighlightedText texto={t.texto} destacado={t.destacado}  />
+                {t.texto2}
+              </p>
+            </div>
 
             <a
               href={waCollab(lang, t.tituloBold)}
@@ -87,8 +103,8 @@ export default function Collab() {
             className="md:col-span-3 relative z-0 overflow-hidden min-h-[300px] md:min-h-[600px]"
           >
             <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-110"
-              style={{ backgroundImage: "url('/assets/bgCollab.png')" }}
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-110 grayscale"
+              style={{ backgroundImage: "url('/assets/bgCollab.jpg')" }}
             >
               <div className="absolute inset-0 bg-black/30" />
             </div>

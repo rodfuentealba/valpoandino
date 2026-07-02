@@ -82,11 +82,7 @@ export default function Navbar() {
 
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } })
 
-      tl.fromTo(
-        children[0],
-        { opacity: 0, y: -15 },
-        { opacity: 1, y: 0, duration: 0.5 },
-      )
+      tl.fromTo(children[0], { opacity: 0, y: -15 }, { opacity: 1, y: 0, duration: 0.5 })
 
       tl.fromTo(
         [children[1], children[2], children[3]].filter(Boolean),

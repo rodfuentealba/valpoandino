@@ -36,7 +36,16 @@ export default function Chilcas() {
         gsap.fromTo(
           img,
           { scale: 1 },
-          { scale: 1.2, ease: 'none', scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: 1 } },
+          {
+            scale: 1.2,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: img.parentElement,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1,
+            },
+          },
         )
       }
 
