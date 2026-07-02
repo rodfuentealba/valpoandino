@@ -3,11 +3,19 @@ import Analytics from '@vercel/analytics/astro'
 interface Props {
   title?: string
   description?: string
+  keywords?: string
+  gscVerification?: string
 }
 const {
   title = 'Valparaíso Andino — Escalada en Roca',
   description = 'Experiencias de escalada en roca y deportes en montaña en Valparaíso, Chile.',
+  keywords = 'escalada en roca, valparaíso, andinismo, deportes de montaña, las chilcas, trekking, chile',
+  gscVerification = '',
 } = Astro.props
+
+const canonical = Astro.url.pathname === '/'
+  ? 'https://www.valparaisoandino.cl'
+  : `https://www.valparaisoandino.cl${Astro.url.pathname}`
 ---
 
 <!doctype html>
@@ -16,6 +24,9 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={canonical} />
+    {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
