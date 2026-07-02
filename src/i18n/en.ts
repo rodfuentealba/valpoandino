@@ -44,18 +44,21 @@ export const en = {
         tituloBold: 'Anchor',
         titulo: 'Workshop',
         texto: 'Learn to set up load-sharing anchor systems for single-pitch sport rock climbing.',
+        destacado: 'load-sharing anchor systems',
       },
       {
         icono: 'terrain',
         tituloBold: 'Rappel',
         titulo: 'Workshop',
         texto: 'Learn the rope descent system used in sport rock climbing.',
+        destacado: 'rope descent system',
       },
       {
         icono: 'verified',
         tituloBold: 'Whipper',
-        titulo: 'Clinic - 2 Days',
+        titulo: 'Workshop - 2 Days',
         texto: 'Fall factors and dynamic whippers.',
+        destacado: 'dynamic whippers',
       },
     ],
   },
@@ -72,15 +75,15 @@ export const en = {
       {
         icon: 'location_on',
         label: 'Location',
-        value: 'km 74 Ruta 5 Norte, LlayLlay. 1 h from Santiago / Valparaíso',
+        value: 'km 74 Ruta 5 Norte, LlayLlay. 1 h from Santiago / Valparaíso.',
       },
-      { icon: 'terrain', label: 'Rock type', value: 'Conglomerate (pocket and sloper holds)' },
-      { icon: 'route', label: 'Routes', value: '+100 sport routes, bolted. 5−8 Grade' },
+      { icon: 'terrain', label: 'Rock type', value: 'Conglomerate (pocket and sloper holds).' },
+      { icon: 'route', label: 'Routes', value: '+100 sport routes, bolted. 5−8 Grade.' },
       { icon: 'thermostat', label: 'Climate', value: 'Semi-arid Mediterranean.' },
       {
         icon: 'layers',
         label: 'Sectors',
-        value: 'El Cubo, La Muela, Desplomilandia y Tecnobloque',
+        value: 'El Cubo, La Muela, Desplomilandia y Tecnobloque.',
       },
       {
         icon: 'directions_car',
@@ -129,7 +132,7 @@ export const en = {
       {
         icon: 'landscape',
         title: 'Geology',
-        text: 'The conglomerate walls belong to the Abanico Formation (Miocene), a sedimentary rock composed of rounded pebbles in a sandstone matrix. Its porous, rough texture creates characteristic pocket and sloper holds.',
+        text: 'The conglomerate walls belong to the Chilcas Formation, a sedimentary rock composed of rounded pebbles in a sandstone matrix. Its porous, rough texture creates characteristic pocket and sloper holds.',
       },
     ],
     block3Title: 'Quick',
@@ -189,7 +192,9 @@ export const en = {
     tituloBold: 'Educational Adventure Program',
     titulo: 'Schools and Companies',
     texto:
-      'We design tailor-made adventure experiences for schools and companies. Through climbing, trekking, and environmental education.',
+      'We design adventure experiences for schools and companies.',
+    texto2: 'Through climbing, trekking and environmental education.',
+    destacado: 'adventure experiences',
     cta: 'GET A QUOTE',
   },
 }

@@ -141,7 +141,7 @@ export default function Servicios() {
                 {col.titulo}
               </h4>
               <p className="px-10 md:p-0 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
-                {col.texto}
+                <HighlightedText texto={col.texto} destacado={col.destacado} />
               </p>
             </div>
           ))}
