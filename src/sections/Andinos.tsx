@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Andinos() {
   const lang = useStore(langStore)
   const t = lang === 'es' ? es.andinos : en.andinos
-  const imgRef = useRef<HTMLDivElement>(null)
+  const imgRef = useRef<HTMLImageElement>(null)
   const iconRef = useRef<HTMLDivElement>(null)
   const textRef = useRef<HTMLDivElement>(null)
 
@@ -83,17 +83,17 @@ export default function Andinos() {
           alt="Montañas de los Andes"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
+      </div>
 
-        <div ref={textRef} className="absolute inset-0 z-10 translate-y-[45%] md:translate-y-[65%]">
-          <div className="w-full max-w-6xl mx-auto px-6">
-            <div className="ml-auto w-full md:w-1/2 text-left">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-red-400 mb-6 opacity-0 translate-y-8">
-                {t.titulo}
-              </h2>
-              <p className="leading-9 md:leading-10 text-lg md:text-2xl text-red-400 opacity-0 translate-y-8">
-                {t.texto}
-              </p>
-            </div>
+      <div ref={textRef} className="absolute left-0 right-0 bottom-0 z-10 translate-y-1/2">
+        <div className="w-full max-w-6xl mx-auto px-6">
+          <div className="ml-auto w-full md:w-1/2 text-left">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-red-400 mb-6 opacity-0 translate-y-8">
+              {t.titulo}
+            </h2>
+            <p className="leading-9 md:leading-10 text-lg md:text-2xl text-red-400 opacity-0 translate-y-8">
+              {t.texto}
+            </p>
           </div>
         </div>
       </div>

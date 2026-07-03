@@ -65,7 +65,7 @@ export default function Collab() {
         </div>
 
         <FadeIn
-          as="h2"
+          as="p"
           className="text-md font-semibold uppercase text-black dark:text-white mt-0 mb-16"
         >
           {t.seccion}
