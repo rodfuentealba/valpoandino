@@ -65,7 +65,7 @@ export default function Collab() {
         </div>
 
         <FadeIn
-          as="p"
+          as="h2"
           className="text-md font-semibold uppercase text-black dark:text-white mt-0 mb-16"
         >
           {t.seccion}
@@ -111,12 +111,13 @@ export default function Collab() {
             as="div"
             className="md:col-span-3 relative z-0 overflow-hidden min-h-[300px] md:min-h-[600px]"
           >
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-110 grayscale"
-              style={{ backgroundImage: "url('/assets/bgCollab.jpg')" }}
-            >
-              <div className="absolute inset-0 bg-black/30" />
-            </div>
+            <img
+              src="/assets/bgCollab.jpg"
+              alt="Programa Educativo Colegios y Empresas"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110 grayscale"
+            />
+            <div className="absolute inset-0 bg-black/30" />
           </FadeIn>
 
           <a

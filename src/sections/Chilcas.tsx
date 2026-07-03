@@ -99,12 +99,12 @@ export default function Chilcas() {
           data-astro-transition-name="chilcas-title"
           data-astro-transition-animate="morph"
         >
-          <p className="text-6xl md:text-8xl lg:text-[10rem] font-light text-black dark:text-white leading-none tracking-tight">
+          <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-light text-black dark:text-white leading-none tracking-tight">
             {splitText('LasChilcas')}
-          </p>
-          <p className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-black dark:text-white leading-none tracking-tight -mt-3 md:-mt-8">
+          </h2>
+          <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-black dark:text-white leading-none tracking-tight -mt-3 md:-mt-8">
             {splitText('LlayLlay.')}
-          </p>
+          </h2>
         </div>
       </div>
 
@@ -118,6 +118,7 @@ export default function Chilcas() {
           ref={imgRef}
           src="/assets/bgChilcas.png"
           alt="Las Chilcas - LlayLlay"
+          loading="lazy"
           className="w-full h-auto object-contain grayscale"
         />
       </FadeIn>

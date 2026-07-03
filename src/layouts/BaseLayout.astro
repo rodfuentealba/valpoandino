@@ -5,17 +5,27 @@ interface Props {
   description?: string
   keywords?: string
   gscVerification?: string
+  image?: string
+  type?: string
 }
 const {
   title = 'Valparaíso Andino — Escalada en Roca',
   description = 'Experiencias de escalada en roca y deportes en montaña en Valparaíso, Chile.',
   keywords = 'escalada en roca, valparaíso, andinismo, deportes de montaña, las chilcas, trekking, chile',
   gscVerification = '',
+  image = 'https://www.valparaisoandino.cl/thumbnail.png',
+  type = 'website',
 } = Astro.props
 
 const canonical = Astro.url.pathname === '/'
   ? 'https://www.valparaisoandino.cl'
   : `https://www.valparaisoandino.cl${Astro.url.pathname}`
+const ogUrl = canonical
+const ogImage = image
+const ogImageWidth = 1200
+const ogImageHeight = 630
+const siteName = 'Valparaíso Andino'
+const twitterHandle = '@valparaiso_andino'
 ---
 
 <!doctype html>
@@ -25,19 +35,32 @@ const canonical = Astro.url.pathname === '/'
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta property="og:type" content="website" />
+    <link rel="apple-touch-icon" href="/thumbnail.png" />
+
+    <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://www.valparaisoandino.cl/thumbnail.png" />
-    <meta property="og:url" content="https://www.valparaisoandino.cl" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content={ogImageWidth} />
+    <meta property="og:image:height" content={ogImageHeight} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content={siteName} />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://www.valparaisoandino.cl/thumbnail.png" />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content={twitterHandle} />
+
     <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0"
@@ -50,10 +73,45 @@ const canonical = Astro.url.pathname === '/'
       if (t === 'dark' || (!t && dark)) document.documentElement.classList.add('dark')
     </script>
     <Analytics />
+
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.valparaisoandino.cl/#business",
+            "name": "Valparaíso Andino",
+            "description": "Experiencias de escalada en roca y deportes en montaña en Valparaíso, Chile.",
+            "url": "https://www.valparaisoandino.cl",
+            "telephone": "+56962822676",
+            "image": "https://www.valparaisoandino.cl/thumbnail.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Valparaíso",
+              "addressCountry": "CL"
+            },
+            "sameAs": ["https://www.instagram.com/valparaiso_andino/"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.valparaisoandino.cl/#website",
+            "name": "Valparaíso Andino",
+            "url": "https://www.valparaisoandino.cl",
+            "publisher": { "@id": "https://www.valparaisoandino.cl/#business" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body
     class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-white transition-colors duration-300"
   >
-    <slot />
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-zinc-900 focus:px-4 focus:py-2 focus:rounded focus:shadow-lg">
+      Ir al contenido principal
+    </a>
+    <div id="main-content">
+      <slot />
+    </div>
   </body>
 </html>

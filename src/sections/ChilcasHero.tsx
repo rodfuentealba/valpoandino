@@ -101,6 +101,7 @@ export default function ChilcasHero() {
         <img
           src="/assets/bgChilcas.png"
           alt="Las Chilcas - LlayLlay"
+          loading="lazy"
           className="w-full h-auto object-contain"
         />
       </div>

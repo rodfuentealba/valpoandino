@@ -32,7 +32,7 @@ export default function Servicios() {
       className="relative w-full bg-white dark:bg-zinc-900 overflow-hidden pb-20 md:pb-0 mt-[60%] md:mt-0"
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 md:py-32">
-        <FadeIn as="p" className="text-md font-semibold uppercase text-black dark:text-white mb-16">
+        <FadeIn as="h2" className="text-md font-semibold uppercase text-black dark:text-white mb-16">
           {t.titulo}
         </FadeIn>
 
@@ -46,11 +46,13 @@ export default function Servicios() {
               <FadeIn key={i} className="grid md:grid-cols-5 gap-0">
                 {isReversed ? (
                   <>
-                    <div className="md:col-span-3 relative overflow-hidden order-2 md:order-1">
-                      <div
-                        className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110 grayscale"
-                        style={{ backgroundImage: `url('${img}')` }}
-                      ></div>
+                    <div className="md:col-span-3 relative overflow-hidden order-2 md:order-1 min-h-[300px] md:min-h-[400px]">
+                      <img
+                        src={img}
+                        alt={fullName}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110 grayscale"
+                      />
                     </div>
 
                     <div className="md:col-span-2 flex flex-col text-left justify-between gap-6 dark:bg-zinc-900 py-8 md:p-12 order-1 md:order-2">
@@ -104,11 +106,13 @@ export default function Servicios() {
                         <span className="material-symbols-outlined text-2xl">arrow_forward</span>
                       </a>
                     </div>
-                    <div className="md:col-span-3 relative overflow-hidden">
-                      <div
-                        className="relative min-h-[300px] md:min-h-[400px] bg-cover bg-center transition-transform duration-500 hover:scale-110 grayscale"
-                        style={{ backgroundImage: `url('${img}')` }}
-                      ></div>
+                    <div className="md:col-span-3 relative overflow-hidden min-h-[300px] md:min-h-[400px]">
+                      <img
+                        src={img}
+                        alt={fullName}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110 grayscale"
+                      />
                     </div>
 
                     <a

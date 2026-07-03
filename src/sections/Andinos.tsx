@@ -76,11 +76,12 @@ export default function Andinos() {
 
   return (
     <section id="andinos" className="relative w-full overflow-visible bg-white dark:bg-zinc-900">
-      <div className="relative w-full h-[320px] md:h-[500px]">
-        <div
+      <div className="relative w-full h-[320px] md:h-[500px] overflow-hidden">
+        <img
           ref={imgRef}
-          className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-          style={{ backgroundImage: "url('/assets/bgAndinos.png')" }}
+          src="/assets/bgAndinos.png"
+          alt="Montañas de los Andes"
+          className="absolute inset-0 w-full h-full object-cover object-top"
         />
 
         <div ref={textRef} className="absolute inset-0 z-10 translate-y-[45%] md:translate-y-[65%]">

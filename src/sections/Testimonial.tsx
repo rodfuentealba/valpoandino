@@ -20,21 +20,26 @@ export default function Testimonial() {
 
   return (
     <section className="relative w-full overflow-hidden mt-12 md:mt-0">
-      <div
-        className="absolute inset-0 bg-cover bg-center grayscale transition-all duration-500"
-        style={{
-          backgroundImage: `url('${testimonialImages[selected % testimonialImages.length]}')`,
-        }}
-      />
+      {testimonialImages.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={t.personas[i]?.nombre ?? ''}
+          loading="lazy"
+          className={`absolute inset-0 w-full h-full object-cover grayscale transition-opacity duration-500 ${
+            i === selected ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+      ))}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
 
       <FadeIn className="relative max-w-5xl mx-auto px-6 md:px-8 lg:px-20 py-10 md:py-20">
         <div className="md:grid md:grid-cols-7 md:gap-8">
           <div className="md:col-span-4">
             <div className="p-8 md:p-12 md:pl-0 md:text-left text-center">
-              <p className="text-md font-semibold uppercase text-red-400 mb-16 md:text-left text-center">
+              <h2 className="text-md font-semibold uppercase text-red-400 mb-16 md:text-left text-center">
                 {t.titulo}
-              </p>
+              </h2>
               <p className="text-white md:leading-10 text-md md:text-xl font-light mb-6">
                 &ldquo;{t.personas[selected].texto}&rdquo;
               </p>
