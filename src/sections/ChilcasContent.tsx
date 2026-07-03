@@ -46,12 +46,12 @@ export default function ChilcasContent({ mapboxToken }: Props) {
           </div>
         </FadeIn>
 
-        <img
-          src="/assets/ChilcasSeparator.jpg"
-          alt="Pared de escalada Las Chilcas"
-          loading="lazy"
-          className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] object-cover"
-        />
+        <div
+          className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-scroll md:bg-fixed bg-center bg-cover"
+          style={{ backgroundImage: "url('/assets/ChilcasSeparator.jpg')" }}
+          role="img"
+          aria-label="Pared de escalada Las Chilcas"
+        ></div>
 
         <div className="space-y-20 md:space-y-32 mt-20">
           <FadeIn className="grid md:grid-cols-5 gap-8 items-center">
