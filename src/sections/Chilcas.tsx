@@ -61,7 +61,7 @@ export default function Chilcas() {
       })
 
       if (title) {
-        const chars = title.querySelectorAll('p > span')
+        const chars = title.querySelectorAll('h2 > span')
         if (chars.length) {
           gsap.fromTo(
             chars,
