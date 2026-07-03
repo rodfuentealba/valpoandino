@@ -13,7 +13,8 @@
     "check": "astro check",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.7",
@@ -41,6 +42,8 @@
     "eslint-plugin-astro": "^2.1.1",
     "prettier": "^3.9.4",
     "prettier-plugin-astro": "^0.14.1",
+    "sharp": "^0.35.3",
+    "svgo": "^4.0.1",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.62.1"
   }
