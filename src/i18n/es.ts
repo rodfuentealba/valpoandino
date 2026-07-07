@@ -16,7 +16,7 @@ export const es = {
   andinos: {
     titulo: 'Andinos®',
     texto:
-      'Equipo autónomo de andinistas y escaladores dedicados a transmitir experiencias desde el año 2018 nuestra misión ha sido ofrecer experiencias únicas y seguras para disfrutar al máximo de la escalada en roca.',
+      'Equipo autónomo de andinistas y escaladores. Dedicados a transmitir experiencias desde el año 2018 nuestra misión ha sido ofrecer experiencias únicas y seguras para disfrutar al máximo de la escalada en roca.',
   },
   servicios: {
     titulo: 'Servicios',

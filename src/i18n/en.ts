@@ -16,7 +16,7 @@ export const en = {
   andinos: {
     titulo: 'Andinos®',
     texto:
-      'An autonomous team of mountaineers and climbers dedicated to sharing experiences since 2018. Our mission has been to offer unique and safe experiences to fully enjoy rock climbing.',
+      'An autonomous team of mountaineers and climbers. Dedicated to sharing experiences since 2018. Our mission has been to offer unique and safe experiences to fully enjoy rock climbing.',
   },
   servicios: {
     titulo: 'Services',
