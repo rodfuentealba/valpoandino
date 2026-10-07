@@ -65,7 +65,8 @@ export const en = {
   faq: {
     tituloPrincipal: 'General Questions',
     tituloSecundario: 'from our climbers.',
-    descripcion: 'Our mountain and climbing team is always available to help you with clear, safe, and reliable answers whenever needed.',
+    descripcion:
+      'Our mountain and climbing team is always available to help you with clear, safe, and reliable answers whenever needed.',
     cta: 'Contact on WhatsApp',
     items: [
       {
@@ -245,8 +246,7 @@ export const en = {
     seccion: 'Collab',
     tituloBold: 'Educational Adventure Program',
     titulo: 'Schools and Companies',
-    texto:
-      'We design adventure experiences for schools and companies.',
+    texto: 'We design adventure experiences for schools and companies.',
     texto2: 'Through climbing, trekking and environmental education.',
     destacado: 'adventure experiences',
     videoLabel: 'Watch experience',

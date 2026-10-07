@@ -67,7 +67,8 @@ export const es = {
   faq: {
     tituloPrincipal: 'Preguntas Frecuentes',
     tituloSecundario: 'de nuestra comunidad.',
-    descripcion: 'Nuestro equipo de andinistas y escaladores está siempre disponible para orientarte de forma clara, cercana y segura.',
+    descripcion:
+      'Nuestro equipo de andinistas y escaladores está siempre disponible para orientarte de forma clara, cercana y segura.',
     cta: 'Contactar por WhatsApp',
     items: [
       {
@@ -133,7 +134,11 @@ export const es = {
         label: 'Ubicación',
         value: 'km 74 Ruta 5 Norte, LlayLlay. 1 h desde Santiago / Valparaíso.',
       },
-      { icon: 'terrain', label: 'Tipo de roca', value: 'Conglomerado (tomas de agujeros y romos).' },
+      {
+        icon: 'terrain',
+        label: 'Tipo de roca',
+        value: 'Conglomerado (tomas de agujeros y romos).',
+      },
       { icon: 'route', label: 'Rutas', value: '+100 deportivas equipadas con bolts. 5−8 Grado.' },
       { icon: 'thermostat', label: 'Clima', value: 'Mediterráneo semiárido.' },
       {
@@ -247,8 +252,7 @@ export const es = {
     seccion: 'Collab',
     tituloBold: 'Programa Educativo',
     titulo: 'Colegios y Empresas',
-    texto:
-      'Diseñamos experiencias a la medida para colegios y empresas.',
+    texto: 'Diseñamos experiencias a la medida para colegios y empresas.',
     texto2: 'A través de la escalada en roca, trekking y educación ambiental.',
     destacado: 'experiencias',
     videoLabel: 'Ver experiencia',

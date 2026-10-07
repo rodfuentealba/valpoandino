@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 interface FadeInProps {
   children: ReactNode
   className?: string
-  as?: 'div' | 'span' | 'section' | 'article' | 'blockquote' | 'p'
+  as?: 'div' | 'span' | 'section' | 'article' | 'blockquote' | 'p' | 'h1' | 'h2' | 'h3'
   y?: number
   duration?: number
   delay?: number
@@ -52,7 +52,7 @@ export function FadeIn({
   }, [])
 
   return (
-    <Tag ref={ref as any} className={className} {...rest}>
+    <Tag ref={ref as React.Ref<any>} className={className} {...rest}>
       {children}
     </Tag>
   )

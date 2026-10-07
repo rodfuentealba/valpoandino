@@ -8,7 +8,10 @@ import { es } from '../i18n/index'
 import '../styles/global.css'
 ---
 
-<BaseLayout title="Escalada en Las Chilcas (Llay-Llay) — Guía y Sectores | Valparaíso Andino" description={es.chilcasPage.metaDesc}>
+<BaseLayout
+  title="Escalada en Las Chilcas (Llay-Llay) — Guía y Sectores | Valparaíso Andino"
+  description={es.chilcasPage.metaDesc}
+>
   <Navbar client:load />
   <ChilcasHero client:load />
   <ChilcasContent client:visible mapboxToken={import.meta.env.PUBLIC_MAPBOX_TOKEN} />

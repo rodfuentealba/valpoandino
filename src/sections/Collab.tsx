@@ -82,7 +82,7 @@ export default function Collab() {
 
             <div>
               <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
-                <HighlightedText texto={t.texto} destacado={t.destacado}  />
+                <HighlightedText texto={t.texto} destacado={t.destacado} />
                 {t.texto2}
               </p>
               <a

@@ -44,11 +44,7 @@ export default function FAQ() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold tracking-wide transition-all shadow-sm hover:shadow-md active:scale-95"
                 >
-                  <svg
-                    className="w-4 h-4 fill-current"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c.969.541 1.838.835 2.809.835 3.18 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.818-5.771-5.818zm9.969 5.766c0 5.505-4.475 9.97-9.969 9.97-1.719 0-3.364-.44-4.815-1.258l-5.216 1.35 1.39-5.075c-.93-1.49-1.429-3.218-1.429-4.987 0-5.504 4.475-9.97 9.969-9.97 5.503 0 10.07 4.466 10.07 9.97z" />
                   </svg>
                   {t.cta}
@@ -61,8 +57,9 @@ export default function FAQ() {
           <div className="lg:col-span-7 space-y-3.5">
             {t.items.map((item, idx) => {
               const isOpen = openIndex === idx
-              const hasList = 'list' in item && Array.isArray(item.list)
-              const hasModalities = 'modalities' in item && Array.isArray(item.modalities)
+              const list = 'list' in item && Array.isArray(item.list) ? item.list : null
+              const modalities =
+                'modalities' in item && Array.isArray(item.modalities) ? item.modalities : null
 
               return (
                 <FadeIn
@@ -127,13 +124,11 @@ export default function FAQ() {
 
                         {/* Texto complementario si existe */}
                         {'body' in item && item.body && (
-                          <p className="font-light text-zinc-600 dark:text-zinc-400">
-                            {item.body}
-                          </p>
+                          <p className="font-light text-zinc-600 dark:text-zinc-400">{item.body}</p>
                         )}
 
                         {/* Lista con emojis (ejemplo: equipo técnico) */}
-                        {hasList && (
+                        {list && (
                           <div className="space-y-2.5 pt-1">
                             {'listTitle' in item && item.listTitle && (
                               <p className="text-xs uppercase tracking-wider font-bold text-red-400">
@@ -141,7 +136,7 @@ export default function FAQ() {
                               </p>
                             )}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                              {item.list.map((el) => (
+                              {list.map((el) => (
                                 <div
                                   key={el.text}
                                   className="flex items-center gap-2.5 bg-white/70 dark:bg-zinc-900/60 rounded-xl px-3.5 py-2 border border-zinc-200/60 dark:border-zinc-700/50"
@@ -164,7 +159,7 @@ export default function FAQ() {
                         )}
 
                         {/* Modalidades separadas con saltos de línea y numeración (transporte) */}
-                        {hasModalities && (
+                        {modalities && (
                           <div className="space-y-3 pt-1">
                             {'listTitle' in item && item.listTitle && (
                               <p className="text-xs uppercase tracking-wider font-bold text-red-400">
@@ -172,7 +167,7 @@ export default function FAQ() {
                               </p>
                             )}
                             <div className="space-y-2.5">
-                              {item.modalities.map((m) => (
+                              {modalities.map((m) => (
                                 <div
                                   key={m.num}
                                   className="bg-white/80 dark:bg-zinc-900/70 p-4 rounded-xl border border-zinc-200/70 dark:border-zinc-700/60"
