@@ -16,7 +16,7 @@ export const en = {
   andinos: {
     titulo: 'Andinos®',
     texto:
-      'An autonomous team of mountaineers and climbers. Dedicated to sharing experiences since 2018. Our mission has been to offer unique and safe experiences to fully enjoy rock climbing.',
+      'An autonomous team of mountaineers and climbers dedicated to sharing experiences since 2018. Our mission has been to offer unique and safe experiences to fully enjoy rock climbing.',
   },
   servicios: {
     titulo: 'Services',
@@ -59,6 +59,60 @@ export const en = {
         titulo: 'Workshop - 2 Days',
         texto: 'Fall factors and dynamic whippers.',
         destacado: 'dynamic whippers',
+      },
+    ],
+  },
+  faq: {
+    tituloPrincipal: 'General Questions',
+    tituloSecundario: 'from our climbers.',
+    descripcion: 'Our mountain and climbing team is always available to help you with clear, safe, and reliable answers whenever needed.',
+    cta: 'Contact on WhatsApp',
+    items: [
+      {
+        pregunta: 'Do I need prior experience to join a climbing workshop?',
+        lead: 'Not at all. In our initiation workshop we start completely from scratch.',
+        body: 'We teach fundamental safety principles, wall movement technique, footwork, and how to belay a partner with full confidence.',
+      },
+      {
+        pregunta: 'Is technical gear included in the workshop fee?',
+        lead: 'Yes, all certified technical equipment is 100% included.',
+        listTitle: 'Gear provided for each session:',
+        list: [
+          { icon: '🪖', text: 'UIAA certified climbing helmet' },
+          { icon: '🧗', text: 'Adjustable climbing harness' },
+          { icon: '👟', text: 'Climbing shoes (rock shoes)' },
+          { icon: '➰', text: 'Dynamic climbing rope' },
+          { icon: '🔒', text: 'Locking safety carabiners' },
+          { icon: '⚙️', text: 'Quickdraws and belay device (ATC / GriGri)' },
+        ],
+        footerNote: 'You only need to bring comfortable sports clothing and drinking water.',
+      },
+      {
+        pregunta: 'Where do the sessions take place and how does transportation work?',
+        lead: 'Our climbing activities take place in Las Chilcas (Llay-Llay) and rock sectors around Valparaíso.',
+        listTitle: 'Available travel options:',
+        modalities: [
+          {
+            num: '01',
+            title: 'Coordinated vAndino Transport',
+            desc: 'We have private car transportation available with prior arrangement to pick you up departing from Valparaíso, Viña del Mar, and nearby areas.',
+          },
+          {
+            num: '02',
+            title: 'Independent Arrival',
+            desc: 'You can arrive directly at the sector meeting point in your own vehicle if you prefer.',
+          },
+        ],
+      },
+      {
+        pregunta: 'What safety standards and certifications do instructors have?',
+        lead: 'Over 10 years of active experience in mountaineering and rock climbing.',
+        body: 'We hold Wilderness First Responder (WFR) certifications and adhere to strict international UIAA risk management protocols.',
+      },
+      {
+        pregunta: 'How do I book a date or inquire about custom trips?',
+        lead: 'Bookings are coordinated directly through our official WhatsApp.',
+        body: 'Let us know your preferred dates, group size, and experience level, and we will send you registration details.',
       },
     ],
   },

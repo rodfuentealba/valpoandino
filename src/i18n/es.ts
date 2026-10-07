@@ -64,6 +64,60 @@ export const es = {
       },
     ],
   },
+  faq: {
+    tituloPrincipal: 'Preguntas Frecuentes',
+    tituloSecundario: 'de nuestra comunidad.',
+    descripcion: 'Nuestro equipo de andinistas y escaladores está siempre disponible para orientarte de forma clara, cercana y segura.',
+    cta: 'Contactar por WhatsApp',
+    items: [
+      {
+        pregunta: '¿Necesito experiencia previa para tomar un taller de escalada?',
+        lead: 'No, para nada. En nuestro taller de iniciación empezamos desde cero.',
+        body: 'Te enseñamos los principios básicos de seguridad, progresión en la pared, técnicas de pies y cómo asegurar a un compañero con total confianza.',
+      },
+      {
+        pregunta: '¿El equipo técnico está incluido en el valor del taller?',
+        lead: 'Sí, todo el equipo técnico certificado está 100% incluido.',
+        listTitle: 'Equipo que te entregamos en cada jornada:',
+        list: [
+          { icon: '🪖', text: 'Casco homologado UIAA' },
+          { icon: '🧗', text: 'Arnés de escalada ajustable' },
+          { icon: '👟', text: 'Zapatillas de escalada (pies de gato)' },
+          { icon: '➰', text: 'Cuerda dinámica de escalada' },
+          { icon: '🔒', text: 'Mosquetones de seguridad con seguro' },
+          { icon: '⚙️', text: 'Cintas exprés y sistema de freno (ATC / GriGri)' },
+        ],
+        footerNote: 'Tú solo debes llevar ropa cómoda y agua para hidratarte.',
+      },
+      {
+        pregunta: '¿Dónde se realizan las salidas y cómo es el transporte?',
+        lead: 'Nuestras actividades se desarrollan en Las Chilcas (Llay-Llay) y sectores de roca en Valparaíso y alrededores.',
+        listTitle: 'Modalidades de traslado disponibles:',
+        modalities: [
+          {
+            num: '01',
+            title: 'Transporte coordinado vAndino',
+            desc: 'Disponemos de automóvil con previa coordinación para recogerte y trasladarte saliendo desde Valparaíso, Viña del Mar y alrededores.',
+          },
+          {
+            num: '02',
+            title: 'Llegada de manera particular',
+            desc: 'Puedes llegar directamente al punto de encuentro en tu propio vehículo o transporte si así lo prefieres.',
+          },
+        ],
+      },
+      {
+        pregunta: '¿Qué medidas de seguridad y certificaciones tienen los instructores?',
+        lead: 'Más de 10 años de trayectoria activa en montaña y escalada en roca.',
+        body: 'Contamos con certificaciones de primeros auxilios en áreas remotas (WFR) y aplicamos estrictos protocolos de gestión de riesgo bajo estándares internacionales UIAA.',
+      },
+      {
+        pregunta: '¿Cómo reservo una fecha o consulto por salidas personalizadas?',
+        lead: 'La reserva se coordina directamente a través de nuestro WhatsApp oficial.',
+        body: 'Nos indicas la fecha deseada, cuántas personas son y su nivel de experiencia, y te enviamos la ficha de inscripción con todos los detalles.',
+      },
+    ],
+  },
   chilcas: {
     cta: 'SABER MÁS DEL SECTOR',
   },

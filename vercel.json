@@ -6,5 +6,31 @@
   "github": {
     "silent": true,
     "autoJobCancelation": true
-  }
+  },
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "valparaisoandino.cl" }],
+      "destination": "https://www.valparaisoandino.cl/:path",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" }
+      ]
+    },
+    {
+      "source": "/(assets|fonts|img)/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/(favicon.svg|favicon.ico|favicon.png|apple-touch-icon.png|icon-192.png|icon-512.png|thumbnail.jpg)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    }
+  ]
 }

@@ -7,7 +7,7 @@ import { waService, waMoreInfo } from '../constants'
 import { FadeIn, StaggerIn } from '../components/Reveal'
 
 const v = '?v=2'
-const serviceImages = [`/assets/service01.jpg${v}`, `/assets/service02.jpg${v}`]
+const serviceImages = [`/assets/service01.webp${v}`, `/assets/service02.webp${v}`]
 
 function HighlightedText({ texto, destacado }: { texto: string; destacado: string }) {
   if (!destacado) return <>{texto}</>
@@ -39,7 +39,7 @@ export default function Servicios() {
         <div className="space-y-20 md:space-y-32">
           {t.filas.map((fila, i) => {
             const isReversed = i % 2 !== 0
-            const img = serviceImages[i] ?? '/assets/service01.jpg'
+            const img = serviceImages[i] ?? '/assets/service01.webp'
             const fullName = `${fila.titulo} - ${fila.subtitulo}`
 
             return (

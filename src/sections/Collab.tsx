@@ -112,8 +112,8 @@ export default function Collab() {
             className="md:col-span-3 relative z-0 overflow-hidden min-h-[300px] md:min-h-[600px]"
           >
             <img
-              src="/assets/bgCollab.jpg"
-              alt="Programa Educativo Colegios y Empresas"
+              src="/assets/bgCollab.webp"
+              alt="Programa educativo de escalada para colegios y empresas en Valparaíso"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110 grayscale"
             />

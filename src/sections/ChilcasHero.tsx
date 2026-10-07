@@ -99,8 +99,8 @@ export default function ChilcasHero() {
         data-astro-transition-animate="morph"
       >
         <img
-          src="/assets/bgChilcas.png"
-          alt="Las Chilcas - LlayLlay"
+          src="/assets/bgChilcas.webp"
+          alt="Sector de escalada Las Chilcas en Llay-Llay, Valparaíso"
           loading="lazy"
           className="w-full h-auto object-contain"
         />

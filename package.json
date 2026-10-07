@@ -14,7 +14,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "brand": "node scripts/generate-brand-assets.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.7",

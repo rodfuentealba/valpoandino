@@ -79,8 +79,8 @@ export default function Andinos() {
       <div className="relative w-full h-[320px] md:h-[500px] overflow-hidden">
         <img
           ref={imgRef}
-          src="/assets/bgAndinos.png"
-          alt="Montañas de los Andes"
+          src="/assets/bgAndinos.webp"
+          alt="Cerros y paredes de roca de la zona central de Chile donde Andinos guía talleres de escalada"
           className="absolute inset-0 w-full h-full object-cover object-top"
         />
       </div>

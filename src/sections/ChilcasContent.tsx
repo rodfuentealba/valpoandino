@@ -48,7 +48,7 @@ export default function ChilcasContent({ mapboxToken }: Props) {
 
         <div
           className="w-screen relative left-1/2 right-1/2 -mx-[50vw] my-16 md:my-24 h-[300px] md:h-[650px] bg-scroll md:bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/assets/ChilcasSeparator.jpg')" }}
+          style={{ backgroundImage: "url('/assets/ChilcasSeparator.webp')" }}
           role="img"
           aria-label="Pared de escalada Las Chilcas"
         ></div>
@@ -298,9 +298,10 @@ export default function ChilcasContent({ mapboxToken }: Props) {
         <FadeIn className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mt-24">
           <div className="relative w-full h-[400px] md:h-[600px] overflow-hidden">
             <img
-              src="/assets/service05.jpg"
-              alt="Las Chilcas"
+              src="/assets/service05.webp"
+              alt="Paredes de roca del sector Las Chilcas, escalada deportiva cerca de Valparaíso"
               loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/10" />

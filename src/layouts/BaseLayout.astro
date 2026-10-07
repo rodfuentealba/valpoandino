@@ -3,17 +3,15 @@ import Analytics from '@vercel/analytics/astro'
 interface Props {
   title?: string
   description?: string
-  keywords?: string
   gscVerification?: string
   image?: string
   type?: string
 }
 const {
-  title = 'Valparaíso Andino — Escalada en Roca',
-  description = 'Experiencias de escalada en roca y deportes en montaña en Valparaíso, Chile.',
-  keywords = 'escalada en roca, valparaíso, andinismo, deportes de montaña, las chilcas, trekking, chile',
+  title = 'Talleres de Escalada en Roca en Valparaíso | Valparaíso Andino',
+  description = 'Reserva talleres de escalada en roca en Valparaíso y Las Chilcas, Chile. Guías certificados, equipo incluido y experiencias seguras para principiantes, colegios y empresas.',
   gscVerification = '',
-  image = 'https://www.valparaisoandino.cl/thumbnail.png',
+  image = 'https://www.valparaisoandino.cl/thumbnail.jpg',
   type = 'website',
 } = Astro.props
 
@@ -34,12 +32,18 @@ const twitterHandle = '@valparaiso_andino'
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
     {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/thumbnail.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#ff6467" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="alternate" hreflang="es-CL" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <meta property="og:image:alt" content="Valparaíso Andino — talleres de escalada en roca" />
 
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
@@ -47,6 +51,7 @@ const twitterHandle = '@valparaiso_andino'
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content={ogImageWidth} />
     <meta property="og:image:height" content={ogImageHeight} />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:url" content={ogUrl} />
     <meta property="og:locale" content="es_CL" />
     <meta property="og:site_name" content={siteName} />
@@ -67,6 +72,7 @@ const twitterHandle = '@valparaiso_andino'
     />
     <link rel="preload" href="/fonts/Nohemi-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/Nohemi-ExtraBold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/hero-poster.webp" as="image" type="image/webp" fetchpriority="high" />
     <script is:inline>
       const t = localStorage.getItem('va-theme')
       const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -79,17 +85,36 @@ const twitterHandle = '@valparaiso_andino'
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "LocalBusiness",
+            "@type": ["LocalBusiness", "SportsActivityLocation"],
             "@id": "https://www.valparaisoandino.cl/#business",
             "name": "Valparaíso Andino",
-            "description": "Experiencias de escalada en roca y deportes en montaña en Valparaíso, Chile.",
+            "alternateName": "vAndino",
+            "description": "Talleres y experiencias de escalada en roca y deportes en montaña en Valparaíso y Las Chilcas, Chile.",
             "url": "https://www.valparaisoandino.cl",
             "telephone": "+56962822676",
-            "image": "https://www.valparaisoandino.cl/thumbnail.png",
+            "image": "https://www.valparaisoandino.cl/thumbnail.jpg",
+            "logo": "https://www.valparaisoandino.cl/icon-512.png",
+            "priceRange": "$$",
+            "foundingDate": "2018",
+            "inLanguage": ["es-CL", "en"],
+            "areaServed": [
+              { "@type": "City", "name": "Valparaíso" },
+              { "@type": "City", "name": "Viña del Mar" },
+              { "@type": "City", "name": "Santiago" }
+            ],
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Valparaíso",
+              "addressRegion": "Valparaíso",
               "addressCountry": "CL"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Talleres de escalada",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Taller de escalada en roca", "areaServed": "Valparaíso, Chile" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Programa educativo para colegios y empresas", "areaServed": "Valparaíso, Chile" } }
+              ]
             },
             "sameAs": ["https://www.instagram.com/valparaiso_andino/"]
           },
@@ -99,6 +124,52 @@ const twitterHandle = '@valparaiso_andino'
             "name": "Valparaíso Andino",
             "url": "https://www.valparaisoandino.cl",
             "publisher": { "@id": "https://www.valparaisoandino.cl/#business" }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.valparaisoandino.cl/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Necesito experiencia previa para tomar un taller de escalada?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, para nada. En nuestro taller de iniciación empezamos desde cero. Te enseñamos los principios básicos de seguridad, progresión en la pared, técnicas de pies y cómo asegurar a un compañero con total confianza."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿El equipo técnico está incluido en el valor del taller?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, todo el equipo técnico certificado está 100% incluido: arnés, casco, cuerda, mosquetones, cintas exprés, sistema de freno (ATC/GriGri) y zapatillas de escalada (pies de gato)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Dónde se realizan las salidas y cómo es el transporte?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nuestras actividades se desarrollan en Las Chilcas (Llay-Llay) y sectores de Valparaíso y alrededores. Se ofrecen dos modalidades: 1) Disponemos de automóvil previa coordinación desde Valparaíso, Viña del Mar y alrededores; o 2) Llegada de manera particular al punto de encuentro si prefieres ir en tu vehículo."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué medidas de seguridad y certificaciones tienen los instructores?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nuestros instructores cuentan con más de 10 años de trayectoria activa en montaña y escalada en roca, certificaciones de primeros auxilios en áreas remotas (WFR) y estándares UIAA."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo reservo una fecha o consulto por salidas personalizadas?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "La reserva se coordina directamente a través de nuestro WhatsApp oficial. Te enviamos la ficha de inscripción con todos los detalles de la fecha solicitada."
+                }
+              }
+            ]
           }
         ]
       }
