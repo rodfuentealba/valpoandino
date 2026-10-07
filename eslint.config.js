@@ -13,17 +13,6 @@ export default [
     ignores: ['dist/', '.astro/', 'node_modules/'],
   },
   {
-    files: ['scripts/**/*.{js,mjs}'],
-    languageOptions: {
-      globals: {
-        ...globals.node,
-      },
-    },
-    rules: {
-      'no-console': 'off',
-    },
-  },
-  {
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -34,6 +23,17 @@ export default [
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'warn',
       'no-console': 'warn',
+    },
+  },
+  {
+    files: ['scripts/**/*.{js,mjs}'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      'no-console': 'off',
     },
   },
 ]
